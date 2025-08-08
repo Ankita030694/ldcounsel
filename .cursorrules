@@ -1,0 +1,94 @@
+# Website Design Guidelines for AI Assistance
+
+## Project Overview
+This is a website project that requires a minimal yet aesthetic design approach. The design should be professional, subtle, and breathtaking without being flashy or loud.
+
+## Color Palette
+- **Primary Background/Off White/Cream**: #F8F1E6
+- **Primary Text/Accent/Midnight Blue/Dark Azure**: #102028
+
+## Design Principles
+1. **Minimalism**: Keep designs clean and uncluttered
+2. **Aesthetic Appeal**: Focus on visual harmony and balance
+3. **Professional**: Maintain a business-appropriate appearance
+4. **Subtle**: Avoid flashy or overly bright elements
+5. **Breathable**: Use generous whitespace and clean typography
+
+## Implementation Guidelines
+- Use the cream color (#F8F1E6) for backgrounds, cards, and light elements
+- Use the midnight blue (#102028) for text, borders, buttons, and dark accents
+- Maintain high contrast for accessibility
+- Prefer subtle shadows and minimal animations
+- Use clean, modern typography
+- Implement responsive design principles
+- Focus on user experience and readability
+
+## Technical Preferences
+- Modern CSS with flexbox/grid layouts
+- Semantic HTML structure
+- Mobile-first responsive design
+- Optimized for performance
+- Clean, maintainable code structure
+
+## File Structure
+- Organize CSS with clear naming conventions
+- Use component-based architecture where applicable
+- Maintain consistent spacing and sizing systems
+- Document any custom design decisions
+
+## Component Design Behavior
+
+### Navbar Component
+**Purpose**: Main navigation header with logo and menu items
+**Background**: Dark midnight blue (#102028) for contrast
+**Layout Structure**:
+- Logo positioned in center with circular border
+- Navigation links split: 2 on left, 2 on right of logo
+- Horizontal line intersects logo at vertical center
+- Mobile: Hamburger menu with centered logo
+**Navigation Items**: About Us, Blogs, Services, Contact Us
+**Logo**: Circular container with cream border, contains law firm logo image
+**Responsive Behavior**: Desktop shows split navigation, mobile shows hamburger menu
+**Interactive Elements**: Hover effects on navigation links, animated hamburger menu
+
+### Hero Component
+**Purpose**: Main landing section with background image and content
+**Background**: Banner image (legal-themed) with cream (#F8F1E6) fallback
+**Layout Structure**:
+- Full-screen height with background image
+- Content positioned with proper z-index layering
+- Background image covers entire section
+**Content Elements**:
+- Headline: Large italic serif text in midnight blue
+- CTA Button: Dark background with cream text
+- Counter section below hero content
+**Typography**: Playfair Display for headlines, clean sans-serif for body text
+**Responsive Behavior**: Content scales appropriately on all screen sizes
+**Visual Hierarchy**: Background image subtle, content prominent and readable
+
+### Counter Section Component
+**Purpose**: Display key statistics and achievements
+**Background**: Cream (#F8F1E6) background
+**Layout**: Horizontal flex layout with space-between justification
+**Statistics Displayed**:
+- Services Offered: 1000+
+- Customers Served: 100%
+- Satisfaction Guaranteed: 100%
+- Customers Ratings: 9.6/10
+**Typography**: Large bold numbers with medium-weight labels
+**Animation**: Count-up animation for numbers with staggered timing
+**Interactive Elements**: Hover scale effects on individual stat cards
+**Responsive**: Maintains horizontal layout on all screen sizes
+
+## AI Assistance Context
+When helping with this project:
+- Always consider the established color palette
+- Prioritize minimal and professional aesthetics
+- Suggest subtle enhancements over dramatic changes
+- Maintain consistency with the overall design language
+- Consider accessibility and user experience
+- Provide clean, well-structured code solutions
+- Follow the component design patterns established
+- Ensure responsive behavior across all components
+- Maintain the law firm's professional branding
+- Use semantic HTML and proper accessibility attributes 
