@@ -15,9 +15,9 @@ export default function Navbar() {
   };
 
   const navItems = [
-    { href: '#about', label: 'About Us' },
-    { href: '#blogs', label: 'Blogs' },
-    { href: '#services', label: 'Services' },
+    { href: '#about', label: 'About' },
+    { href: '#resources', label: 'Resources' },
+    { href: '#practiceareas', label: 'Practice Areas' },
     { href: '#contact', label: 'Contact Us' },
   ];
 
@@ -50,7 +50,7 @@ export default function Navbar() {
               <li key={item.href} className="list-none">
                 <a
                   href={item.href}
-                  className="text-[#F8F1E6] hover:text-[#F8F1E6]/80 transition-colors duration-200 font-sans text-base font-medium px-3 py-2"
+                  className="text-[#F8F1E6] hover:text-[#F8F1E6]/80 transition-colors duration-200 font-playfair text-base font-medium px-3 py-2"
                 >
                   {item.label}
                 </a>
@@ -60,7 +60,7 @@ export default function Navbar() {
 
           {/* Center Logo */}
           <div className="relative z-20">
-            <div className="w-32 h-24 lg:w-24 lg:h-24 border-2 border-[#F8F1E6] rounded-full flex items-center justify-center bg-[#102028] shadow-sm overflow-hidden">
+            <div className="w-32 h-24 lg:w-24 lg:h-24 border-2 border-[#F8F1E6] flex items-center justify-center bg-[#102028] shadow-sm overflow-hidden">
               <Image
                 src="/logo/ldlogo.png"
                 alt="Luthra and Luthra Law Offices India"
@@ -78,7 +78,7 @@ export default function Navbar() {
               <li key={item.href} className="list-none">
                 <a
                   href={item.href}
-                  className="text-[#F8F1E6] hover:text-[#F8F1E6]/80 transition-colors duration-200 font-sans text-base font-medium px-3 py-2"
+                  className="text-[#F8F1E6] hover:text-[#F8F1E6]/80 transition-colors duration-200 font-playfair text-base font-medium px-3 py-2"
                 >
                   {item.label}
                 </a>
@@ -90,7 +90,7 @@ export default function Navbar() {
         {/* Mobile Logo - centered */}
         <div className="lg:hidden flex justify-center mb-4">
           <div className="relative z-20">
-            <div className="w-32 h-24 lg:w-24 lg:h-24 border-2 border-[#F8F1E6] rounded-full flex items-center justify-center bg-[#102028] shadow-sm overflow-hidden">
+            <div className="w-32 h-24 lg:w-24 lg:h-24 border-2 border-[#F8F1E6] flex items-center justify-center bg-[#102028] shadow-sm overflow-hidden">
               <Image
                 src="/logo/ldlogo.png"
                 alt="Luthra and Luthra Law Offices India"
@@ -122,7 +122,7 @@ export default function Navbar() {
               <li key={item.href}>
                 <a
                   href={item.href}
-                  className="block text-[#F8F1E6] hover:text-[#F8F1E6]/80 transition-colors duration-200 font-sans text-lg font-medium py-3"
+                  className="block text-[#F8F1E6] hover:text-[#F8F1E6]/80 transition-colors duration-200 font-playfair text-lg font-medium py-3"
                   onClick={closeMenu}
                 >
                   {item.label}

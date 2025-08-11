@@ -16,7 +16,7 @@ const playfairDisplay = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "Luthra and Luthra - Law Offices India",
+  title: "LD Counsels - Law Offices India",
   description: "Consistently ranked and globally recognized law firm in India",
 };
 

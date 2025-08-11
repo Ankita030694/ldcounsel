@@ -67,14 +67,14 @@ export default function TestimonialsSection() {
   };
 
   return (
-    <section className="bg-[#F8F1E6] py-16 lg:py-20">
-      <div className="max-w-4xl mx-auto px-6 lg:px-8">
+    <section className="bg-[#F8F1E6] py-12 sm:py-16 lg:py-20">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center mb-12 lg:mb-16">
-          <h2 className="font-playfair text-[#102028] text-3xl lg:text-4xl mb-4">
+        <div className="text-center mb-8 sm:mb-12 lg:mb-16">
+          <h2 className="font-playfair text-[#102028] text-2xl sm:text-3xl lg:text-4xl mb-3 sm:mb-4">
             What Our Clients Say
           </h2>
-          <p className="text-[#102028] opacity-80 text-lg max-w-2xl mx-auto">
+          <p className="text-[#102028] opacity-80 text-base sm:text-lg max-w-2xl mx-auto">
             Trusted by leading companies and individuals for exceptional legal services and outstanding results.
           </p>
         </div>
@@ -82,27 +82,27 @@ export default function TestimonialsSection() {
         {/* Testimonials Carousel */}
         <div className="relative">
           {/* Testimonial Card */}
-          <div className="bg-white rounded-lg shadow-lg p-8 lg:p-12 border border-[#102028]/10 hover:shadow-xl transition-shadow duration-300">
+          <div className="bg-white rounded-lg shadow-lg p-6 sm:p-8 lg:p-12 border border-[#102028]/10 hover:shadow-xl transition-shadow duration-300">
             {/* Rating */}
-            <div className="flex justify-center mb-6">
+            <div className="flex justify-center mb-4 sm:mb-6">
               {renderStars(testimonials[currentTestimonial].rating)}
             </div>
 
             {/* Content */}
-            <blockquote className="text-[#102028] text-xl lg:text-2xl leading-relaxed mb-8 italic text-center">
+            <blockquote className="text-[#102028] text-lg sm:text-xl lg:text-2xl leading-relaxed mb-6 sm:mb-8 italic text-center">
               "{testimonials[currentTestimonial].content}"
             </blockquote>
 
             {/* Author Info */}
             <div className="flex items-center justify-center">
-              <div className="w-16 h-16 bg-[#102028] rounded-full flex items-center justify-center text-[#F8F1E6] font-bold text-xl mr-4">
+              <div className="w-12 h-12 sm:w-16 sm:h-16 bg-[#102028] rounded-full flex items-center justify-center text-[#F8F1E6] font-bold text-lg sm:text-xl mr-3 sm:mr-4">
                 {testimonials[currentTestimonial].name.charAt(0)}
               </div>
               <div className="text-center">
-                <h4 className="font-medium text-[#102028] text-xl">
+                <h4 className="font-medium text-[#102028] text-lg sm:text-xl">
                   {testimonials[currentTestimonial].name}
                 </h4>
-                <p className="text-[#102028] opacity-70 text-base">
+                <p className="text-[#102028] opacity-70 text-sm sm:text-base">
                   {testimonials[currentTestimonial].position}, {testimonials[currentTestimonial].company}
                 </p>
               </div>
@@ -110,13 +110,13 @@ export default function TestimonialsSection() {
           </div>
 
           {/* Navigation Dots */}
-          <div className="flex justify-center mt-12">
-            <div className="flex space-x-3">
+          <div className="flex justify-center mt-8 sm:mt-12">
+            <div className="flex space-x-2 sm:space-x-3">
               {testimonials.map((_, index) => (
                 <button
                   key={index}
                   onClick={() => setCurrentTestimonial(index)}
-                  className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                  className={`w-2.5 h-2.5 sm:w-3 sm:h-3 rounded-full transition-all duration-300 ${
                     index === currentTestimonial
                       ? 'bg-[#102028]'
                       : 'bg-[#102028]/30'
@@ -130,14 +130,14 @@ export default function TestimonialsSection() {
           {/* Navigation Arrows */}
           <button
             onClick={() => setCurrentTestimonial((prev) => (prev - 1 + testimonials.length) % testimonials.length)}
-            className="absolute left-4 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-[#102028] text-[#F8F1E6] rounded-full flex items-center justify-center hover:bg-[#102028]/90 transition-colors duration-200 shadow-lg"
+            className="absolute left-2 sm:left-4 top-1/2 transform -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 bg-[#102028] text-[#F8F1E6] rounded-full flex items-center justify-center hover:bg-[#102028]/90 transition-colors duration-200 shadow-lg"
             aria-label="Previous testimonial"
           >
             ←
           </button>
           <button
             onClick={() => setCurrentTestimonial((prev) => (prev + 1) % testimonials.length)}
-            className="absolute right-4 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-[#102028] text-[#F8F1E6] rounded-full flex items-center justify-center hover:bg-[#102028]/90 transition-colors duration-200 shadow-lg"
+            className="absolute right-2 sm:right-4 top-1/2 transform -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 bg-[#102028] text-[#F8F1E6] rounded-full flex items-center justify-center hover:bg-[#102028]/90 transition-colors duration-200 shadow-lg"
             aria-label="Next testimonial"
           >
             →

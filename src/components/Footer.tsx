@@ -51,7 +51,7 @@ export default function Footer() {
           {/* Company Info */}
           <div className="lg:col-span-1">
             <div className="flex items-center mb-4">
-              <div className="w-12 h-12 border-2 border-[#F8F1E6] rounded-full flex items-center justify-center bg-[#102028] shadow-sm overflow-hidden mr-3">
+              <div className="w-12 h-12 border-2 border-[#F8F1E6] flex items-center justify-center bg-[#102028] shadow-sm overflow-hidden mr-3">
                 <Image
                   src="/logo/ldlogo.png"
                   alt="LD Counsels Law Offices India"

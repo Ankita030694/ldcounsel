@@ -36,7 +36,7 @@ function Counter({ end, suffix = '', duration = 2000 }: CounterProps) {
   }, [end, duration]);
 
   return (
-    <span className="text-4xl lg:text-6xl font-bold">
+    <span className="text-2xl sm:text-3xl lg:text-4xl xl:text-6xl font-bold">
       {count}{suffix}
     </span>
   );
@@ -67,9 +67,9 @@ export default function CounterSection() {
   ];
 
   return (
-    <section className="bg-[#F8F1E6] py-8 lg:py-12">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="flex justify-between items-center">
+    <section className="bg-[#F8F1E6] py-6 sm:py-8 lg:py-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-2 lg:flex lg:justify-between items-center gap-4 sm:gap-6 lg:gap-0">
           {stats.map((stat, index) => (
             <div 
               key={index} 
@@ -82,7 +82,7 @@ export default function CounterSection() {
                   duration={2000 + index * 200}
                 />
               </div>
-              <h3 className="text-[#102028] text-lg lg:text-xl font-medium leading-tight">
+              <h3 className="text-[#102028] text-xs sm:text-sm lg:text-lg xl:text-xl font-medium leading-tight">
                 {stat.label}
               </h3>
             </div>
