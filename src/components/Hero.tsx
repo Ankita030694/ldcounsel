@@ -8,7 +8,6 @@ export default function Hero() {
   return (
     <>
       {/* Navigation */}
-      <Navbar />
       <header className="relative min-h-screen bg-[#F8F1E6]">
         {/* Background banner image */}
         <div className="absolute inset-0 z-0">
