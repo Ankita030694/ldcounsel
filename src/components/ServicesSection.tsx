@@ -53,6 +53,7 @@ export default function ServicesSection() {
     {
       title: 'Arbitration & Mediation',
       icon: faBalanceScale,
+      link: '/services/arbitration-mediation',
       concisePoints: [
         'Domestic & International Arbitration',
         'Mediation & Alternative Dispute Resolution',
@@ -71,6 +72,7 @@ export default function ServicesSection() {
     {
       title: 'Corporate & Commercial Advisory',
       icon: faBuilding,
+      link: '/services/corporate-commercial-advisory',
       concisePoints: [
         'Contract Drafting & Negotiation',
         'Mergers & Acquisitions Support',
@@ -89,6 +91,7 @@ export default function ServicesSection() {
     {
       title: 'Regulatory & Compliance',
       icon: faShieldAlt,
+      link: '/services/regulatory-compliance',
       concisePoints: [
         'Statutory & Regulatory Filings',
         'Sector-Specific Compliance',
@@ -107,6 +110,7 @@ export default function ServicesSection() {
     {
       title: 'Matrimonial & Family Law',
       icon: faHeart,
+      link: '/services/matrimonial-family-law',
       concisePoints: [
         'Divorce & Separation Proceedings',
         'Child Custody & Guardianship',
@@ -125,6 +129,7 @@ export default function ServicesSection() {
     {
       title: 'Media, Entertainment & IP',
       icon: faFilm,
+      link: '/services/media-entertainment-ip',
       concisePoints: [
         'Film & Content Contracts',
         'Copyright & Trademark Protection',
@@ -143,6 +148,7 @@ export default function ServicesSection() {
     {
       title: 'Startup Legal Solutions',
       icon: faRocket,
+      link: '/services/startup-legal-solutions',
       concisePoints: [
         'Founders\' Agreements & Structuring',
         'Compliance for Early-Stage Ventures',
@@ -161,6 +167,7 @@ export default function ServicesSection() {
     {
       title: 'Conveyancing & Wills',
       icon: faHome,
+      link: '/services/conveyancing-wills',
       concisePoints: [
         'Drafting & Registration of Property Documents',
         'Transfer & Lease Agreements',
@@ -179,6 +186,7 @@ export default function ServicesSection() {
     {
       title: 'Intellectual Property',
       icon: faLightbulb,
+      link: '/services/intellectual-property',
       concisePoints: [
         'Trademark Registration & Enforcement',
         'Copyright & Design Protection',
@@ -197,6 +205,7 @@ export default function ServicesSection() {
     {
       title: 'Employment & Labour Law',
       icon: faUsers,
+      link: '/employment-labour-service-law',
       concisePoints: [
         'Employment Contracts & Policies',
         'Workplace Dispute Resolution',
@@ -215,6 +224,7 @@ export default function ServicesSection() {
     {
       title: 'Public Interest & Constitutional Matters',
       icon: faBalanceScale,
+      link: '/public-interest-constitutional-matters',
       concisePoints: [
         'Writ Petitions & PILs',
         'Constitutional Rights Litigation',
@@ -233,6 +243,7 @@ export default function ServicesSection() {
     {
       title: 'NGO & Non-Profit Advisory',
       icon: faHandHoldingHeart,
+      link: '/ngo-non-profit-advisory',
       concisePoints: [
         'Registration & Compliance',
         'FCRA & Trust Law Advisory',
