@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Urbanist } from "next/font/google";
 import { Playfair_Display } from "next/font/google";
 import "./globals.css";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 const urbanist = Urbanist({
   variable: "--font-urbanist",
@@ -30,7 +32,9 @@ export default function RootLayout({
       <body
         className={`${urbanist.variable} ${playfairDisplay.variable} antialiased`}
       >
+        <Navbar />
         {children}
+        <Footer />
       </body>
     </html>
   );

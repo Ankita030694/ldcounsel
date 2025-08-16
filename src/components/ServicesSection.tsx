@@ -17,6 +17,7 @@ import {
   faHandHoldingHeart
 } from '@fortawesome/free-solid-svg-icons';
 import { useState } from 'react';
+import Link from 'next/link';
 
 export default function ServicesSection() {
   const [expandedServices, setExpandedServices] = useState<number[]>([]);
@@ -33,6 +34,7 @@ export default function ServicesSection() {
     {
       title: 'Litigation & Dispute Resolution',
       icon: faGavel,
+      link: '/services/litigation-dispute-resolution',  
       concisePoints: [
         'Civil & Criminal Litigation',
         'Commercial Disputes',
@@ -264,6 +266,7 @@ export default function ServicesSection() {
         {/* Services Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-12">
           {services.map((service, index) => (
+            <Link href={service.link || ''} key={index}>
             <div
               key={index}
               className="group bg-[#F8F1E6] rounded-xl shadow-lg p-6 sm:p-8 border border-[#102028]/10 hover:shadow-xl transition-all duration-300 hover:transform hover:scale-105"
@@ -342,6 +345,7 @@ export default function ServicesSection() {
                 </button>
               </div>
             </div>
+            </Link>
           ))}
         </div>
 
