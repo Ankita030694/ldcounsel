@@ -41,122 +41,126 @@ export default function Navbar() {
   return (
     <nav className="relative z-10 bg-[#102028] w-full">
       {/* Logo and horizontal rule */}
-      <div className="relative pt-6 lg:pt-8 w-full">
-        {/* Mobile menu button - top right */}
-        <div className="lg:hidden flex justify-end mb-4">
-          <button
-            className="p-3"
-            onClick={toggleMenu}
-            aria-expanded={isMenuOpen}
-            aria-controls="mobile-menu"
-            aria-label="Toggle navigation menu"
-          >
-            <div className="w-8 h-8 flex flex-col justify-center items-center">
-              <span className={`block w-6 h-0.5 bg-[#F8F1E6] transition-all duration-300 ${isMenuOpen ? 'rotate-45 translate-y-1' : '-translate-y-1'}`}></span>
-              <span className={`block w-6 h-0.5 bg-[#F8F1E6] transition-all duration-300 ${isMenuOpen ? 'opacity-0' : 'opacity-100'}`}></span>
-              <span className={`block w-6 h-0.5 bg-[#F8F1E6] transition-all duration-300 ${isMenuOpen ? '-rotate-45 -translate-y-1' : 'translate-y-1'}`}></span>
-            </div>
-          </button>
-        </div>
-
-        {/* Desktop Layout - Logo and Navigation side by side */}
-        <div className="hidden lg:flex justify-center items-center mb-4 w-full">
-          {/* Left Navigation */}
-          <nav className="flex space-x-10 mr-10" role="navigation" aria-label="Left navigation">
-            {navItems.slice(0, 2).map((item) => (
-              <li key={item.href} className="list-none">
-                <a
-                  href={item.href}
-                  className="text-[#F8F1E6] hover:text-[#F8F1E6]/80 transition-colors duration-200 font-playfair text-base font-medium px-3 py-2"
-                >
-                  {item.label}
-                </a>
-              </li>
-            ))}
-          </nav>
-
-          {/* Center Logo */}
-          <div className="relative z-20">
-            <div className="w-32 h-24 lg:w-24 lg:h-24 border-2 border-[#F8F1E6] flex items-center justify-center bg-[#102028] shadow-sm overflow-hidden">
-              <Image
-                src="/logo/ldlogo.png"
-                alt="Luthra and Luthra Law Offices India"
-                width={200}
-                height={80}
-                className="w-20 h-20 lg:w-22 lg:h-22 object-cover"
-                priority
-              />
-            </div>
+      <div className="relative w-full">
+        <div className="lg:px-8 lg:pt-8">
+          {/* Mobile menu button - top right */}
+          <div className="lg:hidden flex justify-end mb-4">
+            <button
+              className="p-3"
+              onClick={toggleMenu}
+              aria-expanded={isMenuOpen}
+              aria-controls="mobile-menu"
+              aria-label="Toggle navigation menu"
+            >
+              <div className="w-8 h-8 flex flex-col justify-center items-center">
+                <span className={`block w-6 h-0.5 bg-[#F8F1E6] transition-all duration-300 ${isMenuOpen ? 'rotate-45 translate-y-1' : '-translate-y-1'}`}></span>
+                <span className={`block w-6 h-0.5 bg-[#F8F1E6] transition-all duration-300 ${isMenuOpen ? 'opacity-0' : 'opacity-100'}`}></span>
+                <span className={`block w-6 h-0.5 bg-[#F8F1E6] transition-all duration-300 ${isMenuOpen ? '-rotate-45 -translate-y-1' : 'translate-y-1'}`}></span>
+              </div>
+            </button>
           </div>
 
-          {/* Right Navigation */}
-          <nav className="flex space-x-10 ml-10" role="navigation" aria-label="Right navigation">
-            {/* Practice Areas Dropdown */}
-            <li className="list-none relative group">
-              <button
-                className="text-[#F8F1E6] hover:text-[#F8F1E6]/80 transition-colors duration-200 font-playfair text-base font-medium px-3 py-2 flex items-center"
-                onMouseEnter={() => setIsPracticeAreasOpen(true)}
-                aria-expanded={isPracticeAreasOpen}
-                aria-haspopup="true"
-              >
-                Practice Areas
-                <svg 
-                  className={`ml-1 w-4 h-4 transition-transform duration-200 ${isPracticeAreasOpen ? 'rotate-180' : ''}`} 
-                  fill="none" 
-                  stroke="currentColor" 
-                  viewBox="0 0 24 24"
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                </svg>
-              </button>
-              
-              {/* Dropdown Menu */}
-              <div 
-                className={`absolute top-full left-0 mt-0 w-80 bg-[#F8F1E6] border border-[#102028]/20 shadow-lg rounded-md overflow-hidden transition-all duration-200 z-[9999] ${
-                  isPracticeAreasOpen ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible -translate-y-2'
-                }`}
-                onMouseEnter={() => setIsPracticeAreasOpen(true)}
-                onMouseLeave={() => setIsPracticeAreasOpen(false)}
-                style={{ maxHeight: '400px' }}
-              >
-                <div className="py-2 overflow-y-auto" style={{ maxHeight: '380px' }}>
-                  {practiceAreas.map((area) => (
-                    <Link
-                      key={area.href}
-                      href={area.href}
-                      className="block px-4 py-3 text-[#102028] hover:bg-[#102028] hover:text-[#F8F1E6] transition-colors duration-200 font-playfair text-sm cursor-pointer"
-                    >
-                      {area.label}
-                    </Link>
-                  ))}
-                </div>
+          {/* Desktop Layout - Logo and Navigation side by side */}
+          <div className="hidden lg:flex justify-center items-center mb-4 w-full">
+            {/* Left Navigation */}
+            <nav className="flex space-x-10 mr-10 ml-14" role="navigation" aria-label="Left navigation">
+              {navItems.slice(0, 2).map((item) => (
+                <li key={item.href} className="list-none">
+                  <a
+                    href={item.href}
+                    className="text-[#F8F1E6] hover:text-[#F8F1E6]/80 transition-colors duration-200 font-playfair text-base font-medium px-3 py-2"
+                  >
+                    {item.label}
+                  </a>
+                </li>
+              ))}
+            </nav>
+
+            {/* Center Logo */}
+            <div className="relative z-20">
+              <Link href="/"> 
+              <div className="w-32 h-32 lg:w-24 lg:h-24 border-2 border-[#F8F1E6] flex items-center justify-center bg-[#102028] shadow-sm overflow-hidden">
+                <Image
+                  src="/logo/ldlogo.png"
+                  alt="Luthra and Luthra Law Offices India"
+                  width={200}
+                  height={80}
+                  className="w-20 h-20 lg:w-22 lg:h-22 object-contain"
+                  priority
+                />
               </div>
-            </li>
-
-            {/* Contact Us */}
-            <li className="list-none">
-              <Link
-                href="/contact"
-                className="text-[#F8F1E6] hover:text-[#F8F1E6]/80 transition-colors duration-200 font-playfair text-base font-medium px-3 py-2 flex items-center"
-              >
-                Contact Us
               </Link>
-            </li>
-          </nav>
-        </div>
+            </div>
 
-        {/* Mobile Logo - centered */}
-        <div className="lg:hidden flex justify-center mb-4">
-          <div className="relative z-20">
-            <div className="w-32 h-24 lg:w-24 lg:h-24 border-2 border-[#F8F1E6] flex items-center justify-center bg-[#102028] shadow-sm overflow-hidden">
-              <Image
-                src="/logo/ldlogo.png"
-                alt="Luthra and Luthra Law Offices India"
-                width={200}
-                height={80}
-                className="w-20 h-20 lg:w-22 lg:h-22 object-cover"
-                priority
-              />
+            {/* Right Navigation */}
+            <nav className="flex space-x-10 ml-10" role="navigation" aria-label="Right navigation">
+              {/* Practice Areas Dropdown */}
+              <li className="list-none">
+                <button
+                  className="text-[#F8F1E6] hover:text-[#F8F1E6]/80 transition-colors duration-200 font-playfair text-base font-medium px-3 py-2 flex items-center"
+                  onMouseEnter={() => setIsPracticeAreasOpen(true)}
+                  aria-expanded={isPracticeAreasOpen}
+                  aria-haspopup="true"
+                >
+                  Practice Areas
+                  {/* <svg 
+                    className={`ml-1 w-4 h-4 transition-transform duration-200 ${isPracticeAreasOpen ? 'rotate-180' : ''}`} 
+                    fill="none" 
+                    stroke="currentColor" 
+                    viewBox="0 0 24 24"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg> */}
+                </button>
+                
+
+                {/* <div 
+                  className={`absolute top-full left-0 mt-0 w-80 bg-[#F8F1E6] border border-[#102028]/20 shadow-lg rounded-md overflow-hidden transition-all duration-200 z-[9999] ${
+                    isPracticeAreasOpen ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible -translate-y-2'
+                  }`}
+                  onMouseEnter={() => setIsPracticeAreasOpen(true)}
+                  onMouseLeave={() => setIsPracticeAreasOpen(false)}
+                  style={{ maxHeight: '400px' }}
+                >
+                  <div className="py-2 overflow-y-auto" style={{ maxHeight: '380px' }}>
+                    {practiceAreas.map((area) => (
+                      <Link
+                        key={area.href}
+                        href={area.href}
+                        className="block px-4 py-3 text-[#102028] hover:bg-[#102028] hover:text-[#F8F1E6] transition-colors duration-200 font-playfair text-sm cursor-pointer"
+                      >
+                        {area.label}
+                      </Link>
+                    ))}
+                  </div>
+                </div> */}
+              </li>
+
+              {/* Contact Us */}
+              <li className="list-none">
+                <Link
+                  href="/contact"
+                  className="text-[#F8F1E6] hover:text-[#F8F1E6]/80 transition-colors duration-200 font-playfair text-base font-medium px-3 py-2 flex items-center -ml-5"
+                >
+                  Contact Us
+                </Link>
+              </li>
+            </nav>
+          </div>
+
+          {/* Mobile Logo - centered */}
+          <div className="lg:hidden flex justify-center mb-4">
+            <div className="relative z-20">
+              <div className="w-32 h-24 lg:w-24 lg:h-24 border-2 border-[#F8F1E6] flex items-center justify-center bg-[#102028] shadow-sm overflow-hidden">
+                <Image
+                  src="/logo/ldlogo.png"
+                  alt="Luthra and Luthra Law Offices India"
+                  width={200}
+                  height={80}
+                  className="w-20 h-20 lg:w-22 lg:h-22 object-cover"
+                  priority
+                />
+              </div>
             </div>
           </div>
         </div>

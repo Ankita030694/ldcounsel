@@ -6,14 +6,25 @@ export default function DisclaimerPopup() {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsVisible(true);
-    }, 2000);
+    // Check if user has already accepted the disclaimer
+    const hasAcceptedDisclaimer = localStorage.getItem('disclaimerAccepted');
+    
+    if (!hasAcceptedDisclaimer) {
+      const timer = setTimeout(() => {
+        setIsVisible(true);
+      }, 2000);
 
-    return () => clearTimeout(timer);
+      return () => clearTimeout(timer);
+    }
   }, []);
 
   const handleClose = () => {
+    setIsVisible(false);
+  };
+
+  const handleAccept = () => {
+    // Store acceptance in localStorage
+    localStorage.setItem('disclaimerAccepted', 'true');
     setIsVisible(false);
   };
 
@@ -48,7 +59,7 @@ export default function DisclaimerPopup() {
           </div>
           
           <button
-            onClick={handleClose}
+            onClick={handleAccept}
             className="mt-6 px-6 py-2 bg-[#102028] text-[#F8F1E6] rounded hover:bg-opacity-90 transition-colors duration-200"
           >
             I Understand
