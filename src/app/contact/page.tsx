@@ -261,12 +261,7 @@ export default function ContactPage() {
                   Follow Us
                 </h2>
                 <div className="flex space-x-4">
-                  <a
-                    href="#"
-                    className="w-12 h-12 bg-[#102028] rounded-lg flex items-center justify-center hover:bg-[#102028]/80 transition-colors duration-300"
-                  >
-                    <FontAwesomeIcon icon={faFacebook} className="text-[#F8F1E6] text-lg" />
-                  </a>
+
                   <a
                     href="#"
                     className="w-12 h-12 bg-[#102028] rounded-lg flex items-center justify-center hover:bg-[#102028]/80 transition-colors duration-300"
