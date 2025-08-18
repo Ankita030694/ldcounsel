@@ -24,12 +24,12 @@ export default function Hero() {
         <main className="relative z-10 px-4 pt-8 sm:px-6 lg:pt-30 lg:px-12">
           <div className="max-w-4xl mx-auto sm:mx-0">
             <h1 className="font-playfair text-[#102028] text-2xl sm:text-3xl lg:text-5xl xl:text-6xl leading-tight mb-4 sm:mb-6 lg:mb-8 text-center sm:text-left">
-              Consistently ranked and<br />
-              globally recognized
+              LD Counsels – Your Trusted<br />
+              Law Firm in India
             </h1>
             
             <h2 className="font-playfair text-[#102028] text-lg sm:text-xl lg:text-2xl xl:text-3xl leading-relaxed mb-6 sm:mb-8 lg:mb-12 text-center sm:text-left font-normal">
-              Legal experts under one roof <br /> legal services that you can trust
+              Delivering reliable, result-driven legal services<br /> tailored to your needs across India all under one roof.
             </h2>
 
             <div className="text-center sm:text-left">

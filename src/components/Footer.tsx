@@ -3,6 +3,7 @@
 import Image from 'next/image';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLinkedin, faTwitter, faFacebook, faInstagram } from '@fortawesome/free-brands-svg-icons';
+import Link from 'next/link';
 
 export default function Footer() {
   const footerSections = [
@@ -18,6 +19,7 @@ export default function Footer() {
     {
       title: 'Resources',
       links: [
+        { label: 'Our Team', href: '/team' },
         { label: 'Blog', href: '#blog' },
         { label: 'Case Studies', href: '#cases' },
         { label: 'Legal Updates', href: '#updates' },
@@ -92,12 +94,21 @@ export default function Footer() {
               <ul className="space-y-2">
                 {section.links.map((link) => (
                   <li key={link.label}>
-                    <a
-                      href={link.href}
-                      className="text-xs opacity-80 hover:opacity-100 hover:text-[#F8F1E6] transition-all duration-200"
-                    >
-                      {link.label}
-                    </a>
+                    {link.href.startsWith('/') ? (
+                      <Link
+                        href={link.href}
+                        className="text-xs opacity-80 hover:opacity-100 hover:text-[#F8F1E6] transition-all duration-200"
+                      >
+                        {link.label}
+                      </Link>
+                    ) : (
+                      <a
+                        href={link.href}
+                        className="text-xs opacity-80 hover:opacity-100 hover:text-[#F8F1E6] transition-all duration-200"
+                      >
+                        {link.label}
+                      </a>
+                    )}
                   </li>
                 ))}
               </ul>

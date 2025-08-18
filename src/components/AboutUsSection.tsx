@@ -1,161 +1,545 @@
-'use client';
+'use client'
+import React from 'react';
 
-import Image from 'next/image';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { 
-  faUsers, 
-  faGavel, 
-  faRocket, 
-  faChalkboardTeacher,
-  faBalanceScale,
-  faShieldAlt,
-  faBriefcase,
-  faHeart,
-  faShoppingCart,
-  faTv,
-  faBuilding,
-  faHandshake,
-  faCheckCircle
-} from '@fortawesome/free-solid-svg-icons';
-
-export default function AboutUsSection() {
+const AboutUsSection: React.FC = () => {
   return (
-    <section className="bg-gradient-to-br from-[#102028] via-[#1a2a35] to-[#102028] text-[#F8F1E6] py-12 sm:py-16 lg:py-20 relative overflow-hidden">
-      {/* Background decorative elements */}
-      <div className="absolute inset-0">
-        <div className="absolute top-20 left-10 w-32 h-32 bg-[#F8F1E6] rounded-full opacity-5 blur-xl"></div>
-        <div className="absolute bottom-20 right-10 w-40 h-40 bg-[#F8F1E6] rounded-full opacity-5 blur-xl"></div>
-      </div>
+    <section className="about-us-section">
+      <div className="container">
+        {/* Decorative Background Elements */}
+        <div className="bg-decoration">
+          <div className="circle-1"></div>
+          <div className="circle-2"></div>
+          <div className="circle-3"></div>
+        </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* Top Section: Image on left, info on right */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-start mb-12 sm:mb-16">
-          {/* Left Side - Image */}
-          <div className="relative group">
-            <div className="relative rounded-2xl overflow-hidden shadow-2xl transform group-hover:scale-105 transition-transform duration-700">
-              <Image
-                src="/banners/banner1.png"
-                alt="LD Counsels Law Office"
-                width={600}
-                height={400}
-                className="w-full h-auto object-cover"
-              />
-              {/* Gradient overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-[#102028]/60 via-transparent to-transparent"></div>
-              
-              {/* Floating elements */}
-              <div className="absolute top-6 right-6 w-12 h-12 sm:w-16 sm:h-16 bg-[#F8F1E6] rounded-full flex items-center justify-center shadow-lg">
-                <span className="text-[#102028] font-bold text-lg sm:text-xl">LD</span>
-              </div>
-            </div>
-            
-            {/* Decorative elements */}
-            <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-gradient-to-br from-[#F8F1E6] to-[#F8F1E6]/50 rounded-full opacity-20 blur-sm"></div>
+        <div className="about-content">
+          {/* Header */}
+          <div className="about-header">
+            <div className="section-tag">About</div>
+            <h2 className="section-title">The Visionary Build</h2>
+            <p className="section-subtitle">
+              Combining legal expertise with strategic vision to deliver exceptional results
+            </p>
           </div>
 
-          {/* Right Side - Initial Content */}
-          <div className="space-y-6 sm:space-y-8">
-            <div className="relative">
-              <div className="inline-block bg-gradient-to-r from-[#F8F1E6] to-[#F8F1E6]/80 text-[#102028] px-3 py-1 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-medium mb-4">
-                The Visionary Build
+          {/* Content Grid */}
+          <div className="content-wrapper">
+            {/* Left Column - Main Content */}
+            <div className="main-content">
+              {/* Introduction Card */}
+              <div className="content-card intro-card">
+                <div className="card-header">
+                  <h3>Our Foundation</h3>
+                </div>
+                <p>
+                  At LD Counsels, we provide litigation, legal consultancy, contract drafting, and
+                  compliance solutions designed to meet today's dynamic legal landscape. We combine
+                  courtroom expertise with strategic advisory skills, ensuring every client receives
+                  the clarity, confidence, and results they need to move forward.
+                  <span className="mission-text">
+                  Your challenges become our mission. Your goals, our strategy and your trust, our greatest victory.
+                </span>
+                </p>
               </div>
-              <h2 className="font-playfair text-[#F8F1E6] text-2xl sm:text-3xl lg:text-4xl mb-4 sm:mb-6 leading-tight">
-                About <span className="bg-gradient-to-r from-[#F8F1E6] to-[#F8F1E6]/70 bg-clip-text text-transparent">LD Counsels</span>
-              </h2>
-              <div className="w-16 sm:w-20 h-1 bg-gradient-to-r from-[#F8F1E6] to-transparent mb-6 sm:mb-8"></div>
+
+             
+              {/* Mission & Approach */}
+              <div className="content-row">
+                <div className="content-card">
+                  <div className="card-header">
+                    <h3>Our Mission</h3>
+                  </div>
+                  <p>
+                    Our mission is simple - to combine legal expertise with personalised attention, ensuring
+                    every client feels informed, empowered, and supported at every step. We believe that
+                    the law is not just about resolving disputes, but about building strategies that protect
+                    and advance our clients' interests.
+                  </p>
+                </div>
+
+                <div className="content-card">
+                  <div className="card-header">
+                    <h3>Our Approach</h3>
+                  </div>
+                  <p>
+                    We combine deep legal expertise with a solutions-focused approach, delivering
+                    strategies tailored to each client's unique needs. Our guiding principles are
+                    precision, professionalism, and unwavering dedication.
+                  </p>
+                </div>
+              </div>
+
+              {/* Services & Network */}
+              <div className="content-row">
+                <div className="content-card">
+                  <div className="card-header">
+                    <h3>What We Do</h3>
+                  </div>
+                  <p>
+                    We deliver strategic, result-driven legal solutions across litigation, arbitration, and advisory.
+                    Our work spans Trial Courts, Delhi High Court, Supreme Court of India, and specialized forums.
+                    We advise on civil, criminal, commercial, matrimonial, consumer, and media law matters.
+                  </p>
+                </div>
+
+                <div className="content-card">
+                  <div className="card-header">
+                    <h3>Our Network</h3>
+                  </div>
+                  <p>
+                    Backed by a nationwide network of 150+ lawyers, we ensure seamless representation
+                    and tailored legal strategies. From startups to established businesses, we combine
+                    precision and professionalism to achieve results that matter.
+                  </p>
+                </div>
+              </div>
+
+              {/* Proven Track Record & Client-Centric Approach */}
+              <div className="content-row">
+                <div className="content-card">
+                  <div className="card-header">
+                    <h3>Proven Track Record</h3>
+                  </div>
+                  <p>
+                    Successful representation in complex, high-stakes matters.
+                  </p>
+                </div>
+
+                <div className="content-card">
+                  <div className="card-header">
+                    <h3>Client-Centric Approach</h3>
+                  </div>
+                  <p>
+                    Personalised attention and strategies aligned with your objectives.
+                  </p>
+                </div>
+              </div>
             </div>
 
-            <div className="space-y-4 sm:space-y-6">
-              <p className="text-[#F8F1E6] text-base sm:text-lg leading-relaxed opacity-95 font-light">
-                At LD Counsels, we provide <span className="font-semibold text-[#F8F1E6]">litigation, legal consultancy, contract drafting, and compliance solutions</span> designed to meet today's dynamic legal landscape. We combine courtroom expertise with strategic advisory skills, ensuring every client - from individuals to businesses, receives the clarity, confidence, and results they need to move forward.
-              </p>
+            {/* Right Column - Stats & Highlights */}
+            <div className="sidebar">
+              <div className="stats-card">
+                <h3>Our Impact</h3>
+                <div className="stat-item">
+                  <div className="stat-number">150+</div>
+                  <div className="stat-label">Expert Lawyers</div>
+                </div>
+                <div className="stat-item">
+                  <div className="stat-number">100%</div>
+                  <div className="stat-label">Client Satisfaction</div>
+                </div>
+                <div className="stat-item">
+                  <div className="stat-number">1000+</div>
+                  <div className="stat-label">Cases Handled</div>
+                </div>
+              </div>
 
-              <p className="text-[#F8F1E6] text-base sm:text-lg leading-relaxed opacity-95 font-light">
-                <span className="italic">Your challenges become our mission. Your goals, our strategy and your trust, our greatest victory.</span>
-              </p>
+              <div className="expertise-card">
+                <h3>Expertise Areas</h3>
+                <div className="expertise-list">
+                  <div className="expertise-item">Civil Law</div>
+                  <div className="expertise-item">Criminal Law</div>
+                  <div className="expertise-item">Commercial Law</div>
+                  <div className="expertise-item">Matrimonial Law</div>
+                  <div className="expertise-item">Consumer Law</div>
+                  <div className="expertise-item">Media Law</div>
+                  <div className="expertise-item">Corporate Governance</div>
+                  <div className="expertise-item">Compliance</div>
+                </div>
+              </div>
+            </div>
+          </div>
 
-              <p className="text-[#F8F1E6] text-base sm:text-lg leading-relaxed opacity-95 font-light">
-                Our mission is simple - to combine legal expertise with personalised attention, ensuring every client feels informed, empowered, and supported at every step. We believe that the law is not just about resolving disputes, but about building strategies that protect and advance our clients' interests.
+          {/* Bottom Section */}
+          <div className="bottom-section">
+            <div className="closing-card">
+              <h3>Our Commitment</h3>
+              <p>
+                Beyond litigation, LD Counsels has been a trusted advisor to startups during their
+                formative stages, ensuring they are built on strong legal foundations. Every matter
+                we take on is approached with strategic foresight, unwavering commitment, and a focus
+                on results that truly matter.
               </p>
             </div>
           </div>
         </div>
-
-        {/* Bottom Section: Rest of the content */}
-        <div className="space-y-8 sm:space-y-12">
-          {/* Key Features */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
-            <div className="group p-4 sm:p-6 bg-gradient-to-br from-[#F8F1E6]/10 to-[#F8F1E6]/5 rounded-xl border border-[#F8F1E6]/20 hover:border-[#F8F1E6]/40 transition-all duration-300 hover:transform hover:scale-105">
-              <div className="flex flex-col items-center text-center space-y-3 sm:space-y-4">
-                <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-[#F8F1E6] to-[#F8F1E6]/80 rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow duration-300">
-                  <FontAwesomeIcon 
-                    icon={faUsers} 
-                    className="text-[#102028] text-lg sm:text-xl group-hover:scale-110 transition-transform duration-300"
-                  />
-                </div>
-                <div>
-                  <h4 className="font-semibold text-[#F8F1E6] mb-1 sm:mb-2 text-sm sm:text-base lg:text-lg">Nationwide Network</h4>
-                  <p className="text-[#F8F1E6] opacity-80 text-xs sm:text-sm leading-relaxed">150+ lawyers across India for seamless representation</p>
-                </div>
-              </div>
-            </div>
-
-            <div className="group p-4 sm:p-6 bg-gradient-to-br from-[#F8F1E6]/10 to-[#F8F1E6]/5 rounded-xl border border-[#F8F1E6]/20 hover:border-[#F8F1E6]/40 transition-all duration-300 hover:transform hover:scale-105">
-              <div className="flex flex-col items-center text-center space-y-3 sm:space-y-4">
-                <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-[#F8F1E6] to-[#F8F1E6]/80 rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow duration-300">
-                  <FontAwesomeIcon 
-                    icon={faGavel} 
-                    className="text-[#102028] text-lg sm:text-xl group-hover:scale-110 transition-transform duration-300"
-                  />
-                </div>
-                <div>
-                  <h4 className="font-semibold text-[#F8F1E6] mb-1 sm:mb-2 text-sm sm:text-base lg:text-lg">Multi-Court Expertise</h4>
-                  <p className="text-[#F8F1E6] opacity-80 text-xs sm:text-sm leading-relaxed">Trial Courts to Supreme Court representation</p>
-                </div>
-              </div>
-            </div>
-
-            <div className="group p-4 sm:p-6 bg-gradient-to-br from-[#F8F1E6]/10 to-[#F8F1E6]/5 rounded-xl border border-[#F8F1E6]/20 hover:border-[#F8F1E6]/40 transition-all duration-300 hover:transform hover:scale-105">
-              <div className="flex flex-col items-center text-center space-y-3 sm:space-y-4">
-                <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-[#F8F1E6] to-[#F8F1E6]/80 rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow duration-300">
-                  <FontAwesomeIcon 
-                    icon={faRocket} 
-                    className="text-[#102028] text-lg sm:text-xl group-hover:scale-110 transition-transform duration-300"
-                  />
-                </div>
-                <div>
-                  <h4 className="font-semibold text-[#F8F1E6] mb-1 sm:mb-2 text-sm sm:text-base lg:text-lg">Startup Advisory</h4>
-                  <p className="text-[#F8F1E6] opacity-80 text-xs sm:text-sm leading-relaxed">Strong legal foundations for growth and success</p>
-                </div>
-              </div>
-            </div>
-
-            <div className="group p-4 sm:p-6 bg-gradient-to-br from-[#F8F1E6]/10 to-[#F8F1E6]/5 rounded-xl border border-[#F8F1E6]/20 hover:border-[#F8F1E6]/40 transition-all duration-300 hover:transform hover:scale-105">
-              <div className="flex flex-col items-center text-center space-y-3 sm:space-y-4">
-                <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-[#F8F1E6] to-[#F8F1E6]/80 rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow duration-300">
-                  <FontAwesomeIcon 
-                    icon={faChalkboardTeacher} 
-                    className="text-[#102028] text-lg sm:text-xl group-hover:scale-110 transition-transform duration-300"
-                  />
-                </div>
-                <div>
-                  <h4 className="font-semibold text-[#F8F1E6] mb-1 sm:mb-2 text-sm sm:text-base lg:text-lg">PoSH Training</h4>
-                  <p className="text-[#F8F1E6] opacity-80 text-xs sm:text-sm leading-relaxed">Preventive legal programs and compliance training</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-     
-          {/* CTA Button */}
-          <div className="text-center">
-            <button className="group relative bg-gradient-to-r from-[#F8F1E6] to-[#F8F1E6]/90 text-[#102028] px-6 py-3 sm:px-8 sm:py-4 rounded-xl border-2 border-[#F8F1E6] hover:from-[#F8F1E6]/90 hover:to-[#F8F1E6] transition-all duration-300 font-sans text-sm sm:text-base lg:text-lg font-semibold focus:outline-none focus:ring-4 focus:ring-[#F8F1E6]/30 shadow-xl hover:shadow-2xl transform hover:scale-105">
-              <span className="relative z-10">Learn More About Us</span>
-              <div className="absolute inset-0 bg-gradient-to-r from-[#F8F1E6] to-[#F8F1E6]/80 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-            </button>
-          </div>
-        </div>
       </div>
+
+      <style jsx>{`
+        .about-us-section {
+          background: #102028;
+          color: #F8F1E6;
+          padding: 120px 0;
+          position: relative;
+          overflow: hidden;
+          min-height: 100vh;
+        }
+
+        .bg-decoration {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          pointer-events: none;
+          z-index: 1;
+        }
+
+        .circle-1, .circle-2, .circle-3 {
+          position: absolute;
+          border-radius: 50%;
+          background: rgba(248, 241, 230, 0.02);
+          border: 1px solid rgba(248, 241, 230, 0.05);
+        }
+
+        .circle-1 {
+          width: 300px;
+          height: 300px;
+          top: 10%;
+          right: -150px;
+        }
+
+        .circle-2 {
+          width: 200px;
+          height: 200px;
+          bottom: 20%;
+          left: -100px;
+        }
+
+        .circle-3 {
+          width: 150px;
+          height: 150px;
+          top: 50%;
+          right: 10%;
+          opacity: 0.3;
+        }
+
+        .container {
+          max-width: 1400px;
+          margin: 0 auto;
+          padding: 0 30px;
+          position: relative;
+          z-index: 2;
+        }
+
+        .about-content {
+          max-width: 1200px;
+          margin: 0 auto;
+        }
+
+        .about-header {
+          text-align: center;
+          margin-bottom: 80px;
+        }
+
+        .section-tag {
+          display: inline-block;
+          background: rgba(248, 241, 230, 0.1);
+          color: #F8F1E6;
+          padding: 8px 24px;
+          border-radius: 30px;
+          font-size: 0.9rem;
+          font-weight: 500;
+          letter-spacing: 2px;
+          text-transform: uppercase;
+          margin-bottom: 20px;
+          border: 1px solid rgba(248, 241, 230, 0.2);
+        }
+
+        .section-title {
+          font-family: 'Playfair Display', serif;
+          font-size: 4rem;
+          font-weight: 700;
+          margin-bottom: 20px;
+          color: #F8F1E6;
+          font-style: italic;
+          line-height: 1.2;
+        }
+
+        .section-subtitle {
+          font-size: 1.25rem;
+          color: #F8F1E6;
+          opacity: 0.8;
+          max-width: 600px;
+          margin: 0 auto;
+          line-height: 1.6;
+        }
+
+        .content-wrapper {
+          display: grid;
+          grid-template-columns: 2fr 1fr;
+          gap: 60px;
+          margin-bottom: 60px;
+        }
+
+        .main-content {
+          display: flex;
+          flex-direction: column;
+          gap: 40px;
+        }
+
+        .content-card {
+          background: #F8F1E6;
+          border: 1px solid rgba(16, 32, 40, 0.1);
+          border-radius: 16px;
+          padding: 32px;
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+          transition: all 0.3s ease;
+        }
+
+        .content-card:hover {
+          box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+          transform: translateY(-5px);
+        }
+
+        .card-header {
+          display: flex;
+          align-items: center;
+          margin-bottom: 20px;
+        }
+
+        .card-icon {
+          font-size: 2rem;
+          margin-right: 16px;
+          opacity: 0.8;
+        }
+
+        .card-header h3 {
+          font-family: 'Playfair Display', serif;
+          font-size: 1.5rem;
+          font-weight: 600;
+          color: #102028;
+          margin: 0;
+        }
+
+        .content-card p {
+          font-size: 1.1rem;
+          line-height: 1.7;
+          color: #102028;
+          opacity: 0.9;
+          margin: 0;
+        }
+
+        .intro-card {
+          border: 2px solid rgba(16, 32, 40, 0.15);
+          box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .mission-highlight {
+          background: #F8F1E6;
+          border: 2px solid rgba(16, 32, 40, 0.1);
+          border-radius: 20px;
+          padding: 40px;
+          text-align: center;
+          position: relative;
+          box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .quote-mark {
+          font-family: 'Playfair Display', serif;
+          font-size: 4rem;
+          color: rgba(16, 32, 40, 0.2);
+          position: absolute;
+          top: 10px;
+          left: 30px;
+        }
+
+        .quote-mark.closing {
+          bottom: 10px;
+          right: 30px;
+          top: auto;
+          left: auto;
+        }
+
+        .mission-text {
+          font-family: 'Playfair Display', serif;
+          font-size: 1.5rem;
+          font-style: italic;
+          color: #102028;
+          margin: 0;
+          line-height: 1.6;
+          position: relative;
+          z-index: 1;
+        }
+
+        .content-row {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 30px;
+        }
+
+        .sidebar {
+          display: flex;
+          flex-direction: column;
+          gap: 30px;
+        }
+
+        .stats-card, .expertise-card {
+          background: #F8F1E6;
+          border: 1px solid rgba(16, 32, 40, 0.1);
+          border-radius: 16px;
+          padding: 32px;
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .stats-card h3, .expertise-card h3 {
+          font-family: 'Playfair Display', serif;
+          font-size: 1.5rem;
+          font-weight: 600;
+          color: #102028;
+          margin-bottom: 24px;
+          text-align: center;
+        }
+
+        .stat-item {
+          text-align: center;
+          margin-bottom: 24px;
+        }
+
+        .stat-number {
+          font-size: 2.5rem;
+          font-weight: 700;
+          color: #102028;
+          margin-bottom: 8px;
+        }
+
+        .stat-label {
+          font-size: 0.9rem;
+          color: #102028;
+          opacity: 0.7;
+          text-transform: uppercase;
+          letter-spacing: 1px;
+        }
+
+        .expertise-list {
+          display: grid;
+          gap: 12px;
+        }
+
+        .expertise-item {
+          background: rgba(16, 32, 40, 0.05);
+          padding: 12px 16px;
+          border-radius: 8px;
+          font-size: 0.95rem;
+          color: #102028;
+          opacity: 0.9;
+          border-left: 3px solid rgba(16, 32, 40, 0.3);
+          transition: all 0.3s ease;
+        }
+
+        .expertise-item:hover {
+          background: rgba(16, 32, 40, 0.1);
+          border-left-color: #102028;
+          opacity: 1;
+        }
+
+        .bottom-section {
+          margin-top: 60px;
+        }
+
+        .closing-card {
+          background: #F8F1E6;
+          border: 1px solid rgba(16, 32, 40, 0.1);
+          border-radius: 16px;
+          padding: 40px;
+          text-align: center;
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .closing-card h3 {
+          font-family: 'Playfair Display', serif;
+          font-size: 1.75rem;
+          font-weight: 600;
+          color: #102028;
+          margin-bottom: 20px;
+        }
+
+        .closing-card p {
+          font-size: 1.1rem;
+          line-height: 1.7;
+          color: #102028;
+          opacity: 0.9;
+          max-width: 800px;
+          margin: 0 auto;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+          .content-wrapper {
+            grid-template-columns: 1fr;
+            gap: 40px;
+          }
+
+          .sidebar {
+            order: -1;
+          }
+
+          .stats-card, .expertise-card {
+            display: none;
+          }
+        }
+
+        @media (max-width: 768px) {
+          .about-us-section {
+            padding: 80px 0;
+          }
+
+          .container {
+            padding: 0 20px;
+          }
+
+          .section-title {
+            font-size: 2.5rem;
+          }
+
+          .content-row {
+            grid-template-columns: 1fr;
+            gap: 20px;
+          }
+
+          .content-card {
+            padding: 24px;
+          }
+
+          .mission-highlight {
+            padding: 30px 20px;
+          }
+
+          .quote-mark {
+            font-size: 3rem;
+          }
+
+          .mission-text {
+            font-size: 1.25rem;
+          }
+        }
+
+        @media (max-width: 480px) {
+          .section-title {
+            font-size: 2rem;
+          }
+
+          .about-header {
+            margin-bottom: 60px;
+          }
+
+          .content-card {
+            padding: 20px;
+          }
+
+          .card-header {
+            flex-direction: column;
+            text-align: center;
+            gap: 10px;
+          }
+
+          .card-icon {
+            margin-right: 0;
+          }
+        }
+      `}</style>
     </section>
   );
-} 
+};
+
+export default AboutUsSection;

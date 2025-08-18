@@ -16,25 +16,14 @@ import {
   faBalanceScale,
   faHandHoldingHeart
 } from '@fortawesome/free-solid-svg-icons';
-import { useState } from 'react';
 import Link from 'next/link';
 
 export default function ServicesSection() {
-  const [expandedServices, setExpandedServices] = useState<number[]>([]);
-
-  const toggleServiceExpansion = (index: number) => {
-    setExpandedServices(prev => 
-      prev.includes(index) 
-        ? prev.filter(i => i !== index)
-        : [...prev, index]
-    );
-  };
-
   const services = [
     {
       title: 'Litigation & Dispute Resolution',
       icon: faGavel,
-      link: '/services/litigation-dispute-resolution',  
+      link: '/litigation-dispute-resolution',  
       concisePoints: [
         'Civil & Criminal Litigation',
         'Commercial Disputes',
@@ -53,7 +42,7 @@ export default function ServicesSection() {
     {
       title: 'Arbitration & Mediation',
       icon: faBalanceScale,
-      link: '/services/arbitration-mediation',
+      link: '/arbitration-mediation',
       concisePoints: [
         'Domestic & International Arbitration',
         'Mediation & Alternative Dispute Resolution',
@@ -72,7 +61,7 @@ export default function ServicesSection() {
     {
       title: 'Corporate & Commercial Advisory',
       icon: faBuilding,
-      link: '/services/corporate-commercial-advisory',
+      link: '/corporate-commercial-advisory',
       concisePoints: [
         'Contract Drafting & Negotiation',
         'Mergers & Acquisitions Support',
@@ -89,28 +78,28 @@ export default function ServicesSection() {
       ]
     },
     {
-      title: 'Regulatory & Compliance',
+      title: 'Consumer Disputes & Protection',
       icon: faShieldAlt,
-      link: '/services/regulatory-compliance',
+      link: '/consumer-disputes-protection',
       concisePoints: [
-        'Statutory & Regulatory Filings',
-        'Sector-Specific Compliance',
-        'Risk Assessment & Governance'
+        'Consumer Rights Protection',
+        'Dispute Resolution',
+        'Regulatory Compliance'
       ],
-      description: 'Comprehensive regulatory compliance services ensuring your business meets all statutory requirements and maintains proper governance.',
+      description: 'Comprehensive consumer protection services ensuring your rights are protected and disputes are resolved effectively.',
       features: [
-        'Statutory & Regulatory Filings',
-        'Sector-Specific Compliance',
-        'Risk Assessment & Governance',
-        'Compliance audits and reviews',
-        'Regulatory training programs',
-        'Policy development and implementation'
+        'Consumer Rights Protection',
+        'Dispute Resolution',
+        'Regulatory Compliance',
+        'Consumer complaint handling',
+        'Legal representation in consumer forums',
+        'Consumer awareness and education'
       ]
     },
     {
-      title: 'Matrimonial & Family Law',
+      title: 'Family Law & Matrimonial Disputes',
       icon: faHeart,
-      link: '/services/matrimonial-family-law',
+      link: '/family-law-matrimonial-disputes',
       concisePoints: [
         'Divorce & Separation Proceedings',
         'Child Custody & Guardianship',
@@ -129,7 +118,7 @@ export default function ServicesSection() {
     {
       title: 'Media, Entertainment & IP',
       icon: faFilm,
-      link: '/services/media-entertainment-ip',
+      link: '/media-entertainment-intellectual-property',
       concisePoints: [
         'Film & Content Contracts',
         'Copyright & Trademark Protection',
@@ -148,7 +137,7 @@ export default function ServicesSection() {
     {
       title: 'Startup Legal Solutions',
       icon: faRocket,
-      link: '/services/startup-legal-solutions',
+      link: '/startup-legal-solutions',
       concisePoints: [
         'Founders\' Agreements & Structuring',
         'Compliance for Early-Stage Ventures',
@@ -167,7 +156,7 @@ export default function ServicesSection() {
     {
       title: 'Conveyancing & Wills',
       icon: faHome,
-      link: '/services/conveyancing-wills',
+      link: '/conveyancing-wills',
       concisePoints: [
         'Drafting & Registration of Property Documents',
         'Transfer & Lease Agreements',
@@ -184,26 +173,7 @@ export default function ServicesSection() {
       ]
     },
     {
-      title: 'Intellectual Property',
-      icon: faLightbulb,
-      link: '/services/intellectual-property',
-      concisePoints: [
-        'Trademark Registration & Enforcement',
-        'Copyright & Design Protection',
-        'IP Portfolio Management'
-      ],
-      description: 'Complete IP protection services including trademark registration, copyright protection, and comprehensive portfolio management.',
-      features: [
-        'Trademark Registration & Enforcement',
-        'Copyright & Design Protection',
-        'IP Portfolio Management',
-        'Patent filing and prosecution',
-        'IP litigation and enforcement',
-        'Licensing and technology transfer'
-      ]
-    },
-    {
-      title: 'Employment & Labour Law',
+      title: 'Employment & Labour Service Law',
       icon: faUsers,
       link: '/employment-labour-service-law',
       concisePoints: [
@@ -258,6 +228,25 @@ export default function ServicesSection() {
         'Board governance advisory',
         'Impact assessment and reporting'
       ]
+    },
+    {
+      title: 'Insolvency & Bankruptcy (IBC) Matters',
+      icon: faShieldAlt,
+      link: '/insolvency-bankruptcy-ibc-matters',
+      concisePoints: [
+        'Corporate Insolvency Resolution',
+        'Bankruptcy Proceedings',
+        'Debt Restructuring'
+      ],
+      description: 'Expert insolvency and bankruptcy services including corporate restructuring, debt resolution, and IBC compliance.',
+      features: [
+        'Corporate Insolvency Resolution',
+        'Bankruptcy Proceedings',
+        'Debt Restructuring',
+        'Creditor representation',
+        'Asset liquidation advisory',
+        'Cross-border insolvency matters'
+      ]
     }
   ];
 
@@ -310,41 +299,12 @@ export default function ServicesSection() {
                 </ul>
               </div>
 
-              {/* Read More Button */}
-              <button
-                onClick={() => toggleServiceExpansion(index)}
-                className="text-[#102028] text-sm font-medium hover:text-[#102028]/70 transition-colors duration-300 border-b border-[#102028]/30 hover:border-[#102028] pb-1 mb-4"
-              >
-                {expandedServices.includes(index) ? 'Read Less' : 'Read More'}
-              </button>
-
-              {/* Expanded Content */}
-              {expandedServices.includes(index) && (
-                <div className="space-y-4 animate-fadeIn">
-                  {/* Service Description */}
-                  <div>
-                    <h4 className="font-medium text-[#102028] text-sm sm:text-base mb-2">About:</h4>
-                    <p className="text-[#102028] opacity-80 text-sm sm:text-base leading-relaxed">
-                      {service.description}
-                    </p>
-                  </div>
-
-                  {/* Detailed Features */}
-                  <div>
-                    <h4 className="font-medium text-[#102028] text-sm sm:text-base mb-2">Comprehensive Services:</h4>
-                    <ul className="space-y-1 sm:space-y-2">
-                      {service.features.map((feature, featureIndex) => (
-                        <li key={featureIndex} className="flex items-start space-x-2 sm:space-x-3">
-                          <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-[#102028] rounded-full mt-1.5 sm:mt-2 flex-shrink-0"></div>
-                          <span className="text-[#102028] opacity-90 text-xs sm:text-sm font-medium">
-                            {feature}
-                          </span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-              )}
+              {/* Service Description */}
+              <div className="mb-6">
+                <p className="text-[#102028] opacity-80 text-sm sm:text-base leading-relaxed">
+                  {service.description}
+                </p>
+              </div>
 
               {/* Learn More Button */}
               <div className="mt-6 sm:mt-8">
@@ -359,25 +319,7 @@ export default function ServicesSection() {
             </Link>
           ))}
         </div>
-
-
       </div>
-
-      <style jsx>{`
-        @keyframes fadeIn {
-          from {
-            opacity: 0;
-            transform: translateY(10px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-        .animate-fadeIn {
-          animation: fadeIn 0.3s ease-out;
-        }
-      `}</style>
     </section>
   );
 } 

@@ -14,11 +14,13 @@ import {
   faBalanceScale,
   faUsers,
   faFileAlt,
-  faEdit
+  faEdit,
+  faArrowLeft
 } from '@fortawesome/free-solid-svg-icons';
 import { useState } from 'react';
+import Link from 'next/link';
 
-export default function OurTeamSection() {
+export default function TeamPage() {
   const [expandedMembers, setExpandedMembers] = useState<number[]>([]);
 
   const toggleMemberExpansion = (index: number) => {
@@ -34,7 +36,7 @@ export default function OurTeamSection() {
       name: 'Lavanya Dhawan',
       role: 'Founder',
       icon: faUserTie,
-      image: '/team/lavanya-dhawan.jpg',
+      image: '/team/Lavanya.png',
       concisePoints: [
         'Results-driven Advocate and Founder',
         'Expertise across litigation, arbitration, mediation',
@@ -53,7 +55,7 @@ export default function OurTeamSection() {
       name: 'Anuj Anand Malik',
       role: 'Senior Partner',
       icon: faBriefcase,
-      image: '/team/anuj-anand-malik.jpg',
+      image: '/team/Anuj.png',
       concisePoints: [
         'Specializes in debt settlement and banking law',
         'Corporate compliance and regulatory advisory',
@@ -72,7 +74,7 @@ export default function OurTeamSection() {
       name: 'Aman Pathak',
       role: 'Managing Partner',
       icon: faBalanceScale,
-      image: '/team/aman-pathak.jpg',
+      image: '/team/Aman.png',
       concisePoints: [
         'Litigation specialist with courtroom expertise',
         'Experience in landmark cases like Amazon vs. Future Retail',
@@ -91,7 +93,7 @@ export default function OurTeamSection() {
       name: 'Yash Datt',
       role: 'Managing Partner',
       icon: faShieldAlt,
-      image: '/team/yash-datt.jpg',
+      image: '/team/Yashd.png',
       concisePoints: [
         'Expertise in high-stakes criminal litigation',
         'Skilled mediator with strategic foresight',
@@ -110,7 +112,7 @@ export default function OurTeamSection() {
       name: 'Ashwin Kumar Nair',
       role: 'Legal Consultant & Advocate-on-Record, Supreme Court of India',
       icon: faAward,
-      image: '/team/ashwin-kumar-nair.jpg',
+      image: '/team/Ashwin.png',
       concisePoints: [
         'Advocate-on-Record at Supreme Court of India',
         'Advisory work for prominent real estate companies',
@@ -129,7 +131,7 @@ export default function OurTeamSection() {
       name: 'Sandeep Dhawan',
       role: 'Senior Advisor',
       icon: faChartLine,
-      image: '/team/sandeep-dhawan.jpg',
+      image: '/team/Sandeep.png',
       concisePoints: [
         'Three decades of global leadership experience',
         'Fellow Chartered Accountant and Insolvency Professional',
@@ -148,7 +150,7 @@ export default function OurTeamSection() {
       name: 'Shrey Arora',
       role: 'Senior Associate',
       icon: faUsers,
-      image: '/team/shrey-arora.jpg',
+      image: '/team/Shrey.png',
       concisePoints: [
         'Dispute resolution and banking expertise',
         'Intellectual property rights specialist',
@@ -167,7 +169,7 @@ export default function OurTeamSection() {
       name: 'Ritik Gupta',
       role: 'Senior Associate',
       icon: faHandshake,
-      image: '/team/ritik-gupta.jpg',
+      image: '/team/Ritik.png',
       concisePoints: [
         'Corporate advisory and litigation expertise',
         'Representation before Supreme Court and High Courts',
@@ -186,7 +188,7 @@ export default function OurTeamSection() {
       name: 'Aishwarya Sharma',
       role: 'Chief of Administration & Legal Analyst',
       icon: faFileAlt,
-      image: '/team/aishwarya-sharma.jpg',
+      image: '/team/Aishwarya.png',
       concisePoints: [
         'Meticulous legal research and analysis',
         'Administrative acumen and workflow optimization',
@@ -205,7 +207,7 @@ export default function OurTeamSection() {
       name: 'Nitika Grover',
       role: 'Senior Associate',
       icon: faEdit,
-      image: '/team/nitika-grover.jpg',
+      image: '/team/Nitikag.png',
       concisePoints: [
         'Seasoned litigation lawyer with high-stakes commercial expertise',
         'Complex contractual disputes and contentious corporate issues',
@@ -224,7 +226,7 @@ export default function OurTeamSection() {
       name: 'Chhavi Joshi',
       role: 'Legal Content Strategist',
       icon: faLightbulb,
-      image: '/team/chhavi-joshi.jpg',
+      image: '/team/Chhavi.png',
       concisePoints: [
         'Legal content creation and curation',
         'Case updates and practice notes',
@@ -242,123 +244,108 @@ export default function OurTeamSection() {
   ];
 
   return (
-    <section className="bg-gradient-to-br from-[#102028] via-[#1a2a35] to-[#102028] text-[#F8F1E6] py-12 sm:py-16 lg:py-20 relative overflow-hidden">
-      {/* Background decorative elements */}
-      <div className="absolute inset-0">
-        <div className="absolute top-20 right-10 w-32 h-32 bg-[#F8F1E6] rounded-full opacity-5 blur-xl"></div>
-        <div className="absolute bottom-20 left-10 w-40 h-40 bg-[#F8F1E6] rounded-full opacity-5 blur-xl"></div>
-      </div>
+    <div className="min-h-screen bg-[#F8F1E6]">
+      {/* Header Section */}
+    
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* Section Header */}
-        <div className="text-center mb-12 sm:mb-16">
-          <div className="inline-block bg-gradient-to-r from-[#F8F1E6] to-[#F8F1E6]/80 text-[#102028] px-3 py-1 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-medium mb-4">
-            Meet Our Team
-          </div>
-          <h2 className="font-playfair text-[#F8F1E6] text-2xl sm:text-3xl lg:text-4xl mb-4 sm:mb-6 leading-tight">
-            Our <span className="bg-gradient-to-r from-[#F8F1E6] to-[#F8F1E6]/70 bg-clip-text text-transparent">Expert Team</span>
-          </h2>
-          <div className="w-16 sm:w-20 h-1 bg-gradient-to-r from-[#F8F1E6] to-transparent mx-auto mb-6 sm:mb-8"></div>
-          <p className="text-[#F8F1E6] text-base sm:text-lg leading-relaxed opacity-95 max-w-3xl mx-auto">
-            A diverse team of legal professionals committed to delivering exceptional results through expertise, integrity, and unwavering dedication to client success.
-          </p>
-        </div>
-
-        {/* Team Members Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-10">
-          {teamMembers.map((member, index) => (
-            <div 
-              key={index}
-              className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 hover:transform hover:scale-105 border border-[#F8F1E6]/20 hover:border-[#F8F1E6]/40"
-            >
-              {/* Member Image */}
-              <div className="relative h-64 sm:h-72 overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-[#102028] to-[#102028]/80 flex items-center justify-center">
-                  <FontAwesomeIcon 
-                    icon={member.icon} 
-                    className="text-[#F8F1E6] text-4xl sm:text-5xl opacity-60 group-hover:scale-110 transition-transform duration-300"
-                  />
-                </div>
-                {/* Placeholder for actual image - uncomment when images are available */}
-                {/* <Image
-                  src={member.image}
-                  alt={`${member.name} - ${member.role}`}
-                  fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-500"
-                /> */}
-                
-                {/* Image overlay with role */}
-                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-[#102028] via-[#102028]/80 to-transparent p-4">
-                  <p className="text-[#F8F1E6] text-sm sm:text-base font-medium">
-                    {member.role}
-                  </p>
-                </div>
-              </div>
-
-              {/* Member Information */}
-              <div className="p-6 sm:p-8">
-                {/* Member Name */}
-                <h3 className="font-semibold text-[#102028] text-xl sm:text-2xl mb-4 group-hover:text-[#102028]/80 transition-colors duration-300">
-                  {member.name}
-                </h3>
-
-                {/* Concise Points (Always Visible) */}
-                <div className="space-y-3 mb-6">
-                  <h4 className="font-medium text-[#102028] text-sm sm:text-base">Key Expertise:</h4>
-                  <ul className="space-y-2">
-                    {member.concisePoints.map((point, pointIndex) => (
-                      <li key={pointIndex} className="flex items-start space-x-2">
-                        <div className="w-1.5 h-1.5 bg-[#102028] rounded-full mt-2 flex-shrink-0"></div>
-                        <span className="text-[#102028] opacity-70 text-xs sm:text-sm leading-relaxed">
-                          {point}
-                        </span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                {/* Read More Button */}
-                <button
-                  onClick={() => toggleMemberExpansion(index)}
-                  className="text-[#102028] text-sm font-medium hover:text-[#102028]/70 transition-colors duration-300 border-b border-[#102028]/30 hover:border-[#102028] pb-1"
-                >
-                  {expandedMembers.includes(index) ? 'Read Less' : 'Read More'}
-                </button>
-
-                {/* Expanded Content */}
-                {expandedMembers.includes(index) && (
-                  <div className="mt-6 space-y-4 animate-fadeIn">
-                    {/* Member Description */}
-                    <div>
-                      <h4 className="font-medium text-[#102028] text-sm sm:text-base mb-2">About:</h4>
-                      <p className="text-[#102028] text-sm sm:text-base leading-relaxed opacity-80">
-                        {member.description}
-                      </p>
-                    </div>
-
-                    {/* Detailed Highlights */}
-                    <div>
-                      <h4 className="font-medium text-[#102028] text-sm sm:text-base mb-2">Detailed Highlights:</h4>
-                      <ul className="space-y-1">
-                        {member.highlights.map((highlight, highlightIndex) => (
-                          <li key={highlightIndex} className="flex items-start space-x-2">
-                            <div className="w-1.5 h-1.5 bg-[#102028] rounded-full mt-2 flex-shrink-0"></div>
-                            <span className="text-[#102028] opacity-70 text-xs sm:text-sm leading-relaxed">
-                              {highlight}
-                            </span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
-                )}
-              </div>
-            </div>
-          ))}
-        </div>
-
+      {/* Team Members Section */}
+      <section className="py-16 sm:py-20 lg:py-24">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
        
-      </div>
+
+          {/* Team Members Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-10">
+            {teamMembers.map((member, index) => (
+              <div 
+                key={index}
+                className="group bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 border border-[#102028]/10 hover:border-[#102028]/20"
+              >
+                {/* Member Image */}
+                <div className="relative h-94 overflow-hidden">
+                  <Image
+                    src={member.image}
+                    alt={member.name}
+                    fill
+                    className="object-contain"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  />
+                  
+                  {/* Image overlay with role */}
+                  <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-[#102028] via-[#102028]/80 to-transparent p-6">
+                    <p className="text-[#F8F1E6] text-base font-medium">
+                      {member.role}
+                    </p>
+                  </div>
+                </div>
+
+                {/* Member Information */}
+                <div className="p-8">
+                  {/* Member Name */}
+                  <h3 className="font-semibold text-[#102028] text-2xl mb-6 group-hover:text-[#102028]/80 transition-colors duration-300">
+                    {member.name}
+                  </h3>
+
+                  {/* Concise Points */}
+                  <div className="space-y-3 mb-8">
+                    <h4 className="font-medium text-[#102028] text-base">Key Expertise:</h4>
+                    <ul className="space-y-2">
+                      {member.concisePoints.map((point, pointIndex) => (
+                        <li key={pointIndex} className="flex items-start space-x-3">
+                          <div className="w-2 h-2 bg-[#102028] rounded-full mt-2 flex-shrink-0"></div>
+                          <span className="text-[#102028] opacity-70 text-sm leading-relaxed">
+                            {point}
+                          </span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  {/* Action Buttons */}
+                  <div className="flex space-x-4">
+                    <button
+                      onClick={() => toggleMemberExpansion(index)}
+                      className="w-full text-[#102028] text-sm font-medium hover:text-[#102028]/70 transition-colors duration-300 border-b border-[#102028]/30 hover:border-[#102028] pb-1"
+                    >
+                      {expandedMembers.includes(index) ? 'Read Less' : 'Read More'}
+                    </button>
+                  </div>
+
+                  {/* Expanded Content */}
+                  {expandedMembers.includes(index) && (
+                    <div className="mt-8 space-y-6 animate-fadeIn">
+                      {/* Member Description */}
+                      <div>
+                        <h4 className="font-medium text-[#102028] text-base mb-3">About:</h4>
+                        <p className="text-[#102028] text-sm leading-relaxed opacity-80">
+                          {member.description}
+                        </p>
+                      </div>
+
+                      {/* Detailed Highlights */}
+                      <div>
+                        <h4 className="font-medium text-[#102028] text-base mb-3">Detailed Highlights:</h4>
+                        <ul className="space-y-2">
+                          {member.highlights.map((highlight, highlightIndex) => (
+                            <li key={highlightIndex} className="flex items-start space-x-3">
+                              <div className="w-2 h-2 bg-[#102028] rounded-full mt-2 flex-shrink-0"></div>
+                              <span className="text-[#102028] opacity-70 text-sm leading-relaxed">
+                                {highlight}
+                              </span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
+                  )}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Member Modal */}
+      {/* The modal is removed as per the edit hint */}
 
       <style jsx>{`
         @keyframes fadeIn {
@@ -375,6 +362,6 @@ export default function OurTeamSection() {
           animation: fadeIn 0.3s ease-out;
         }
       `}</style>
-    </section>
+    </div>
   );
 } 

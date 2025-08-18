@@ -13,12 +13,9 @@ export default function Home() {
       <DisclaimerPopup />
       <Hero />
       <AboutUsSection />
-      <WhyChooseUsSection />
       <ServicesSection />
+      <WhyChooseUsSection />
       <TestimonialsSection />
-
-      <OurTeamSection />
-
     </div>
   );
 }
