@@ -40,7 +40,7 @@ export default function ContactPage() {
     'NGO & Non-Profit Advisory',
     'Public Interest & Constitutional Matters',
     'Startup Legal Solutions',
-    'General Legal Consultation'
+    'Others'
   ];
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {

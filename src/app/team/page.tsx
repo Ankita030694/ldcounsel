@@ -53,7 +53,7 @@ export default function TeamPage() {
     },
     {
       name: 'Anuj Anand Malik',
-      role: 'Senior Partner',
+      role: 'Partner',
       icon: faBriefcase,
       image: '/team/Anuj.png',
       concisePoints: [
@@ -72,7 +72,7 @@ export default function TeamPage() {
     },
     {
       name: 'Aman Pathak',
-      role: 'Managing Partner',
+      role: 'Partner',
       icon: faBalanceScale,
       image: '/team/Aman.png',
       concisePoints: [
@@ -91,7 +91,7 @@ export default function TeamPage() {
     },
     {
       name: 'Yash Datt',
-      role: 'Managing Partner',
+      role: 'Partner',
       icon: faShieldAlt,
       image: '/team/Yashd.png',
       concisePoints: [
