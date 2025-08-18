@@ -38,10 +38,10 @@ export default function Footer() {
   ];
 
   const socialLinks = [
-    { name: 'LinkedIn', href: '#linkedin', icon: faLinkedin },
+    { name: 'LinkedIn', href: 'https://www.linkedin.com/company/ld-counsels/', icon: faLinkedin },
     { name: 'Twitter', href: '#twitter', icon: faTwitter },
     { name: 'Facebook', href: '#facebook', icon: faFacebook },
-    { name: 'Instagram', href: '#instagram', icon: faInstagram }
+    { name: 'Instagram', href: 'https://www.instagram.com/ldcounsels?igsh=cWFid3NyOWFxZzZ1&utm_source=qr', icon: faInstagram }
   ];
 
   return (

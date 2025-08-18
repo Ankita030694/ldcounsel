@@ -263,19 +263,17 @@ export default function ContactPage() {
                 <div className="flex space-x-4">
 
                   <a
-                    href="#"
-                    className="w-12 h-12 bg-[#102028] rounded-lg flex items-center justify-center hover:bg-[#102028]/80 transition-colors duration-300"
-                  >
-                    <FontAwesomeIcon icon={faTwitter} className="text-[#F8F1E6] text-lg" />
-                  </a>
-                  <a
-                    href="#"
+                    href="https://www.linkedin.com/company/ld-counsels/"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="w-12 h-12 bg-[#102028] rounded-lg flex items-center justify-center hover:bg-[#102028]/80 transition-colors duration-300"
                   >
                     <FontAwesomeIcon icon={faLinkedin} className="text-[#F8F1E6] text-lg" />
                   </a>
                   <a
-                    href="#"
+                    href="https://www.instagram.com/ldcounsels?igsh=cWFid3NyOWFxZzZ1&utm_source=qr"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="w-12 h-12 bg-[#102028] rounded-lg flex items-center justify-center hover:bg-[#102028]/80 transition-colors duration-300"
                   >
                     <FontAwesomeIcon icon={faInstagram} className="text-[#F8F1E6] text-lg" />

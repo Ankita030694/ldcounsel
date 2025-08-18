@@ -16,7 +16,7 @@ const WhatsAppCTA = () => {
 
   const handleWhatsAppClick = () => {
     // Replace with your actual WhatsApp number
-    const phoneNumber = '+919876543210'; // Update this with your actual number
+    const phoneNumber = '+917011803577'; // Update this with your actual number
     const message = 'Hello! I would like to get in touch with LD Counsels for legal assistance.';
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     
