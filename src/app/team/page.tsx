@@ -185,25 +185,6 @@ export default function TeamPage() {
       ]
     },
     {
-      name: 'Aishwarya Sharma',
-      role: 'Chief of Administration & Legal Analyst',
-      icon: faFileAlt,
-      image: '/team/Aishwarya.png',
-      concisePoints: [
-        'Meticulous legal research and analysis',
-        'Administrative acumen and workflow optimization',
-        'Case management and team coordination',
-        'Bridge between legal strategy and operations'
-      ],
-      description: 'Aishwarya Sharma combines meticulous legal research skills with exceptional administrative acumen, ensuring that LD Counsels operates with precision, efficiency, and attention to detail. With a deep understanding of procedural law and case preparation, she supports the firm\'s litigation and advisory teams.',
-      highlights: [
-        'Meticulous legal research and analysis',
-        'Administrative acumen and workflow optimization',
-        'Case management and team coordination',
-        'Bridge between legal strategy and operations'
-      ]
-    },
-    {
       name: 'Nitika Grover',
       role: 'Senior Associate',
       icon: faEdit,
@@ -220,6 +201,25 @@ export default function TeamPage() {
         'Complex contractual disputes and contentious corporate issues',
         'Practice spans Supreme Court, High Courts, and specialized tribunals',
         'Unwavering commitment to client interests with sharp, detail-driven preparation'
+      ]
+    },
+    {
+      name: 'Aishwarya Sharma',
+      role: 'Chief of Administration & Legal Analyst',
+      icon: faFileAlt,
+      image: '/team/Aishwarya.png',
+      concisePoints: [
+        'Meticulous legal research and analysis',
+        'Administrative acumen and workflow optimization',
+        'Case management and team coordination',
+        'Bridge between legal strategy and operations'
+      ],
+      description: 'Aishwarya Sharma combines meticulous legal research skills with exceptional administrative acumen, ensuring that LD Counsels operates with precision, efficiency, and attention to detail. With a deep understanding of procedural law and case preparation, she supports the firm\'s litigation and advisory teams.',
+      highlights: [
+        'Meticulous legal research and analysis',
+        'Administrative acumen and workflow optimization',
+        'Case management and team coordination',
+        'Bridge between legal strategy and operations'
       ]
     },
     {
