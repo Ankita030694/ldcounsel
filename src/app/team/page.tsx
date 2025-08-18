@@ -245,8 +245,46 @@ export default function TeamPage() {
 
   return (
     <div className="min-h-screen bg-[#F8F1E6]">
-      {/* Header Section */}
-    
+      {/* Team Introduction Section */}
+      <section className="py-16 sm:py-20 lg:py-24">
+        <div className="w-full px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-[#102028] mb-8 leading-tight">
+              Our Team
+            </h1>
+          </div>
+          
+          <div className="bg-white rounded-2xl p-8 lg:p-12 shadow-lg border border-[#102028]/10">
+            <div className="prose prose-lg max-w-none">
+              <p className="text-[#102028] text-lg leading-relaxed mb-6">
+                At LD Counsels, our strength lies in the people behind the practice. We are a team of researchers and professionals driven by clarity, precision, and purpose committed to solving legal problems with efficiency and integrity.
+              </p>
+              
+              <p className="text-[#102028] text-lg leading-relaxed mb-6">
+                Each member of our team contributes unique expertise, but we operate with a shared vision to protect our clients' interests with diligence, transparency, and foresight.
+              </p>
+              
+              <div className="border-l-4 border-[#102028] pl-6 my-8">
+                <p className="text-[#102028] text-lg leading-relaxed mb-4">
+                  What sets us apart is how we work. We value listening before advising, collaboration over hierarchy, and outcomes over jargon.
+                </p>
+              </div>
+              
+              <p className="text-[#102028] text-lg leading-relaxed mb-6">
+                Our culture is straightforward: think deeply, act decisively, and always put clients first. Whether it is litigation, negotiation, or advisory, we stand by our clients as trusted partners, not just lawyers.
+              </p>
+              
+              <p className="text-[#102028] text-lg leading-relaxed mb-6">
+                At LD Counsels, law is not only about winning cases, it is about building trust, shaping outcomes, and leaving a legacy of credibility in every matter we handle.
+              </p>
+              
+              <p className="text-[#102028] text-lg leading-relaxed">
+                We bring the agility of a boutique with the discipline of big-law experience. Our advocates represent clients across criminal and civil disputes, corporate advisory and compliance, offering both strong courtroom advocacy and strategic legal counsel.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Team Members Section */}
       <section className="py-16 sm:py-20 lg:py-24">
