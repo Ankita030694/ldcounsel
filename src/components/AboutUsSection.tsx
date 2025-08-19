@@ -1,5 +1,6 @@
 'use client'
 import React from 'react';
+import Link from 'next/link';
 
 const AboutUsSection: React.FC = () => {
   return (
@@ -36,9 +37,9 @@ const AboutUsSection: React.FC = () => {
                   compliance solutions designed to meet today's dynamic legal landscape. We combine
                   courtroom expertise with strategic advisory skills, ensuring every client receives
                   the clarity, confidence, and results they need to move forward.
-                  <span className="mission-text">
+
                   Your challenges become our mission. Your goals, our strategy and your trust, our greatest victory.
-                </span>
+
                 </p>
               </div>
 
@@ -146,6 +147,14 @@ const AboutUsSection: React.FC = () => {
                   <div className="expertise-item">Corporate Governance</div>
                   <div className="expertise-item">Compliance</div>
                 </div>
+              </div>
+
+              <div className="cta-card">
+                <h3>Ready to Get Started?</h3>
+                <p>Let's discuss your legal needs and find the best solution for you.</p>
+                <Link href="/contact">  
+                <button className="cta-button">Schedule Consultation</button>
+                </Link>
               </div>
             </div>
           </div>
@@ -374,7 +383,7 @@ const AboutUsSection: React.FC = () => {
           gap: 30px;
         }
 
-        .stats-card, .expertise-card {
+        .stats-card, .expertise-card, .cta-card {
           background: #F8F1E6;
           border: 1px solid rgba(16, 32, 40, 0.1);
           border-radius: 16px;
@@ -382,11 +391,20 @@ const AboutUsSection: React.FC = () => {
           box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
-        .stats-card h3, .expertise-card h3 {
+        .stats-card h3, .expertise-card h3, .cta-card h3 {
           font-family: 'Playfair Display', serif;
           font-size: 1.5rem;
           font-weight: 600;
           color: #102028;
+          margin-bottom: 24px;
+          text-align: center;
+        }
+
+        .cta-card p {
+          font-size: 1rem;
+          line-height: 1.6;
+          color: #102028;
+          opacity: 0.8;
           margin-bottom: 24px;
           text-align: center;
         }
@@ -431,6 +449,37 @@ const AboutUsSection: React.FC = () => {
           background: rgba(16, 32, 40, 0.1);
           border-left-color: #102028;
           opacity: 1;
+        }
+
+        .expertise-cta {
+          margin-top: 24px;
+          text-align: center;
+        }
+
+        .cta-button {
+          background: #102028;
+          color: #F8F1E6;
+          border: 2px solid #102028;
+          padding: 12px 24px;
+          border-radius: 8px;
+          font-size: 0.95rem;
+          font-weight: 600;
+          cursor: pointer;
+          transition: all 0.3s ease;
+          text-transform: uppercase;
+          letter-spacing: 1px;
+          width: 100%;
+        }
+
+        .cta-button:hover {
+          background: #F8F1E6;
+          color: #102028;
+          transform: translateY(-2px);
+          box-shadow: 0 4px 12px rgba(16, 32, 40, 0.2);
+        }
+
+        .cta-button:active {
+          transform: translateY(0);
         }
 
         .bottom-section {

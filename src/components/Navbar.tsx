@@ -17,7 +17,7 @@ export default function Navbar() {
   };
 
   const navItems = [
-    { href: '#about', label: 'About' },
+    { href: '/about', label: 'About' },
     { href: '#resources', label: 'Resources' },
     { href: '#practiceareas', label: 'Practice Areas' },
     { href: '/contact', label: 'Contact Us' },

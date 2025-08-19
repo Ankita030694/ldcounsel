@@ -209,8 +209,7 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <h3 className="text-[#102028] font-medium text-lg mb-1">Phone</h3>
-                      <p className="text-[#102028] opacity-70">+91 98765 43210</p>
-                      <p className="text-[#102028] opacity-70">+91 11 4567 8901</p>
+                      <p className="text-[#102028] opacity-70">+91 70118 03577</p>
                     </div>
                   </div>
 
@@ -221,8 +220,8 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <h3 className="text-[#102028] font-medium text-lg mb-1">Email</h3>
-                      <p className="text-[#102028] opacity-70">info@luthralawoffices.com</p>
-                      <p className="text-[#102028] opacity-70">legal@luthralawoffices.com</p>
+                      {/* <p className="text-[#102028] opacity-70">info@luthralawoffices.com</p> */}
+                      {/* <p className="text-[#102028] opacity-70">legal@luthralawoffices.com</p> */}
                     </div>
                   </div>
 

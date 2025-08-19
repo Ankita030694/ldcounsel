@@ -122,7 +122,7 @@ export default function Footer() {
             {/* Contact Information */}
             <div className="space-y-1">
               <p className="text-xs opacity-80">
-                <span className="font-medium">Phone:</span> +91 11 2345 6789
+                <span className="font-medium">Phone:</span> +91 70118 03577
               </p>
               <p className="text-xs opacity-80">
                 <span className="font-medium">Email:</span> info@ldcounsels.com
