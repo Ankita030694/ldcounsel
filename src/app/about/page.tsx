@@ -36,7 +36,7 @@ export default function AboutPage() {
             
             {/* Subtitle */}
             <p className="text-[#F8F1E6] opacity-95 text-xl sm:text-2xl max-w-4xl mx-auto leading-relaxed mb-12">
-              Pioneering legal excellence through innovation, integrity, and unwavering commitment to client success
+              Redefining legal solutions with expertise, ethics, and a results-driven approach
             </p>
             
             {/* Decorative Elements */}
@@ -119,14 +119,51 @@ export default function AboutPage() {
             </div>
           </div>
 
+          {/* Our Story Section - Moved Up */}
+          <div className="bg-[#102028] p-12 rounded-2xl text-[#F8F1E6] mb-16">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+              <div>
+                <h3 className="font-playfair text-3xl font-semibold mb-6">Our Story</h3>
+                <p className="text-lg leading-relaxed opacity-90 mb-6">
+                  LD Counsels was built on the belief that the practice of law is more than representation, it is about partnership. Over the years, the firm has grown into a network of dedicated professionals, trusted for their ability to handle complex disputes, high-stakes commercial matters, and sensitive personal issues with equal care and precision.
+                </p>
+                <p className="text-lg leading-relaxed opacity-90">
+                  We are proud to be a firm that blends the agility of a modern practice with the strength of traditional advocacy. Our work is guided by three core principles: excellence, integrity, and accessibility. Excellence drives us to stay prepared and deliver results in every matter we take on. Integrity ensures that our clients' interests are always at the center of what we do. Accessibility means that whether you are a multinational corporation, a growing startup, or an individual in need of support, you will always find us approachable, responsive, and invested in your cause.
+                </p>
+              </div>
+              <div className="text-center">
+                <div className="bg-[#F8F1E6] text-[#102028] p-8 rounded-xl">
+                  <h4 className="font-playfair text-2xl mb-6 text-center">Our Evolution</h4>
+                  <div className="space-y-6">
+                    <div className="text-left">
+                      <h5 className="font-semibold text-lg mb-2">From Individual to Institution</h5>
+                      <p className="opacity-90 text-sm">What began as the practice of a first-generation lawyer has today evolved into LD Counsels, a trusted full-service legal firm.</p>
+                    </div>
+                    <div className="text-left">
+                      <h5 className="font-semibold text-lg mb-2">Built on Trust</h5>
+                      <p className="opacity-90 text-sm">Each case and client taught us that legal practice is not just about representation but about building relationships rooted in trust and accountability.</p>
+                    </div>
+                    <div className="text-left">
+                      <h5 className="font-semibold text-lg mb-2">Expanding Horizons</h5>
+                      <p className="opacity-90 text-sm">Over the years, we grew beyond litigation into corporate advisory, compliance, and sector-focused solutions ensuring we remain relevant to a fast-changing business and legal landscape.</p>
+                    </div>
+                    <div className="text-left">
+                      <h5 className="font-semibold text-lg mb-2">Evolving with Impact</h5>
+                      <p className="opacity-90 text-sm">LD Counsels stands today as a team of dedicated professionals, carrying forward the same values of integrity, excellence, and commitment that defined our early days.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
           {/* Strategic Approach */}
           <div className="bg-[#102028] p-12 rounded-2xl text-[#F8F1E6]">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div>
                 <h3 className="font-playfair text-3xl font-semibold mb-6">Our Strategic Approach</h3>
                 <p className="text-lg leading-relaxed opacity-90 mb-6">
-                  We believe that exceptional legal services require more than just expertise—they demand 
-                  a strategic partnership that understands your unique challenges and aspirations.
+                  We believe that exceptional legal services require more than just expertise—they demand a strategic partnership that understands your unique challenges and aspirations.
                 </p>
                 <div className="space-y-4">
                   <div className="flex items-center space-x-4">
@@ -161,83 +198,6 @@ export default function AboutPage() {
 
       {/* Services Section */}
       <ServicesSection />
-
-      {/* Our Story Section (Blue BG, Off-white Text) */}
-      <section className="py-20 bg-[#102028]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="font-playfair text-[#F8F1E6] text-3xl sm:text-4xl lg:text-5xl mb-6 font-italic">
-              Our Story
-            </h2>
-            <div className="w-24 h-1 bg-[#F8F1E6] mx-auto"></div>
-          </div>
-          
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-6">
-              <h3 className="font-playfair text-[#F8F1E6] text-2xl font-semibold">
-                A Legacy of Legal Excellence
-              </h3>
-              <p className="text-[#F8F1E6] text-lg leading-relaxed opacity-90">
-                Founded with a vision to transform the legal landscape, LD Counsels emerged from a deep understanding 
-                that exceptional legal services require more than just expertise—they demand innovation, empathy, 
-                and a relentless pursuit of justice.
-              </p>
-              <p className="text-[#F8F1E6] text-lg leading-relaxed opacity-90">
-                Our journey began with a simple yet powerful belief: every client deserves not just legal representation, 
-                but a strategic partner who understands their unique challenges and aspirations. This philosophy has 
-                guided our growth from a small practice to a nationally recognized legal powerhouse.
-              </p>
-              <div className="bg-[#F8F1E6] text-[#102028] p-6 rounded-lg">
-                <p className="font-playfair text-xl font-italic">
-                  "We don't just practice law; we craft solutions that transform challenges into opportunities."
-                </p>
-              </div>
-            </div>
-            
-            <div className="bg-[#F8F1E6] p-8 rounded-2xl text-[#102028]">
-              <h4 className="font-playfair text-2xl mb-6 text-center">Our Evolution</h4>
-              <div className="space-y-6">
-                <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-[#102028] text-[#F8F1E6] rounded-full flex items-center justify-center font-bold text-lg flex-shrink-0">
-                    1
-                  </div>
-                  <div>
-                    <h5 className="font-semibold text-lg mb-2">Foundation</h5>
-                    <p className="opacity-90">Established with core values of integrity and excellence</p>
-                  </div>
-                </div>
-                <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-[#102028] text-[#F8F1E6] rounded-full flex items-center justify-center font-bold text-lg flex-shrink-0">
-                    2
-                  </div>
-                  <div>
-                    <h5 className="font-semibold text-lg mb-2">Growth</h5>
-                    <p className="opacity-90">Expanded expertise across diverse legal domains</p>
-                  </div>
-                </div>
-                <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-[#102028] text-[#F8F1E6] rounded-full flex items-center justify-center font-bold text-lg flex-shrink-0">
-                    3
-                  </div>
-                  <div>
-                    <h5 className="font-semibold text-lg mb-2">Innovation</h5>
-                    <p className="opacity-90">Pioneered modern legal solutions and technology integration</p>
-                  </div>
-                </div>
-                <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-[#102028] text-[#F8F1E6] rounded-full flex items-center justify-center font-bold text-lg flex-shrink-0">
-                    4
-                  </div>
-                  <div>
-                    <h5 className="font-semibold text-lg mb-2">Leadership</h5>
-                    <p className="opacity-90">Setting industry standards and mentoring future legal leaders</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Core Values Section (Off-white BG, Blue Text) */}
       <section className="py-20 bg-[#F8F1E6]">
@@ -303,79 +263,47 @@ export default function AboutPage() {
             <div className="w-24 h-1 bg-[#F8F1E6] mx-auto"></div>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <div className="bg-[#F8F1E6] p-8 rounded-xl shadow-lg border border-[#102028]/10">
               <div className="bg-[#102028] text-[#F8F1E6] p-4 rounded-lg mb-6">
-                <h4 className="font-playfair text-xl font-semibold">Corporate Restructuring</h4>
+                <h4 className="font-playfair text-xl font-semibold">Criminal Law – Defense & Appeals</h4>
               </div>
               <p className="text-[#102028] opacity-80 leading-relaxed mb-4">
-                Successfully guided a major manufacturing company through complex restructuring, 
-                saving 200+ jobs and ensuring business continuity.
+                Successfully represented clients in sensitive criminal matters, including various criminal cases of different nature, bail applications, and appeals. Our work ensured that due process was upheld and rights of the party were protected at every stage.
               </p>
-              <div className="text-[#102028] font-semibold">Result: 100% Success Rate</div>
             </div>
             
             <div className="bg-[#F8F1E6] p-8 rounded-xl shadow-lg border border-[#102028]/10">
               <div className="bg-[#102028] text-[#F8F1E6] p-4 rounded-lg mb-6">
-                <h4 className="font-playfair text-xl font-semibold">Startup Funding</h4>
+                <h4 className="font-playfair text-xl font-semibold">Civil & Matrimonial Disputes</h4>
               </div>
               <p className="text-[#102028] opacity-80 leading-relaxed mb-4">
-                Assisted a tech startup in securing $5M in Series A funding through comprehensive 
-                legal structuring and investor negotiations.
+                Handled multiple family law and matrimonial cases involving custody, maintenance, and property issues. Focused on delivering both legal and emotional resolution while reducing the stress of prolonged litigation.
               </p>
-              <div className="text-[#102028] font-semibold">Result: 5x Growth Achieved</div>
             </div>
             
             <div className="bg-[#F8F1E6] p-8 rounded-xl shadow-lg border border-[#102028]/10">
               <div className="bg-[#102028] text-[#F8F1E6] p-4 rounded-lg mb-6">
-                <h4 className="font-playfair text-xl font-semibold">Family Resolution</h4>
+                <h4 className="font-playfair text-xl font-semibold">Consumer Protection Matters</h4>
               </div>
               <p className="text-[#102028] opacity-80 leading-relaxed mb-4">
-                Facilitated amicable resolution of complex family dispute involving multiple 
-                properties and business interests worth ₹50 crore.
+                Represented consumers in disputes against corporations, ensuring fair treatment and accountability. Clients secured refunds, damages, and corrective action.
               </p>
-              <div className="text-[#102028] font-semibold">Result: Peaceful Settlement</div>
+            </div>
+            
+            <div className="bg-[#F8F1E6] p-8 rounded-xl shadow-lg border border-[#102028]/10">
+              <div className="bg-[#102028] text-[#F8F1E6] p-4 rounded-lg mb-6">
+                <h4 className="font-playfair text-xl font-semibold">Corporate & Commercial Advisory</h4>
+              </div>
+              <p className="text-[#102028] opacity-80 leading-relaxed mb-4">
+                Advised businesses on drafting contracts, shareholder agreements, and compliance strategies. This support helped companies minimize legal risks and build investor confidence.
+              </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Awards & Recognition Section (Off-white BG, Blue Text) */}
-      <section className="py-20 bg-[#F8F1E6]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="font-playfair text-[#102028] text-3xl sm:text-4xl lg:text-5xl mb-6 font-italic">
-              Awards & Recognition
-            </h2>
-            <div className="w-24 h-1 bg-[#102028] mx-auto"></div>
-          </div>
-          
-          <div className="bg-[#102028] p-12 rounded-2xl text-[#F8F1E6]">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
-              <div>
-                <div className="text-4xl font-bold mb-4">2023</div>
-                <h4 className="font-playfair text-xl font-semibold mb-2">Legal Excellence Award</h4>
-                <p className="opacity-80">Chambers & Partners</p>
-              </div>
-              <div>
-                <div className="text-4xl font-bold mb-4">2022</div>
-                <h4 className="font-playfair text-xl font-semibold mb-2">Best Law Firm</h4>
-                <p className="opacity-80">India Legal Awards</p>
-              </div>
-              <div>
-                <div className="text-4xl font-bold mb-4">2021</div>
-                <h4 className="font-playfair text-xl font-semibold mb-2">Client Choice Award</h4>
-                <p className="opacity-80">Legal 500</p>
-              </div>
-              <div>
-                <div className="text-4xl font-bold mb-4">2020</div>
-                <h4 className="font-playfair text-xl font-semibold mb-2">Innovation in Legal Services</h4>
-                <p className="opacity-80">Asia Legal Awards</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+     
 
       {/* Call to Action Section (Blue BG, Off-white Text) */}
       <section className="py-20 bg-[#102028]">
