@@ -148,7 +148,7 @@ export default function AboutPage() {
               <div>
                 <h3 className="font-playfair text-3xl font-semibold mb-6">Our Strategic Approach</h3>
                 <p className="text-lg leading-relaxed opacity-90 mb-6">
-                  We believe that exceptional legal services require more than just expertise—they demand a strategic partnership that understands your unique challenges and aspirations.
+                  We believe that exceptional legal services require more than just expertise, they demand a strategic partnership that understands your unique challenges and aspirations.
                 </p>
                 <div className="space-y-4">
                   <div className="flex items-center space-x-4">
