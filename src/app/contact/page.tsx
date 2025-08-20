@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { useRouter } from 'next/navigation';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { 
   faPhone, 
@@ -8,7 +9,9 @@ import {
   faMapMarkerAlt,
   faClock,
   faUser,
-  faPaperPlane
+  faPaperPlane,
+  faCheck,
+  faExclamationTriangle
 } from '@fortawesome/free-solid-svg-icons';
 import { 
   faFacebook, 
@@ -17,8 +20,11 @@ import {
   faInstagram,
   faWhatsapp
 } from '@fortawesome/free-brands-svg-icons';
+import { db } from '@/lib/firebase';
+import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
 
 export default function ContactPage() {
+  const router = useRouter();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -26,6 +32,10 @@ export default function ContactPage() {
     service: '',
     message: ''
   });
+
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'error'>('idle');
+  const [submitMessage, setSubmitMessage] = useState('');
 
   const practiceAreas = [
     'Arbitration & Mediation',
@@ -51,11 +61,35 @@ export default function ContactPage() {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission here
-    console.log('Form submitted:', formData);
-    // You can add form submission logic here
+    setIsSubmitting(true);
+    setSubmitStatus('idle');
+    setSubmitMessage('');
+
+    try {
+      // Add document to Firestore with timestamp
+      const docRef = await addDoc(collection(db, 'contact_forms'), {
+        ...formData,
+        createdAt: serverTimestamp(),
+        status: 'new'
+      });
+
+      console.log('Form submitted successfully with ID:', docRef.id);
+      
+      // Redirect to thank you page
+      router.push('/thank-you');
+    } catch (error) {
+      console.error('Error submitting form:', error);
+      setSubmitStatus('error');
+      setSubmitMessage('Sorry, there was an error sending your message. Please try again or contact us directly.');
+      setIsSubmitting(false);
+    }
+  };
+
+  const resetForm = () => {
+    setSubmitStatus('idle');
+    setSubmitMessage('');
   };
 
   return (
@@ -185,11 +219,46 @@ export default function ContactPage() {
                 {/* Submit Button */}
                 <button
                   type="submit"
-                  className="w-full bg-[#102028] text-[#F8F1E6] py-3 px-6 rounded-lg hover:bg-[#102028]/90 transition-all duration-300 font-medium text-lg shadow-lg hover:shadow-xl"
+                  disabled={isSubmitting}
+                  className={`w-full py-3 px-6 rounded-lg transition-all duration-300 font-medium text-lg shadow-lg hover:shadow-xl ${
+                    isSubmitting 
+                      ? 'bg-gray-400 text-gray-600 cursor-not-allowed' 
+                      : 'bg-[#102028] text-[#F8F1E6] hover:bg-[#102028]/90'
+                  }`}
                 >
-                  <FontAwesomeIcon icon={faPaperPlane} className="mr-2" />
-                  Send Message
+                  {isSubmitting ? (
+                    <>
+                      <div className="inline-block animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2"></div>
+                      Sending...
+                    </>
+                  ) : (
+                    <>
+                      <FontAwesomeIcon icon={faPaperPlane} className="mr-2" />
+                      Send Message
+                    </>
+                  )}
                 </button>
+
+                {/* Error Message */}
+                {submitStatus === 'error' && (
+                  <div className="mt-4 p-4 bg-red-50 border border-red-200 rounded-lg">
+                    <div className="flex items-center">
+                      <FontAwesomeIcon icon={faExclamationTriangle} className="text-red-600 mr-2" />
+                      <p className="text-red-800">{submitMessage}</p>
+                    </div>
+                  </div>
+                )}
+
+                {/* Reset Button for Error State */}
+                {submitStatus === 'error' && (
+                  <button
+                    type="button"
+                    onClick={resetForm}
+                    className="w-full mt-4 bg-gray-500 text-white py-2 px-4 rounded-lg hover:bg-gray-600 transition-colors duration-300"
+                  >
+                    Try Again
+                  </button>
+                )}
               </form>
             </div>
 
