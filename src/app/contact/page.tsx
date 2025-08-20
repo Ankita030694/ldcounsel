@@ -220,8 +220,8 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <h3 className="text-[#102028] font-medium text-lg mb-1">Email</h3>
-                      {/* <p className="text-[#102028] opacity-70">info@luthralawoffices.com</p> */}
-                      {/* <p className="text-[#102028] opacity-70">legal@luthralawoffices.com</p> */}
+                      <p className="text-[#102028] opacity-70">info@ldcounsels.com</p>
+                      <p className="text-[#102028] opacity-70">legal@ldcounsels.com</p>
                     </div>
                   </div>
 
@@ -233,7 +233,8 @@ export default function ContactPage() {
                     <div>
                       <h3 className="text-[#102028] font-medium text-lg mb-1">Address</h3>
                       <p className="text-[#102028] opacity-70">
-                        123 Legal Complex, Connaught Place,<br />
+                        LD Counsels,<br />
+                        Legal Complex, Connaught Place,<br />
                         New Delhi - 110001, India
                       </p>
                     </div>
@@ -246,9 +247,9 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <h3 className="text-[#102028] font-medium text-lg mb-1">Office Hours</h3>
-                      <p className="text-[#102028] opacity-70">Monday - Friday: 9:00 AM - 6:00 PM</p>
-                      <p className="text-[#102028] opacity-70">Saturday: 10:00 AM - 4:00 PM</p>
-                      <p className="text-[#102028] opacity-70">Sunday: Closed</p>
+                      <p className="text-[#102028] opacity-70">Monday - Friday: 9:00 AM - 7:00 PM</p>
+                      <p className="text-[#102028] opacity-70">Saturday: 10:00 AM - 5:00 PM</p>
+                      <p className="text-[#102028] opacity-70">Sunday: By Appointment Only</p>
                     </div>
                   </div>
                 </div>

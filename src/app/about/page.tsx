@@ -8,22 +8,7 @@ export default function AboutPage() {
   return (
     <div className="min-h-screen">
       {/* Enhanced Hero Section */}
-      <section className="bg-[#102028] py-20 lg:py-32 relative overflow-hidden">
-        {/* Simple Background Elements */}
-        <div className="absolute inset-0">
-          <div className="absolute top-20 left-10 w-32 h-32 bg-[#F8F1E6] opacity-5 rounded-full"></div>
-          <div className="absolute top-40 right-20 w-24 h-24 bg-[#F8F1E6] opacity-3 rounded-full"></div>
-          <div className="absolute bottom-20 left-1/4 w-16 h-16 bg-[#F8F1E6] opacity-4 rounded-full"></div>
-          <div className="absolute top-1/2 right-1/3 w-20 h-20 bg-[#F8F1E6] opacity-2 rounded-full"></div>
-        </div>
-        
-        {/* Geometric Pattern */}
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-br from-transparent via-[#F8F1E6] to-transparent"></div>
-          <div className="absolute top-1/4 left-1/4 w-64 h-64 border border-[#F8F1E6] rotate-45"></div>
-          <div className="absolute bottom-1/4 right-1/4 w-48 h-48 border border-[#F8F1E6] rotate-12"></div>
-        </div>
-
+      <section className="bg-[#102028] py-20 lg:py-32 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center">
             {/* Decorative Line */}
@@ -65,7 +50,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* The Visionary Build Section - Redesigned */}
+      {/* The Path We Build Section - Redesigned */}
       <section className="py-20 bg-[#F8F1E6]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
@@ -73,7 +58,7 @@ export default function AboutPage() {
               About
             </div>
             <h2 className="font-playfair text-[#102028] text-4xl sm:text-5xl lg:text-6xl mb-6 font-italic">
-              The Visionary Build
+              The Path We Build
             </h2>
             <p className="text-[#102028] text-xl sm:text-2xl max-w-4xl mx-auto leading-relaxed opacity-90">
               Combining legal expertise with strategic vision to deliver exceptional results
