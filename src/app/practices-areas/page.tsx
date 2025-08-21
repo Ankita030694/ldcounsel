@@ -25,13 +25,7 @@ import { useState } from 'react';
 export default function PracticesAreasPage() {
   const [activeCategory, setActiveCategory] = useState('all');
 
-  const categories = [
-    { id: 'all', name: 'All Practices' },
-    { id: 'litigation', name: 'Litigation' },
-    { id: 'corporate', name: 'Corporate' },
-    { id: 'family', name: 'Family Law' },
-    { id: 'specialized', name: 'Specialized' }
-  ];
+
 
   const services = [
     {
@@ -334,26 +328,7 @@ export default function PracticesAreasPage() {
         </div>
       </section>
 
-      {/* Category Filter */}
-      <section className="py-12 bg-[#F8F1E6]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-wrap justify-center gap-3 mb-12">
-            {categories.map((category) => (
-              <button
-                key={category.id}
-                onClick={() => setActiveCategory(category.id)}
-                className={`px-6 py-3 rounded-full font-medium transition-all duration-300 ${
-                  activeCategory === category.id
-                    ? 'bg-[#102028] text-[#F8F1E6] shadow-lg'
-                    : 'bg-[#F8F1E6] text-[#102028] border-2 border-[#102028]/20 hover:border-[#102028] hover:bg-[#102028]/5'
-                }`}
-              >
-                {category.name}
-              </button>
-            ))}
-          </div>
-        </div>
-      </section>
+    
 
       {/* Services Grid */}
       <section className="py-12 lg:py-20 bg-[#F8F1E6]">
