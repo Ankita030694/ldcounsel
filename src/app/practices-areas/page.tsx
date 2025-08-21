@@ -320,10 +320,6 @@ export default function PracticesAreasPage() {
               <div className="text-[#F8F1E6] text-2xl font-bold">15+</div>
               <div className="text-[#F8F1E6]/80 text-sm">Years Experience</div>
             </div>
-            <div className="bg-[#F8F1E6]/10 backdrop-blur-sm rounded-lg px-6 py-3 border border-[#F8F1E6]/20">
-              <div className="text-[#F8F1E6] text-2xl font-bold">95%</div>
-              <div className="text-[#F8F1E6]/80 text-sm">Success Rate</div>
-            </div>
           </div>
         </div>
       </section>
@@ -348,7 +344,7 @@ export default function PracticesAreasPage() {
                       </div>
                       <div className="text-right">
                         <div className="text-[#102028] text-2xl font-bold">
-                          {service.stats.cases || service.stats.deals || service.stats.projects || service.stats.transactions || service.stats.organizations}
+                          {service.stats.cases || service.stats.deals || service.stats.projects || service.stats.transactions || service.stats.organizations || service.stats.startups}
                         </div>
                         <div className="text-[#102028]/60 text-sm">Cases</div>
                       </div>
@@ -363,13 +359,7 @@ export default function PracticesAreasPage() {
                     </p>
 
                     {/* Stats Row */}
-                    <div className="grid grid-cols-3 gap-4 mb-6">
-                      <div className="text-center">
-                        <div className="text-[#102028] text-lg font-bold">
-                          {service.stats.success}
-                        </div>
-                        <div className="text-[#102028]/60 text-xs">Success Rate</div>
-                      </div>
+                    <div className="grid grid-cols-2 gap-4 mb-6">
                       <div className="text-center">
                         <div className="text-[#102028] text-lg font-bold">
                           {service.stats.experience}

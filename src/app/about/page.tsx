@@ -2,9 +2,72 @@
 
 import React from 'react';
 import AboutUsSection from '@/components/AboutUsSection';
-import ServicesSection from '@/components/ServicesSection';
+import Image from 'next/image';
 
 export default function AboutPage() {
+  const teamMembers = [
+    {
+      name: 'Lavanya Dhawan',
+      role: 'Founder',
+      image: '/team/Lavanya.png',
+    },
+    {
+      name: 'Anuj Anand Malik',
+      role: 'Partner',
+      image: '/team/Anuj.png',
+    },
+    {
+      name: 'Aman Pathak',
+      role: 'Partner',
+      image: '/team/Aman.png',
+    },
+    {
+      name: 'Yash Datt',
+      role: 'Partner',
+      image: '/team/Yashd.png',
+    },
+    {
+      name: 'Ashwin Kumar Nair',
+      role: 'Legal Consultant & Advocate-on-Record, Supreme Court of India',
+      image: '/team/Ashwin.png',
+    },
+    {
+      name: 'Sandeep Dhawan',
+      role: 'Senior Advisor',
+      image: '/team/Sandeep.png',
+    },
+    {
+      name: 'Shivraj Pawar',
+      role: 'Senior Associate',
+      image: '/team/Shivraj.png',
+    },
+    {
+      name: 'Shrey Arora',
+      role: 'Senior Associate',
+      image: '/team/Shrey.png',
+    },
+    {
+      name: 'Ritik Gupta',
+      role: 'Senior Associate',
+      image: '/team/Ritik.png',
+    },
+    {
+      name: 'Nitika Grover',
+      role: 'Senior Associate',
+      image: '/team/Nitikag.png',
+    },
+    {
+      name: 'Aishwarya Sharma',
+      role: 'Chief of Administration & Legal Analyst',
+      image: '/team/Aishwarya.png',
+    },
+    {
+      name: 'Chhavi Joshi',
+      role: 'Legal Content Strategist',
+      image: '/team/Chhavi.png',
+    }
+  ];
+
   return (
     <div className="min-h-screen">
       {/* Enhanced Hero Section */}
@@ -181,59 +244,67 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Services Section */}
-      <ServicesSection />
-
-      {/* Core Values Section (Off-white BG, Blue Text) */}
-      <section className="py-20 bg-[#F8F1E6]">
+      {/* Team Members Section */}
+      <section className="py-16 bg-[#F8F1E6]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="font-playfair text-[#102028] text-3xl sm:text-4xl lg:text-5xl mb-6 font-italic">
-              Our Core Values
+          <div className="text-center mb-12">
+            <h2 className="font-playfair text-[#102028] text-3xl sm:text-4xl lg:text-5xl mb-4 font-italic">
+              Meet Our Team
             </h2>
+            <p className="text-[#102028] text-lg opacity-80 max-w-2xl mx-auto mb-6">
+              A diverse team of accomplished professionals dedicated to delivering exceptional legal solutions
+            </p>
             <div className="w-24 h-1 bg-[#102028] mx-auto"></div>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="bg-white p-8 rounded-xl shadow-lg border border-[#102028]/10 text-center hover:transform hover:scale-105 transition-all duration-300">
-              <div className="w-16 h-16 bg-[#102028] rounded-full flex items-center justify-center mx-auto mb-6">
-                <span className="text-[#F8F1E6] text-2xl font-bold">I</span>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-6 mb-12">
+            {teamMembers.map((member, index) => (
+              <div 
+                key={index}
+                className="group bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 border border-[#102028]/10 hover:border-[#102028]/20 transform hover:-translate-y-1"
+              >
+                {/* Member Image Container */}
+                <div className="relative h-48 overflow-hidden bg-gradient-to-br from-[#F8F1E6] to-white">
+                  <Image
+                    src={member.image}
+                    alt={member.name}
+                    fill
+                    className="object-contain object-center group-hover:scale-105 transition-transform duration-300"
+                    sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 16vw"
+                  />
+                  
+                  {/* Image overlay with role */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#102028] via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  <div className="absolute bottom-0 left-0 right-0 p-3 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                    <div className="bg-[#102028] text-[#F8F1E6] px-2 py-1 rounded-full inline-block">
+                      <p className="text-xs font-medium">
+                        {member.role.split(' ')[0]}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Member Information */}
+                <div className="p-4">
+                  <h3 className="font-playfair text-[#102028] text-sm font-semibold mb-1 group-hover:text-[#102028]/80 transition-colors duration-300 line-clamp-2">
+                    {member.name}
+                  </h3>
+                  <p className="text-[#102028] opacity-70 text-xs leading-tight line-clamp-2">
+                    {member.role}
+                  </p>
+                </div>
               </div>
-              <h3 className="font-playfair text-[#102028] text-xl font-semibold mb-4">Integrity</h3>
-              <p className="text-[#102028] opacity-80 leading-relaxed">
-                Unwavering commitment to ethical practices and transparent communication in all our dealings.
-              </p>
-            </div>
-            
-            <div className="bg-white p-8 rounded-xl shadow-lg border border-[#102028]/10 text-center hover:transform hover:scale-105 transition-all duration-300">
-              <div className="w-16 h-16 bg-[#102028] rounded-full flex items-center justify-center mx-auto mb-6">
-                <span className="text-[#F8F1E6] text-2xl font-bold">E</span>
-              </div>
-              <h3 className="font-playfair text-[#102028] text-xl font-semibold mb-4">Excellence</h3>
-              <p className="text-[#102028] opacity-80 leading-relaxed">
-                Pursuit of the highest standards in legal expertise, client service, and professional development.
-              </p>
-            </div>
-            
-            <div className="bg-white p-8 rounded-xl shadow-lg border border-[#102028]/10 text-center hover:transform hover:scale-105 transition-all duration-300">
-              <div className="w-16 h-16 bg-[#102028] rounded-full flex items-center justify-center mx-auto mb-6">
-                <span className="text-[#F8F1E6] text-2xl font-bold">I</span>
-              </div>
-              <h3 className="font-playfair text-[#102028] text-xl font-semibold mb-4">Innovation</h3>
-              <p className="text-[#102028] opacity-80 leading-relaxed">
-                Embracing modern solutions and creative approaches to complex legal challenges.
-              </p>
-            </div>
-            
-            <div className="bg-white p-8 rounded-xl shadow-lg border border-[#102028]/10 text-center hover:transform hover:scale-105 transition-all duration-300">
-              <div className="w-16 h-16 bg-[#102028] rounded-full flex items-center justify-center mx-auto mb-6">
-                <span className="text-[#F8F1E6] text-2xl font-bold">C</span>
-              </div>
-              <h3 className="font-playfair text-[#102028] text-xl font-semibold mb-4">Commitment</h3>
-              <p className="text-[#102028] opacity-80 leading-relaxed">
-                Dedicated to achieving the best possible outcomes for our clients through persistent advocacy.
-              </p>
-            </div>
+            ))}
+          </div>
+
+          {/* Know More Button */}
+          <div className="text-center">
+            <a 
+              href="/team" 
+              className="inline-flex items-center bg-[#102028] text-[#F8F1E6] px-8 py-3 rounded-lg hover:bg-[#102028]/90 transition-all duration-300 font-semibold text-lg shadow-lg hover:shadow-xl transform hover:scale-105"
+            >
+              Know More About Our Team
+            </a>
           </div>
         </div>
       </section>
