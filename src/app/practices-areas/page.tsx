@@ -50,9 +50,9 @@ export default function PracticesAreasPage() {
         'Settlement negotiations'
       ],
       stats: {
-        cases: '500+',
+        cases: '150+',
         success: '95%',
-        experience: '15+ years'
+        experience: '8+ years'
       }
     },
     {
@@ -71,9 +71,9 @@ export default function PracticesAreasPage() {
         'Dispute avoidance strategies'
       ],
       stats: {
-        cases: '200+',
+        cases: '75+',
         success: '92%',
-        experience: '12+ years'
+        experience: '6+ years'
       }
     },
     {
@@ -92,9 +92,9 @@ export default function PracticesAreasPage() {
         'Corporate governance advisory'
       ],
       stats: {
-        deals: '150+',
+        deals: '50+',
         success: '98%',
-        experience: '18+ years'
+        experience: '10+ years'
       }
     },
     {
@@ -113,9 +113,9 @@ export default function PracticesAreasPage() {
         'Consumer awareness and education'
       ],
       stats: {
-        cases: '800+',
+        cases: '200+',
         success: '94%',
-        experience: '10+ years'
+        experience: '7+ years'
       }
     },
     {
@@ -134,9 +134,9 @@ export default function PracticesAreasPage() {
         'Family mediation services'
       ],
       stats: {
-        cases: '300+',
+        cases: '100+',
         success: '89%',
-        experience: '14+ years'
+        experience: '9+ years'
       }
     },
     {
@@ -155,9 +155,9 @@ export default function PracticesAreasPage() {
         'Digital rights management'
       ],
       stats: {
-        projects: '250+',
+        projects: '80+',
         success: '96%',
-        experience: '16+ years'
+        experience: '8+ years'
       }
     },
     {
@@ -176,9 +176,9 @@ export default function PracticesAreasPage() {
         'Regulatory compliance for startups'
       ],
       stats: {
-        startups: '400+',
+        startups: '120+',
         success: '97%',
-        experience: '8+ years'
+        experience: '5+ years'
       }
     },
     {
@@ -197,9 +197,9 @@ export default function PracticesAreasPage() {
         'Estate administration services'
       ],
       stats: {
-        transactions: '600+',
+        transactions: '180+',
         success: '99%',
-        experience: '20+ years'
+        experience: '10+ years'
       }
     },
     {
@@ -218,9 +218,9 @@ export default function PracticesAreasPage() {
         'Workplace safety compliance'
       ],
       stats: {
-        cases: '450+',
+        cases: '140+',
         success: '91%',
-        experience: '13+ years'
+        experience: '6+ years'
       }
     },
     {
@@ -239,9 +239,9 @@ export default function PracticesAreasPage() {
         'Social justice initiatives'
       ],
       stats: {
-        cases: '100+',
+        cases: '35+',
         success: '87%',
-        experience: '22+ years'
+        experience: '9+ years'
       }
     },
     {
@@ -260,9 +260,9 @@ export default function PracticesAreasPage() {
         'Impact assessment and reporting'
       ],
       stats: {
-        organizations: '150+',
+        organizations: '45+',
         success: '93%',
-        experience: '11+ years'
+        experience: '7+ years'
       }
     },
     {
@@ -281,9 +281,9 @@ export default function PracticesAreasPage() {
         'Cross-border insolvency matters'
       ],
       stats: {
-        cases: '80+',
+        cases: '25+',
         success: '90%',
-        experience: '7+ years'
+        experience: '5+ years'
       }
     }
   ];
@@ -361,9 +361,9 @@ export default function PracticesAreasPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8 lg:gap-12">
             {filteredServices.map((service, index) => (
               <Link href={service.link} key={service.id}>
-                <div className="group bg-[#F8F1E6] rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:transform hover:scale-105 border border-[#102028]/10 overflow-hidden">
+                <div className="group bg-[#F8F1E6] rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:transform hover:scale-105 border border-[#102028]/10 overflow-hidden flex flex-col h-full">
                   {/* Service Header */}
-                  <div className="p-8 pb-6">
+                  <div className="p-8 pb-6 flex-1">
                     <div className="flex items-start justify-between mb-6">
                       <div className="w-16 h-16 bg-gradient-to-br from-[#102028] to-[#102028]/90 rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow duration-300">
                         <FontAwesomeIcon 
@@ -431,7 +431,7 @@ export default function PracticesAreasPage() {
                   </div>
 
                   {/* CTA Button */}
-                  <div className="px-8 pb-8">
+                  <div className="px-8 pb-8 mt-auto">
                     <div className="group/btn relative bg-[#102028] text-[#F8F1E6] px-6 py-3 rounded-xl border-2 border-[#102028] hover:bg-[#102028]/90 transition-all duration-300 font-medium focus:outline-none focus:ring-2 focus:ring-[#102028] focus:ring-offset-2 shadow-sm hover:shadow-md text-center">
                       Explore Practice Area
                       <FontAwesomeIcon 

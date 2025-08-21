@@ -148,6 +148,26 @@ export default function TeamPage() {
         'Expertise in business strategy and transformations'
       ]
     },
+    
+    {
+      name: 'Shivraj Pawar',
+      role: 'Senior Associate',
+      icon: faUsers,
+      image: '/team/Shivraj.png',
+      concisePoints: [
+        'Strong foundation in litigation and arbitration',
+        'Experience before Supreme Court, High Courts, and tribunals',
+        'Expertise in criminal litigation (NDPS and PMLA)',
+        'Strategic litigation and client advisory focus'
+      ],
+      description: 'Shivraj brings a strong foundation in litigation and arbitration, with hands-on experience before the Supreme Court of India, High Courts, and various tribunals. Having worked with some of the country\'s leading advocates and chambers, he has honed his skills in drafting, research, and courtroom advocacy across diverse areas of law, including criminal, constitutional, civil, tax, and service matters.',
+      highlights: [
+        'Extensive experience in criminal litigation (NDPS and PMLA)',
+        'Property disputes and corporate advisory expertise',
+        'Strategic litigation and client advisory focus',
+        'Meticulous legal research with practical courtroom insights'
+      ]
+    },
     {
       name: 'Shrey Arora',
       role: 'Senior Associate',
@@ -356,7 +376,7 @@ export default function TeamPage() {
                 <div className="p-8">
                   {/* Member Name */}
                   <h3 className="font-bold text-[#102028] text-2xl mb-4 group-hover:text-[#102028]/80 transition-colors duration-300">
-                    {member.name}
+                    {member.name} <br /> <span className="text-sm text-[#102028] opacity-80">{member.role}</span>
                   </h3>
 
                   {/* Concise Points */}
