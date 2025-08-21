@@ -11,7 +11,8 @@ export default function Footer() {
     { label: 'Blogs', href: '/blogs' },
     { label: 'Practice Areas', href: '/practices-areas' },
     { label: 'Services', href: '/services' },
-    { label: 'Contact Us', href: '/contact' }
+    { label: 'Contact Us', href: '/contact' },
+    { label: 'Our Team', href: '/team' }
   ];
 
   const services = [
