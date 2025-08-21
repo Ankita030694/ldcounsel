@@ -18,8 +18,8 @@ export default function Navbar() {
 
   const navItems = [
     { href: '/about', label: 'About' },
-    { href: '#resources', label: 'Resources' },
-    { href: '#practiceareas', label: 'Practice Areas' },
+    { href: '/resources', label: 'Resources' },
+    { href: '/practices-areas', label: 'Practice Areas' },
     { href: '/contact', label: 'Contact Us' },
   ];
 
@@ -66,12 +66,12 @@ export default function Navbar() {
             <nav className="flex space-x-10 mr-10 ml-14" role="navigation" aria-label="Left navigation">
               {navItems.slice(0, 2).map((item) => (
                 <li key={item.href} className="list-none">
-                  <a
+                  <Link
                     href={item.href}
                     className="text-[#F8F1E6] hover:text-[#F8F1E6]/80 transition-colors duration-200 font-playfair text-base font-medium px-3 py-2"
                   >
                     {item.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </nav>
@@ -182,13 +182,13 @@ export default function Navbar() {
           <ul className="px-6 py-6 space-y-4">
             {navItems.map((item) => (
               <li key={item.href}>
-                <a
+                <Link
                   href={item.href}
                   className="block text-[#F8F1E6] hover:text-[#F8F1E6]/80 transition-colors duration-200 font-playfair text-lg font-medium py-3"
                   onClick={closeMenu}
                 >
                   {item.label}
-                </a>
+                </Link>
               </li>
             ))}
             

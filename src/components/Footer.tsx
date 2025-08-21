@@ -6,35 +6,38 @@ import { faLinkedin, faTwitter, faFacebook, faInstagram } from '@fortawesome/fre
 import Link from 'next/link';
 
 export default function Footer() {
-  const footerSections = [
-    {
-      title: 'Services',
-      links: [
-        { label: 'Corporate Law', href: '#corporate' },
-        { label: 'Litigation', href: '#litigation' },
-        { label: 'Intellectual Property', href: '#ip' },
-        { label: 'Real Estate', href: '#real-estate' }
-      ]
-    },
-    {
-      title: 'Resources',
-      links: [
-        { label: 'Our Team', href: '/team' },
-        { label: 'Blog', href: '#blog' },
-        { label: 'Case Studies', href: '#cases' },
-        { label: 'Legal Updates', href: '#updates' },
-        { label: 'Publications', href: '#publications' }
-      ]
-    },
-    {
-      title: 'Contact',
-      links: [
-        { label: 'Get in Touch', href: '#contact' },
-        { label: 'Office Locations', href: '#locations' },
-        { label: 'Careers', href: '#careers' },
-        { label: 'Client Portal', href: '#portal' }
-      ]
-    }
+  const usefulLinks = [
+    { label: 'About Us', href: '/about' },
+    { label: 'Blogs', href: '/blogs' },
+    { label: 'Practice Areas', href: '/practices-areas' },
+    { label: 'Services', href: '/services' },
+    { label: 'Contact Us', href: '/contact' }
+  ];
+
+  const services = [
+    { label: 'Litigation & Dispute Resolution', href: '/litigation-dispute-resolution' },
+    { label: 'Arbitration & Mediation', href: '/arbitration-mediation' },
+    { label: 'Corporate & Commercial Advisory', href: '/corporate-commercial-advisory' },
+    { label: 'Consumer Disputes & Protection', href: '/consumer-disputes-protection' },
+    { label: 'Family Law & Matrimonial Disputes', href: '/family-law-matrimonial-disputes' },
+    { label: 'Media, Entertainment & IP', href: '/media-entertainment-intellectual-property' },
+    { label: 'Startup Legal Solutions', href: '/startup-legal-solutions' },
+    { label: 'Conveyancing & Wills', href: '/conveyancing-wills' },
+    { label: 'Employment & Labour Service Law', href: '/employment-labour-service-law' },
+    { label: 'Public Interest & Constitutional Matters', href: '/public-interest-constitutional-matters' },
+    { label: 'NGO & Non-Profit Advisory', href: '/ngo-non-profit-advisory' },
+    { label: 'Insolvency & Bankruptcy (IBC) Matters', href: '/insolvency-bankruptcy-ibc-matters' }
+  ];
+
+  const contactInfo = [
+    { label: 'Phone', value: '+91 70118 03577', href: 'tel:+917011803577' },
+    { label: 'Email', value: 'info@ldcounsels.com', href: 'mailto:info@ldcounsels.com' },
+    { label: 'Address', value: 'New Delhi, India', href: '#address' }
+  ];
+
+  const legalLinks = [
+    { label: 'Privacy Policy', href: '/privacy-policy' },
+    { label: 'Terms of Service', href: '/terms-of-service' },
   ];
 
   const socialLinks = [
@@ -85,75 +88,90 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Footer Links */}
-          {footerSections.map((section) => (
-            <div key={section.title} className="lg:col-span-1">
-              <h4 className="font-medium text-base mb-4 border-b border-[#F8F1E6]/20 pb-2">
-                {section.title}
-              </h4>
-              <ul className="space-y-2">
-                {section.links.map((link) => (
-                  <li key={link.label}>
-                    {link.href.startsWith('/') ? (
+          {/* Useful Links */}
+          <div className="lg:col-span-1">
+            <h4 className="font-medium text-base mb-4 border-b border-[#F8F1E6]/20 pb-2">
+              Useful Links
+            </h4>
+            <ul className="space-y-2">
+              {usefulLinks.map((link) => (
+                <li key={link.label}>
+                  <Link
+                    href={link.href}
+                    className="text-xs opacity-80 hover:opacity-100 hover:text-[#F8F1E6] transition-all duration-200"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Contact Us */}
+          <div className="lg:col-span-1">
+            <h4 className="font-medium text-base mb-4 border-b border-[#F8F1E6]/20 pb-2">
+              Contact Us
+            </h4>
+            <div className="space-y-3">
+              {/* Contact Information */}
+              <div className="space-y-2">
+                {contactInfo.map((contact) => (
+                  <div key={contact.label}>
+                    <a
+                      href={contact.href}
+                      className="text-xs opacity-80 hover:opacity-100 hover:text-[#F8F1E6] transition-all duration-200 block"
+                    >
+                      <span className="font-medium">{contact.label}:</span> {contact.value}
+                    </a>
+                  </div>
+                ))}
+              </div>
+              
+              {/* Legal Links */}
+              <div className="pt-2 border-t border-[#F8F1E6]/10">
+                <p className="text-xs font-medium mb-2">Legal</p>
+                <div className="space-y-1">
+                  {legalLinks.map((link) => (
+                    <div key={link.label}>
                       <Link
                         href={link.href}
                         className="text-xs opacity-80 hover:opacity-100 hover:text-[#F8F1E6] transition-all duration-200"
                       >
                         {link.label}
                       </Link>
-                    ) : (
-                      <a
-                        href={link.href}
-                        className="text-xs opacity-80 hover:opacity-100 hover:text-[#F8F1E6] transition-all duration-200"
-                      >
-                        {link.label}
-                      </a>
-                    )}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
-        </div>
-
-        {/* Bottom Section - Contact Info and Copyright */}
-        <div className="border-t border-[#F8F1E6]/20 pt-6">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 lg:gap-6 items-center">
-            {/* Contact Information */}
-            <div className="space-y-1">
-              <p className="text-xs opacity-80">
-                <span className="font-medium">Phone:</span> +91 70118 03577
-              </p>
-              <p className="text-xs opacity-80">
-                <span className="font-medium">Email:</span> info@ldcounsels.com
-              </p>
-              <p className="text-xs opacity-80">
-                <span className="font-medium">Address:</span> New Delhi, India
-              </p>
-            </div>
-
-            {/* Newsletter Signup */}
-            <div className="lg:text-center">
-            
-            </div>
-
-            {/* Copyright */}
-            <div className="lg:text-right">
-              <p className="text-xs opacity-60">
-                © 2024 LD Counsels. All rights reserved.
-              </p>
-              <div className="flex flex-wrap gap-3 mt-1 lg:justify-end">
-                <a href="#privacy" className="text-xs opacity-60 hover:opacity-80 transition-opacity">
-                  Privacy Policy
-                </a>
-                <a href="#terms" className="text-xs opacity-60 hover:opacity-80 transition-opacity">
-                  Terms of Service
-                </a>
-                <a href="#cookies" className="text-xs opacity-60 hover:opacity-80 transition-opacity">
-                  Cookie Policy
-                </a>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
+          </div>
+
+          {/* Services */}
+          <div className="lg:col-span-1">
+            <h4 className="font-medium text-base mb-4 border-b border-[#F8F1E6]/20 pb-2">
+              Services
+            </h4>
+            <ul className="space-y-2">
+              {services.map((service) => (
+                <li key={service.label}>
+                  <Link
+                    href={service.href}
+                    className="text-xs opacity-80 hover:opacity-100 hover:text-[#F8F1E6] transition-all duration-200"
+                  >
+                    {service.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+
+        {/* Bottom Section - Copyright */}
+        <div className="border-t border-[#F8F1E6]/20 pt-6">
+          <div className="text-center">
+            <p className="text-xs opacity-60">
+              © 2024 LD Counsels. All rights reserved.
+            </p>
           </div>
         </div>
       </div>

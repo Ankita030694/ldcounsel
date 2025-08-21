@@ -4,15 +4,12 @@ import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { 
-  faSignOutAlt, 
   faEnvelope, 
   faUser, 
-  faPhone, 
-  faCalendar,
   faEye,
   faTrash
 } from '@fortawesome/free-solid-svg-icons';
-import { signOut, onAuthStateChanged } from 'firebase/auth';
+import { onAuthStateChanged } from 'firebase/auth';
 import { collection, getDocs, deleteDoc, doc, orderBy, query } from 'firebase/firestore';
 import { auth, db } from '@/lib/firebase';
 
@@ -63,15 +60,6 @@ export default function AdminDashboard() {
     }
   };
 
-  const handleSignOut = async () => {
-    try {
-      await signOut(auth);
-      router.push('/admin/login');
-    } catch (error) {
-      console.error('Error signing out:', error);
-    }
-  };
-
   const handleDeleteForm = async (formId: string) => {
     if (window.confirm('Are you sure you want to delete this contact form?')) {
       try {
@@ -91,7 +79,7 @@ export default function AdminDashboard() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-[#F8F1E6] flex items-center justify-center">
+      <div className="flex items-center justify-center min-h-[400px]">
         <div className="text-center">
           <div className="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-[#102028]"></div>
           <p className="mt-4 text-[#102028]">Loading dashboard...</p>
@@ -101,123 +89,103 @@ export default function AdminDashboard() {
   }
 
   return (
-    <div className="min-h-screen bg-[#F8F1E6]">
-      {/* Header */}
-      <header className="bg-[#102028] text-[#F8F1E6] p-6">
-        <div className="max-w-7xl mx-auto flex justify-between items-center">
-          <div>
-            <h1 className="font-playfair text-2xl font-semibold">LD Counsels Admin</h1>
-            <p className="text-sm opacity-80">Welcome, {user?.email}</p>
-          </div>
-          <button
-            onClick={handleSignOut}
-            className="bg-[#F8F1E6] text-[#102028] px-4 py-2 rounded-lg hover:bg-[#F8F1E6]/90 transition-colors duration-300 flex items-center"
-          >
-            <FontAwesomeIcon icon={faSignOutAlt} className="mr-2" />
-            Sign Out
-          </button>
-        </div>
-      </header>
+    <>
+      <div className="mb-8">
+        <h2 className="font-playfair text-[#102028] text-3xl font-semibold mb-2">
+          Contact Form Submissions
+        </h2>
+        <p className="text-[#102028] opacity-70">
+          Manage and review contact form submissions from the website
+        </p>
+      </div>
 
-      {/* Main Content */}
-      <main className="max-w-7xl mx-auto p-6">
-        <div className="mb-8">
-          <h2 className="font-playfair text-[#102028] text-3xl font-semibold mb-2">
-            Contact Form Submissions
-          </h2>
-          <p className="text-[#102028] opacity-70">
-            Manage and review contact form submissions from the website
-          </p>
-        </div>
-
-        {/* Stats */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
-          <div className="bg-white p-6 rounded-xl shadow-lg border border-[#102028]/10">
-            <div className="flex items-center">
-              <div className="w-12 h-12 bg-[#102028] rounded-lg flex items-center justify-center mr-4">
-                <FontAwesomeIcon icon={faEnvelope} className="text-[#F8F1E6] text-xl" />
-              </div>
-              <div>
-                <p className="text-2xl font-bold text-[#102028]">{contactForms.length}</p>
-                <p className="text-[#102028] opacity-70 text-sm">Total Submissions</p>
-              </div>
+      {/* Stats */}
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
+        <div className="bg-white p-6 rounded-xl shadow-lg border border-[#102028]/10">
+          <div className="flex items-center">
+            <div className="w-12 h-12 bg-[#102028] rounded-lg flex items-center justify-center mr-4">
+              <FontAwesomeIcon icon={faEnvelope} className="text-[#F8F1E6] text-xl" />
             </div>
-          </div>
-          
-          <div className="bg-white p-6 rounded-xl shadow-lg border border-[#102028]/10">
-            <div className="flex items-center">
-              <div className="w-12 h-12 bg-green-500 rounded-lg flex items-center justify-center mr-4">
-                <FontAwesomeIcon icon={faUser} className="text-white text-xl" />
-              </div>
-              <div>
-                <p className="text-2xl font-bold text-[#102028]">
-                  {contactForms.filter(form => form.status === 'new').length}
-                </p>
-                <p className="text-[#102028] opacity-70 text-sm">New Messages</p>
-              </div>
+            <div>
+              <p className="text-2xl font-bold text-[#102028]">{contactForms.length}</p>
+              <p className="text-[#102028] opacity-70 text-sm">Total Submissions</p>
             </div>
           </div>
         </div>
-
-        {/* Contact Forms List */}
-        <div className="bg-white rounded-xl shadow-lg border border-[#102028]/10 overflow-hidden">
-          <div className="p-6 border-b border-[#102028]/10">
-            <h3 className="font-playfair text-[#102028] text-xl font-semibold">
-              Recent Submissions
-            </h3>
+        
+        <div className="bg-white p-6 rounded-xl shadow-lg border border-[#102028]/10">
+          <div className="flex items-center">
+            <div className="w-12 h-12 bg-green-500 rounded-lg flex items-center justify-center mr-4">
+              <FontAwesomeIcon icon={faUser} className="text-white text-xl" />
+            </div>
+            <div>
+              <p className="text-2xl font-bold text-[#102028]">
+                {contactForms.filter(form => form.status === 'new').length}
+              </p>
+              <p className="text-[#102028] opacity-70 text-sm">New Messages</p>
+            </div>
           </div>
-          
-          <div className="overflow-x-auto">
-            <table className="w-full">
-              <thead className="bg-[#F8F1E6]">
-                <tr>
-                  <th className="px-6 py-3 text-left text-[#102028] font-medium">Name</th>
-                  <th className="px-6 py-3 text-left text-[#102028] font-medium">Email</th>
-                  <th className="px-6 py-3 text-left text-[#102028] font-medium">Service</th>
-                  <th className="px-6 py-3 text-left text-[#102028] font-medium">Date</th>
-                  <th className="px-6 py-3 text-left text-[#102028] font-medium">Status</th>
-                  <th className="px-6 py-3 text-left text-[#102028] font-medium">Actions</th>
+        </div>
+      </div>
+
+      {/* Contact Forms List */}
+      <div className="bg-white rounded-xl shadow-lg border border-[#102028]/10 overflow-hidden">
+        <div className="p-6 border-b border-[#102028]/10">
+          <h3 className="font-playfair text-[#102028] text-xl font-semibold">
+            Recent Submissions
+          </h3>
+        </div>
+        
+        <div className="overflow-x-auto">
+          <table className="w-full">
+            <thead className="bg-[#F8F1E6]">
+              <tr>
+                <th className="px-6 py-3 text-left text-[#102028] font-medium">Name</th>
+                <th className="px-6 py-3 text-left text-[#102028] font-medium">Email</th>
+                <th className="px-6 py-3 text-left text-[#102028] font-medium">Service</th>
+                <th className="px-6 py-3 text-left text-[#102028] font-medium">Date</th>
+                <th className="px-6 py-3 text-left text-[#102028] font-medium">Status</th>
+                <th className="px-6 py-3 text-left text-[#102028] font-medium">Actions</th>
+              </tr>
+            </thead>
+            <tbody className="divide-y divide-[#102028]/10">
+              {contactForms.map((form) => (
+                <tr key={form.id} className="hover:bg-[#F8F1E6]/30">
+                  <td className="px-6 py-4 text-[#102028] font-medium">{form.name}</td>
+                  <td className="px-6 py-4 text-[#102028]">{form.email}</td>
+                  <td className="px-6 py-4 text-[#102028]">{form.service}</td>
+                  <td className="px-6 py-4 text-[#102028] text-sm">{formatDate(form.createdAt)}</td>
+                  <td className="px-6 py-4">
+                    <span className={`px-2 py-1 rounded-full text-xs font-medium ${
+                      form.status === 'new' 
+                        ? 'bg-green-100 text-green-800' 
+                        : 'bg-gray-100 text-gray-800'
+                    }`}>
+                      {form.status}
+                    </span>
+                  </td>
+                  <td className="px-6 py-4">
+                    <div className="flex space-x-2">
+                      <button
+                        onClick={() => setSelectedForm(form)}
+                        className="text-[#102028] hover:text-[#102028]/70 transition-colors"
+                      >
+                        <FontAwesomeIcon icon={faEye} />
+                      </button>
+                      <button
+                        onClick={() => handleDeleteForm(form.id)}
+                        className="text-red-600 hover:text-red-800 transition-colors"
+                      >
+                        <FontAwesomeIcon icon={faTrash} />
+                      </button>
+                    </div>
+                  </td>
                 </tr>
-              </thead>
-              <tbody className="divide-y divide-[#102028]/10">
-                {contactForms.map((form) => (
-                  <tr key={form.id} className="hover:bg-[#F8F1E6]/30">
-                    <td className="px-6 py-4 text-[#102028] font-medium">{form.name}</td>
-                    <td className="px-6 py-4 text-[#102028]">{form.email}</td>
-                    <td className="px-6 py-4 text-[#102028]">{form.service}</td>
-                    <td className="px-6 py-4 text-[#102028] text-sm">{formatDate(form.createdAt)}</td>
-                    <td className="px-6 py-4">
-                      <span className={`px-2 py-1 rounded-full text-xs font-medium ${
-                        form.status === 'new' 
-                          ? 'bg-green-100 text-green-800' 
-                          : 'bg-gray-100 text-gray-800'
-                      }`}>
-                        {form.status}
-                      </span>
-                    </td>
-                    <td className="px-6 py-4">
-                      <div className="flex space-x-2">
-                        <button
-                          onClick={() => setSelectedForm(form)}
-                          className="text-[#102028] hover:text-[#102028]/70 transition-colors"
-                        >
-                          <FontAwesomeIcon icon={faEye} />
-                        </button>
-                        <button
-                          onClick={() => handleDeleteForm(form.id)}
-                          className="text-red-600 hover:text-red-800 transition-colors"
-                        >
-                          <FontAwesomeIcon icon={faTrash} />
-                        </button>
-                      </div>
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
+              ))}
+            </tbody>
+          </table>
         </div>
-      </main>
+      </div>
 
       {/* Modal for viewing form details */}
       {selectedForm && (
@@ -265,6 +233,6 @@ export default function AdminDashboard() {
           </div>
         </div>
       )}
-    </div>
+    </>
   );
 } 
