@@ -6,7 +6,6 @@ import Link from 'next/link';
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isPracticeAreasOpen, setIsPracticeAreasOpen] = useState(false);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -21,21 +20,6 @@ export default function Navbar() {
     { href: '/resources', label: 'Resources' },
     { href: '/practices-areas', label: 'Practice Areas' },
     { href: '/contact', label: 'Contact Us' },
-  ];
-
-  const practiceAreas = [
-    { href: '/arbitration-mediation', label: 'Arbitration & Mediation' },
-    { href: '/consumer-disputes-protection', label: 'Consumer Disputes & Protection' },
-    { href: '/conveyancing-wills', label: 'Conveyancing & Wills' },
-    { href: '/corporate-commercial-advisory', label: 'Corporate & Commercial Advisory' },
-    { href: '/employment-labour-service-law', label: 'Employment & Labour Service Law' },
-    { href: '/family-law-matrimonial-disputes', label: 'Family Law & Matrimonial Disputes' },
-    { href: '/insolvency-bankruptcy-ibc-matters', label: 'Insolvency & Bankruptcy (IBC) Matters' },
-    { href: '/litigation-dispute-resolution', label: 'Litigation & Dispute Resolution' },
-    { href: '/media-entertainment-intellectual-property', label: 'Media, Entertainment & IP' },
-    { href: '/ngo-non-profit-advisory', label: 'NGO & Non-Profit Advisory' },
-    { href: '/public-interest-constitutional-matters', label: 'Public Interest & Constitutional Matters' },
-    { href: '/startup-legal-solutions', label: 'Startup Legal Solutions' },
   ];
 
   return (
@@ -94,46 +78,14 @@ export default function Navbar() {
 
             {/* Right Navigation */}
             <nav className="flex space-x-10 ml-10" role="navigation" aria-label="Right navigation">
-              {/* Practice Areas Dropdown */}
+              {/* Practice Areas Link */}
               <li className="list-none">
-                <button
+                <Link
+                  href="/practices-areas"
                   className="text-[#F8F1E6] hover:text-[#F8F1E6]/80 transition-colors duration-200 font-playfair text-base font-medium px-3 py-2 flex items-center"
-                  onMouseEnter={() => setIsPracticeAreasOpen(true)}
-                  aria-expanded={isPracticeAreasOpen}
-                  aria-haspopup="true"
                 >
                   Practice Areas
-                  {/* <svg 
-                    className={`ml-1 w-4 h-4 transition-transform duration-200 ${isPracticeAreasOpen ? 'rotate-180' : ''}`} 
-                    fill="none" 
-                    stroke="currentColor" 
-                    viewBox="0 0 24 24"
-                  >
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                  </svg> */}
-                </button>
-                
-
-                {/* <div 
-                  className={`absolute top-full left-0 mt-0 w-80 bg-[#F8F1E6] border border-[#102028]/20 shadow-lg rounded-md overflow-hidden transition-all duration-200 z-[9999] ${
-                    isPracticeAreasOpen ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible -translate-y-2'
-                  }`}
-                  onMouseEnter={() => setIsPracticeAreasOpen(true)}
-                  onMouseLeave={() => setIsPracticeAreasOpen(false)}
-                  style={{ maxHeight: '400px' }}
-                >
-                  <div className="py-2 overflow-y-auto" style={{ maxHeight: '380px' }}>
-                    {practiceAreas.map((area) => (
-                      <Link
-                        key={area.href}
-                        href={area.href}
-                        className="block px-4 py-3 text-[#102028] hover:bg-[#102028] hover:text-[#F8F1E6] transition-colors duration-200 font-playfair text-sm cursor-pointer"
-                      >
-                        {area.label}
-                      </Link>
-                    ))}
-                  </div>
-                </div> */}
+                </Link>
               </li>
 
               {/* Contact Us */}
@@ -198,16 +150,19 @@ export default function Navbar() {
                 Practice Areas
               </div>
               <ul className="ml-4 space-y-2 mt-2">
-                {practiceAreas.map((area) => (
-                  <li key={area.href}>
+                {/* practiceAreas.map((area) => ( */}
+                  <li key="arbitration-mediation">
                     <Link
-                      href={area.href}
+                      href="/arbitration-mediation"
                       className="block text-[#F8F1E6]/80 hover:text-[#F8F1E6] transition-colors duration-200 font-playfair text-base py-2"
                       onClick={closeMenu}
                     >
-                      {area.label}
+                      Arbitration & Mediation
                     </Link>
                   </li>
+                  <li key="consumer-disputes-protection">
+                    <Link
+                      href="/consumer-disputes-protection"
                 ))}
               </ul>
             </li>
