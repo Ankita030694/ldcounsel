@@ -51,50 +51,49 @@ export default function Footer() {
   return (
     <footer className="bg-[#102028] text-[#F8F1E6]">
       {/* Main Footer Content */}
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 py-8 lg:py-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8 lg:py-12">
         {/* Top Section - Logo and Description */}
-        <div className="grid grid-cols-1 lg:grid-cols-4 gap-6 lg:gap-8 mb-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 mb-6 sm:mb-8">
           {/* Company Info */}
-          <div className="lg:col-span-1">
-            <div className="flex items-center mb-4">
-              <div className="w-12 h-12 border-2 border-[#F8F1E6] flex items-center justify-center bg-[#102028] shadow-sm overflow-hidden mr-3">
+          <div className="sm:col-span-2 lg:col-span-1">
+            <div className="flex items-center mb-3 sm:mb-4">
+              <div className="w-10 h-10 sm:w-12 sm:h-12 border-2 border-[#F8F1E6] flex items-center justify-center bg-[#102028] shadow-sm overflow-hidden mr-2 sm:mr-3">
                 <Image
                   src="/logo/ldlogo.png"
                   alt="LD Counsels Law Offices India"
                   width={48}
                   height={48}
-                  className="w-10 h-10 object-cover"
+                  className="w-8 h-8 sm:w-10 sm:h-10 object-cover"
                 />
               </div>
               <div>
-                <h3 className="font-serif text-base font-medium">LD Counsels</h3>
-                <p className="text-xs opacity-80">LAW OFFICES INDIA</p>
+                <h3 className="font-serif text-sm sm:text-base font-medium">LD Counsels</h3>
               </div>
             </div>
-            <p className="text-xs leading-relaxed opacity-80 mb-4">
+            <p className="text-xs leading-relaxed opacity-80 mb-3 sm:mb-4">
               Consistently ranked and globally recognized law firm providing exceptional legal services.
             </p>
             {/* Social Links */}
-            <div className="flex space-x-3">
+            <div className="flex space-x-2 sm:space-x-3">
               {socialLinks.map((social) => (
                 <a
                   key={social.name}
                   href={social.href}
-                  className="w-8 h-8 border border-[#F8F1E6] rounded-full flex items-center justify-center hover:bg-[#F8F1E6] hover:text-[#102028] transition-colors duration-200"
+                  className="w-7 h-7 sm:w-8 sm:h-8 border border-[#F8F1E6] rounded-full flex items-center justify-center hover:bg-[#F8F1E6] hover:text-[#102028] transition-colors duration-200"
                   aria-label={social.name}
                 >
-                  <FontAwesomeIcon icon={social.icon} className="text-sm" />
+                  <FontAwesomeIcon icon={social.icon} className="text-xs sm:text-sm" />
                 </a>
               ))}
             </div>
           </div>
 
           {/* Useful Links */}
-          <div className="lg:col-span-1">
-            <h4 className="font-medium text-base mb-4 border-b border-[#F8F1E6]/20 pb-2">
+          <div className="sm:col-span-1">
+            <h4 className="font-medium text-sm sm:text-base mb-3 sm:mb-4 border-b border-[#F8F1E6]/20 pb-2">
               Useful Links
             </h4>
-            <ul className="space-y-2">
+            <ul className="space-y-1 sm:space-y-2">
               {usefulLinks.map((link) => (
                 <li key={link.label}>
                   <Link
@@ -109,13 +108,13 @@ export default function Footer() {
           </div>
 
           {/* Contact Us */}
-          <div className="lg:col-span-1">
-            <h4 className="font-medium text-base mb-4 border-b border-[#F8F1E6]/20 pb-2">
+          <div className="sm:col-span-1">
+            <h4 className="font-medium text-sm sm:text-base mb-3 sm:mb-4 border-b border-[#F8F1E6]/20 pb-2">
               Contact Us
             </h4>
-            <div className="space-y-3">
+            <div className="space-y-2 sm:space-y-3">
               {/* Contact Information */}
-              <div className="space-y-2">
+              <div className="space-y-1 sm:space-y-2">
                 {contactInfo.map((contact) => (
                   <div key={contact.label}>
                     <a
@@ -130,7 +129,7 @@ export default function Footer() {
               
               {/* Legal Links */}
               <div className="pt-2 border-t border-[#F8F1E6]/10">
-                <p className="text-xs font-medium mb-2">Legal</p>
+                <p className="text-xs font-medium mb-1 sm:mb-2">Legal</p>
                 <div className="space-y-1">
                   {legalLinks.map((link) => (
                     <div key={link.label}>
@@ -148,11 +147,11 @@ export default function Footer() {
           </div>
 
           {/* Services */}
-          <div className="lg:col-span-1">
-            <h4 className="font-medium text-base mb-4 border-b border-[#F8F1E6]/20 pb-2">
+          <div className="sm:col-span-2 lg:col-span-1">
+            <h4 className="font-medium text-sm sm:text-base mb-3 sm:mb-4 border-b border-[#F8F1E6]/20 pb-2">
               Services
             </h4>
-            <ul className="space-y-2">
+            <ul className="space-y-1 sm:space-y-2">
               {services.map((service) => (
                 <li key={service.label}>
                   <Link
@@ -168,7 +167,7 @@ export default function Footer() {
         </div>
 
         {/* Bottom Section - Copyright */}
-        <div className="border-t border-[#F8F1E6]/20 pt-6">
+        <div className="border-t border-[#F8F1E6]/20 pt-4 sm:pt-6">
           <div className="text-center">
             <p className="text-xs opacity-60">
               © 2024 LD Counsels. All rights reserved.

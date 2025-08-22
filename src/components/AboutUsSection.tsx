@@ -178,7 +178,7 @@ const AboutUsSection: React.FC = () => {
         .about-us-section {
           background: #102028;
           color: #F8F1E6;
-          padding: 120px 0;
+          padding: 60px 0;
           position: relative;
           overflow: hidden;
           min-height: 100vh;
@@ -226,7 +226,7 @@ const AboutUsSection: React.FC = () => {
         .container {
           max-width: 1400px;
           margin: 0 auto;
-          padding: 0 30px;
+          padding: 0 16px;
           position: relative;
           z-index: 2;
         }
@@ -238,35 +238,35 @@ const AboutUsSection: React.FC = () => {
 
         .about-header {
           text-align: center;
-          margin-bottom: 80px;
+          margin-bottom: 40px;
         }
 
         .section-tag {
           display: inline-block;
           background: rgba(248, 241, 230, 0.1);
           color: #F8F1E6;
-          padding: 8px 24px;
+          padding: 6px 16px;
           border-radius: 30px;
-          font-size: 0.9rem;
+          font-size: 0.8rem;
           font-weight: 500;
           letter-spacing: 2px;
           text-transform: uppercase;
-          margin-bottom: 20px;
+          margin-bottom: 16px;
           border: 1px solid rgba(248, 241, 230, 0.2);
         }
 
         .section-title {
           font-family: 'Playfair Display', serif;
-          font-size: 4rem;
+          font-size: 2.5rem;
           font-weight: 700;
-          margin-bottom: 20px;
+          margin-bottom: 16px;
           color: #F8F1E6;
           font-style: italic;
           line-height: 1.2;
         }
 
         .section-subtitle {
-          font-size: 1.25rem;
+          font-size: 1rem;
           color: #F8F1E6;
           opacity: 0.8;
           max-width: 600px;
@@ -277,21 +277,21 @@ const AboutUsSection: React.FC = () => {
         .content-wrapper {
           display: grid;
           grid-template-columns: 2fr 1fr;
-          gap: 60px;
-          margin-bottom: 60px;
+          gap: 40px;
+          margin-bottom: 40px;
         }
 
         .main-content {
           display: flex;
           flex-direction: column;
-          gap: 40px;
+          gap: 24px;
         }
 
         .content-card {
           background: #F8F1E6;
           border: 1px solid rgba(16, 32, 40, 0.1);
           border-radius: 16px;
-          padding: 32px;
+          padding: 20px;
           box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
           transition: all 0.3s ease;
         }
@@ -304,7 +304,7 @@ const AboutUsSection: React.FC = () => {
         .card-header {
           display: flex;
           align-items: center;
-          margin-bottom: 20px;
+          margin-bottom: 16px;
         }
 
         .card-icon {
@@ -315,14 +315,14 @@ const AboutUsSection: React.FC = () => {
 
         .card-header h3 {
           font-family: 'Playfair Display', serif;
-          font-size: 1.5rem;
+          font-size: 1.25rem;
           font-weight: 600;
           color: #102028;
           margin: 0;
         }
 
         .content-card p {
-          font-size: 1.1rem;
+          font-size: 0.95rem;
           line-height: 1.7;
           color: #102028;
           opacity: 0.9;
@@ -338,7 +338,7 @@ const AboutUsSection: React.FC = () => {
           background: #F8F1E6;
           border: 2px solid rgba(16, 32, 40, 0.1);
           border-radius: 20px;
-          padding: 40px;
+          padding: 24px;
           text-align: center;
           position: relative;
           box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
@@ -346,23 +346,23 @@ const AboutUsSection: React.FC = () => {
 
         .quote-mark {
           font-family: 'Playfair Display', serif;
-          font-size: 4rem;
+          font-size: 3rem;
           color: rgba(16, 32, 40, 0.2);
           position: absolute;
           top: 10px;
-          left: 30px;
+          left: 20px;
         }
 
         .quote-mark.closing {
           bottom: 10px;
-          right: 30px;
+          right: 20px;
           top: auto;
           left: auto;
         }
 
         .mission-text {
           font-family: 'Playfair Display', serif;
-          font-size: 1.5rem;
+          font-size: 1.25rem;
           font-style: italic;
           color: #102028;
           margin: 0;
@@ -374,55 +374,55 @@ const AboutUsSection: React.FC = () => {
         .content-row {
           display: grid;
           grid-template-columns: 1fr 1fr;
-          gap: 30px;
+          gap: 20px;
         }
 
         .sidebar {
           display: flex;
           flex-direction: column;
-          gap: 30px;
+          gap: 20px;
         }
 
         .stats-card, .expertise-card, .cta-card {
           background: #F8F1E6;
           border: 1px solid rgba(16, 32, 40, 0.1);
           border-radius: 16px;
-          padding: 32px;
+          padding: 20px;
           box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
         .stats-card h3, .expertise-card h3, .cta-card h3 {
           font-family: 'Playfair Display', serif;
-          font-size: 1.5rem;
+          font-size: 1.25rem;
           font-weight: 600;
           color: #102028;
-          margin-bottom: 24px;
+          margin-bottom: 16px;
           text-align: center;
         }
 
         .cta-card p {
-          font-size: 1rem;
+          font-size: 0.9rem;
           line-height: 1.6;
           color: #102028;
           opacity: 0.8;
-          margin-bottom: 24px;
+          margin-bottom: 16px;
           text-align: center;
         }
 
         .stat-item {
           text-align: center;
-          margin-bottom: 24px;
+          margin-bottom: 16px;
         }
 
         .stat-number {
-          font-size: 2.5rem;
+          font-size: 2rem;
           font-weight: 700;
           color: #102028;
-          margin-bottom: 8px;
+          margin-bottom: 6px;
         }
 
         .stat-label {
-          font-size: 0.9rem;
+          font-size: 0.8rem;
           color: #102028;
           opacity: 0.7;
           text-transform: uppercase;
@@ -431,14 +431,14 @@ const AboutUsSection: React.FC = () => {
 
         .expertise-list {
           display: grid;
-          gap: 12px;
+          gap: 8px;
         }
 
         .expertise-item {
           background: rgba(16, 32, 40, 0.05);
-          padding: 12px 16px;
+          padding: 8px 12px;
           border-radius: 8px;
-          font-size: 0.95rem;
+          font-size: 0.85rem;
           color: #102028;
           opacity: 0.9;
           border-left: 3px solid rgba(16, 32, 40, 0.3);
@@ -452,7 +452,7 @@ const AboutUsSection: React.FC = () => {
         }
 
         .expertise-cta {
-          margin-top: 24px;
+          margin-top: 16px;
           text-align: center;
         }
 
@@ -460,9 +460,9 @@ const AboutUsSection: React.FC = () => {
           background: #102028;
           color: #F8F1E6;
           border: 2px solid #102028;
-          padding: 12px 24px;
+          padding: 10px 20px;
           border-radius: 8px;
-          font-size: 0.95rem;
+          font-size: 0.85rem;
           font-weight: 600;
           cursor: pointer;
           transition: all 0.3s ease;
@@ -483,28 +483,28 @@ const AboutUsSection: React.FC = () => {
         }
 
         .bottom-section {
-          margin-top: 60px;
+          margin-top: 40px;
         }
 
         .closing-card {
           background: #F8F1E6;
           border: 1px solid rgba(16, 32, 40, 0.1);
           border-radius: 16px;
-          padding: 40px;
+          padding: 24px;
           text-align: center;
           box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
         .closing-card h3 {
           font-family: 'Playfair Display', serif;
-          font-size: 1.75rem;
+          font-size: 1.5rem;
           font-weight: 600;
           color: #102028;
-          margin-bottom: 20px;
+          margin-bottom: 16px;
         }
 
         .closing-card p {
-          font-size: 1.1rem;
+          font-size: 0.95rem;
           line-height: 1.7;
           color: #102028;
           opacity: 0.9;
@@ -513,6 +513,322 @@ const AboutUsSection: React.FC = () => {
         }
 
         /* Responsive Design */
+        @media (min-width: 640px) {
+          .about-us-section {
+            padding: 80px 0;
+          }
+
+          .container {
+            padding: 0 24px;
+          }
+
+          .about-header {
+            margin-bottom: 60px;
+          }
+
+          .section-title {
+            font-size: 3rem;
+          }
+
+          .section-subtitle {
+            font-size: 1.1rem;
+          }
+
+          .content-wrapper {
+            gap: 50px;
+            margin-bottom: 50px;
+          }
+
+          .main-content {
+            gap: 30px;
+          }
+
+          .content-card {
+            padding: 24px;
+          }
+
+          .card-header h3 {
+            font-size: 1.4rem;
+          }
+
+          .content-card p {
+            font-size: 1rem;
+          }
+
+          .content-row {
+            gap: 24px;
+          }
+
+          .sidebar {
+            gap: 24px;
+          }
+
+          .stats-card, .expertise-card, .cta-card {
+            padding: 24px;
+          }
+
+          .stats-card h3, .expertise-card h3, .cta-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+          }
+
+          .cta-card p {
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+          }
+
+          .stat-item {
+            margin-bottom: 20px;
+          }
+
+          .stat-number {
+            font-size: 2.25rem;
+            margin-bottom: 8px;
+          }
+
+          .stat-label {
+            font-size: 0.85rem;
+          }
+
+          .expertise-item {
+            padding: 10px 14px;
+            font-size: 0.9rem;
+          }
+
+          .cta-button {
+            padding: 12px 24px;
+            font-size: 0.9rem;
+          }
+
+          .bottom-section {
+            margin-top: 50px;
+          }
+
+          .closing-card {
+            padding: 30px;
+          }
+
+          .closing-card h3 {
+            font-size: 1.6rem;
+            margin-bottom: 20px;
+          }
+
+          .closing-card p {
+            font-size: 1rem;
+          }
+        }
+
+        @media (min-width: 768px) {
+          .about-us-section {
+            padding: 100px 0;
+          }
+
+          .container {
+            padding: 0 30px;
+          }
+
+          .about-header {
+            margin-bottom: 80px;
+          }
+
+          .section-title {
+            font-size: 3.5rem;
+          }
+
+          .section-subtitle {
+            font-size: 1.2rem;
+          }
+
+          .content-wrapper {
+            gap: 60px;
+            margin-bottom: 60px;
+          }
+
+          .main-content {
+            gap: 40px;
+          }
+
+          .content-card {
+            padding: 28px;
+          }
+
+          .card-header h3 {
+            font-size: 1.5rem;
+          }
+
+          .content-card p {
+            font-size: 1.05rem;
+          }
+
+          .content-row {
+            gap: 30px;
+          }
+
+          .sidebar {
+            gap: 30px;
+          }
+
+          .stats-card, .expertise-card, .cta-card {
+            padding: 28px;
+          }
+
+          .stats-card h3, .expertise-card h3, .cta-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 24px;
+          }
+
+          .cta-card p {
+            font-size: 1rem;
+            margin-bottom: 24px;
+          }
+
+          .stat-item {
+            margin-bottom: 24px;
+          }
+
+          .stat-number {
+            font-size: 2.5rem;
+            margin-bottom: 8px;
+          }
+
+          .stat-label {
+            font-size: 0.9rem;
+          }
+
+          .expertise-item {
+            padding: 12px 16px;
+            font-size: 0.95rem;
+          }
+
+          .cta-button {
+            padding: 12px 24px;
+            font-size: 0.95rem;
+          }
+
+          .bottom-section {
+            margin-top: 60px;
+          }
+
+          .closing-card {
+            padding: 36px;
+          }
+
+          .closing-card h3 {
+            font-size: 1.75rem;
+            margin-bottom: 20px;
+          }
+
+          .closing-card p {
+            font-size: 1.1rem;
+          }
+        }
+
+        @media (min-width: 1024px) {
+          .about-us-section {
+            padding: 120px 0;
+          }
+
+          .container {
+            padding: 0 30px;
+          }
+
+          .about-header {
+            margin-bottom: 80px;
+          }
+
+          .section-title {
+            font-size: 4rem;
+          }
+
+          .section-subtitle {
+            font-size: 1.25rem;
+          }
+
+          .content-wrapper {
+            grid-template-columns: 2fr 1fr;
+            gap: 60px;
+            margin-bottom: 60px;
+          }
+
+          .main-content {
+            gap: 40px;
+          }
+
+          .content-card {
+            padding: 32px;
+          }
+
+          .card-header h3 {
+            font-size: 1.5rem;
+          }
+
+          .content-card p {
+            font-size: 1.1rem;
+          }
+
+          .content-row {
+            gap: 30px;
+          }
+
+          .sidebar {
+            gap: 30px;
+          }
+
+          .stats-card, .expertise-card, .cta-card {
+            padding: 32px;
+          }
+
+          .stats-card h3, .expertise-card h3, .cta-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 24px;
+          }
+
+          .cta-card p {
+            font-size: 1rem;
+            margin-bottom: 24px;
+          }
+
+          .stat-item {
+            margin-bottom: 24px;
+          }
+
+          .stat-number {
+            font-size: 2.5rem;
+            margin-bottom: 8px;
+          }
+
+          .stat-label {
+            font-size: 0.9rem;
+          }
+
+          .expertise-item {
+            padding: 12px 16px;
+            font-size: 0.95rem;
+          }
+
+          .cta-button {
+            padding: 12px 24px;
+            font-size: 0.95rem;
+          }
+
+          .bottom-section {
+            margin-top: 60px;
+          }
+
+          .closing-card {
+            padding: 40px;
+          }
+
+          .closing-card h3 {
+            font-size: 1.75rem;
+            margin-bottom: 20px;
+          }
+
+          .closing-card p {
+            font-size: 1.1rem;
+          }
+        }
+
         @media (max-width: 1024px) {
           .content-wrapper {
             grid-template-columns: 1fr;
@@ -529,37 +845,21 @@ const AboutUsSection: React.FC = () => {
         }
 
         @media (max-width: 768px) {
-          .about-us-section {
-            padding: 80px 0;
-          }
-
-          .container {
-            padding: 0 20px;
-          }
-
-          .section-title {
-            font-size: 2.5rem;
-          }
-
           .content-row {
             grid-template-columns: 1fr;
             gap: 20px;
           }
 
-          .content-card {
-            padding: 24px;
-          }
-
           .mission-highlight {
-            padding: 30px 20px;
+            padding: 20px 16px;
           }
 
           .quote-mark {
-            font-size: 3rem;
+            font-size: 2.5rem;
           }
 
           .mission-text {
-            font-size: 1.25rem;
+            font-size: 1.1rem;
           }
         }
 
@@ -569,21 +869,29 @@ const AboutUsSection: React.FC = () => {
           }
 
           .about-header {
-            margin-bottom: 60px;
+            margin-bottom: 40px;
           }
 
           .content-card {
-            padding: 20px;
+            padding: 16px;
           }
 
           .card-header {
             flex-direction: column;
             text-align: center;
-            gap: 10px;
+            gap: 8px;
           }
 
           .card-icon {
             margin-right: 0;
+          }
+
+          .card-header h3 {
+            font-size: 1.1rem;
+          }
+
+          .content-card p {
+            font-size: 0.9rem;
           }
         }
       `}</style>

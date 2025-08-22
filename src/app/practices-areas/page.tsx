@@ -289,36 +289,36 @@ export default function PracticesAreasPage() {
   return (
     <div className="min-h-screen bg-[#F8F1E6]">
       {/* Hero Section */}
-      <section className="relative bg-[#102028] py-20 lg:py-32 overflow-hidden">
+      <section className="relative bg-[#102028] py-12 sm:py-16 lg:py-20 xl:py-32 overflow-hidden">
         {/* Background Pattern */}
         <div className="absolute inset-0 opacity-10">
           <div className="absolute inset-0 bg-gradient-to-br from-[#F8F1E6]/20 to-transparent"></div>
         </div>
         
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="mb-8">
-            <div className="inline-flex items-center px-4 py-2 bg-[#F8F1E6]/10 backdrop-blur-sm rounded-full border border-[#F8F1E6]/20 mb-6">
-              <FontAwesomeIcon icon={faStar} className="text-[#F8F1E6] mr-2" />
-              <span className="text-[#F8F1E6] text-sm font-medium">Expert Legal Services</span>
+          <div className="mb-6 sm:mb-8">
+            <div className="inline-flex items-center px-3 sm:px-4 py-2 bg-[#F8F1E6]/10 backdrop-blur-sm rounded-full border border-[#F8F1E6]/20 mb-4 sm:mb-6">
+              <FontAwesomeIcon icon={faStar} className="text-[#F8F1E6] mr-2 text-sm sm:text-base" />
+              <span className="text-[#F8F1E6] text-xs sm:text-sm font-medium">Expert Legal Services</span>
             </div>
           </div>
           
-          <h1 className="font-playfair text-[#F8F1E6] text-4xl sm:text-5xl lg:text-6xl xl:text-7xl mb-6 leading-tight">
+          <h1 className="font-playfair text-[#F8F1E6] text-3xl sm:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl mb-4 sm:mb-6 leading-tight">
             Practice Areas
           </h1>
           
-          <p className="text-[#F8F1E6]/90 text-lg sm:text-xl lg:text-2xl max-w-3xl mx-auto mb-8 leading-relaxed">
+          <p className="text-[#F8F1E6]/90 text-base sm:text-lg lg:text-xl xl:text-2xl max-w-3xl mx-auto mb-6 sm:mb-8 leading-relaxed">
             Comprehensive legal expertise across diverse practice areas, delivering exceptional results with integrity and dedication.
           </p>
           
-          <div className="flex flex-wrap justify-center gap-4 mb-12">
-            <div className="bg-[#F8F1E6]/10 backdrop-blur-sm rounded-lg px-6 py-3 border border-[#F8F1E6]/20">
-              <div className="text-[#F8F1E6] text-2xl font-bold">12+</div>
-              <div className="text-[#F8F1E6]/80 text-sm">Practice Areas</div>
+          <div className="flex flex-wrap justify-center gap-3 sm:gap-4 mb-8 sm:mb-12">
+            <div className="bg-[#F8F1E6]/10 backdrop-blur-sm rounded-lg px-4 sm:px-6 py-2 sm:py-3 border border-[#F8F1E6]/20">
+              <div className="text-[#F8F1E6] text-xl sm:text-2xl font-bold">12+</div>
+              <div className="text-[#F8F1E6]/80 text-xs sm:text-sm">Practice Areas</div>
             </div>
-            <div className="bg-[#F8F1E6]/10 backdrop-blur-sm rounded-lg px-6 py-3 border border-[#F8F1E6]/20">
-              <div className="text-[#F8F1E6] text-2xl font-bold">15+</div>
-              <div className="text-[#F8F1E6]/80 text-sm">Years Experience</div>
+            <div className="bg-[#F8F1E6]/10 backdrop-blur-sm rounded-lg px-4 sm:px-6 py-2 sm:py-3 border border-[#F8F1E6]/20">
+              <div className="text-[#F8F1E6] text-xl sm:text-2xl font-bold">15+</div>
+              <div className="text-[#F8F1E6]/80 text-xs sm:text-sm">Years Experience</div>
             </div>
           </div>
         </div>
@@ -327,47 +327,47 @@ export default function PracticesAreasPage() {
     
 
       {/* Services Grid */}
-      <section className="py-12 lg:py-20 bg-[#F8F1E6]">
+      <section className="py-8 sm:py-12 lg:py-16 xl:py-20 bg-[#F8F1E6]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8 lg:gap-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 sm:gap-8 lg:gap-12">
             {filteredServices.map((service, index) => (
               <Link href={service.link} key={service.id}>
                 <div className="group bg-[#F8F1E6] rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 hover:transform hover:scale-105 border border-[#102028]/10 overflow-hidden flex flex-col h-full">
                   {/* Service Header */}
-                  <div className="p-8 pb-6 flex-1">
-                    <div className="flex items-start justify-between mb-6">
-                      <div className="w-16 h-16 bg-gradient-to-br from-[#102028] to-[#102028]/90 rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow duration-300">
+                  <div className="p-6 sm:p-8 pb-4 sm:pb-6 flex-1">
+                    <div className="flex items-start justify-between mb-4 sm:mb-6">
+                      <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-[#102028] to-[#102028]/90 rounded-xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-shadow duration-300">
                         <FontAwesomeIcon 
                           icon={service.icon} 
-                          className="text-[#F8F1E6] text-xl group-hover:scale-110 transition-transform duration-300"
+                          className="text-[#F8F1E6] text-lg sm:text-xl group-hover:scale-110 transition-transform duration-300"
                         />
                       </div>
                       <div className="text-right">
-                        <div className="text-[#102028] text-2xl font-bold">
+                        <div className="text-[#102028] text-xl sm:text-2xl font-bold">
                           {service.stats.cases || service.stats.deals || service.stats.projects || service.stats.transactions || service.stats.organizations || service.stats.startups}
                         </div>
-                        <div className="text-[#102028]/60 text-sm">Cases</div>
+                        <div className="text-[#102028]/60 text-xs sm:text-sm">Cases</div>
                       </div>
                     </div>
 
-                    <h3 className="font-playfair text-[#102028] text-2xl lg:text-3xl mb-4 leading-tight">
+                    <h3 className="font-playfair text-[#102028] text-xl sm:text-2xl lg:text-3xl mb-3 sm:mb-4 leading-tight">
                       {service.title}
                     </h3>
 
-                    <p className="text-[#102028]/80 text-base leading-relaxed mb-6">
+                    <p className="text-[#102028]/80 text-sm sm:text-base leading-relaxed mb-4 sm:mb-6">
                       {service.description}
                     </p>
 
                     {/* Stats Row */}
-                    <div className="grid grid-cols-2 gap-4 mb-6">
+                    <div className="grid grid-cols-2 gap-3 sm:gap-4 mb-4 sm:mb-6">
                       <div className="text-center">
-                        <div className="text-[#102028] text-lg font-bold">
+                        <div className="text-[#102028] text-base sm:text-lg font-bold">
                           {service.stats.experience}
                         </div>
                         <div className="text-[#102028]/60 text-xs">Experience</div>
                       </div>
                       <div className="text-center">
-                        <div className="text-[#102028] text-lg font-bold">
+                        <div className="text-[#102028] text-base sm:text-lg font-bold">
                           <FontAwesomeIcon icon={faCheckCircle} className="text-green-600" />
                         </div>
                         <div className="text-[#102028]/60 text-xs">Verified</div>
@@ -376,19 +376,19 @@ export default function PracticesAreasPage() {
                   </div>
 
                   {/* Features List */}
-                  <div className="px-8 pb-6">
-                    <h4 className="font-medium text-[#102028] text-sm mb-3">Key Services:</h4>
-                    <div className="space-y-2">
+                  <div className="px-6 sm:px-8 pb-4 sm:pb-6">
+                    <h4 className="font-medium text-[#102028] text-xs sm:text-sm mb-2 sm:mb-3">Key Services:</h4>
+                    <div className="space-y-1 sm:space-y-2">
                       {service.features.slice(0, 4).map((feature, featureIndex) => (
-                        <div key={featureIndex} className="flex items-start space-x-3">
-                          <div className="w-1.5 h-1.5 bg-[#102028] rounded-full mt-2 flex-shrink-0"></div>
-                          <span className="text-[#102028]/80 text-sm font-medium">
+                        <div key={featureIndex} className="flex items-start space-x-2 sm:space-x-3">
+                          <div className="w-1 h-1 sm:w-1.5 sm:h-1.5 bg-[#102028] rounded-full mt-1.5 sm:mt-2 flex-shrink-0"></div>
+                          <span className="text-[#102028]/80 text-xs sm:text-sm font-medium">
                             {feature}
                           </span>
                         </div>
                       ))}
                       {service.features.length > 4 && (
-                        <div className="text-[#102028]/60 text-sm font-medium">
+                        <div className="text-[#102028]/60 text-xs sm:text-sm font-medium">
                           +{service.features.length - 4} more services
                         </div>
                       )}
@@ -396,8 +396,8 @@ export default function PracticesAreasPage() {
                   </div>
 
                   {/* CTA Button */}
-                  <div className="px-8 pb-8 mt-auto">
-                    <div className="group/btn relative bg-[#102028] text-[#F8F1E6] px-6 py-3 rounded-xl border-2 border-[#102028] hover:bg-[#102028]/90 transition-all duration-300 font-medium focus:outline-none focus:ring-2 focus:ring-[#102028] focus:ring-offset-2 shadow-sm hover:shadow-md text-center">
+                  <div className="px-6 sm:px-8 pb-6 sm:pb-8 mt-auto">
+                    <div className="group/btn relative bg-[#102028] text-[#F8F1E6] px-4 sm:px-6 py-2.5 sm:py-3 rounded-xl border-2 border-[#102028] hover:bg-[#102028]/90 transition-all duration-300 font-medium focus:outline-none focus:ring-2 focus:ring-[#102028] focus:ring-offset-2 shadow-sm hover:shadow-md text-center text-sm sm:text-base">
                       Explore Practice Area
                       <FontAwesomeIcon 
                         icon={faArrowRight} 
@@ -413,22 +413,22 @@ export default function PracticesAreasPage() {
       </section>
 
       {/* Call to Action Section */}
-      <section className="py-16 lg:py-24 bg-gradient-to-br from-[#102028] to-[#102028]/95">
+      <section className="py-12 sm:py-16 lg:py-20 xl:py-24 bg-gradient-to-br from-[#102028] to-[#102028]/95">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="font-playfair text-[#F8F1E6] text-3xl lg:text-4xl mb-6">
+          <h2 className="font-playfair text-[#F8F1E6] text-2xl sm:text-3xl lg:text-4xl mb-4 sm:mb-6">
             Need Expert Legal Counsel?
           </h2>
-          <p className="text-[#F8F1E6]/90 text-lg mb-8 max-w-2xl mx-auto">
+          <p className="text-[#F8F1E6]/90 text-base sm:text-lg mb-6 sm:mb-8 max-w-2xl mx-auto">
             Our experienced team is ready to provide you with comprehensive legal solutions tailored to your specific needs.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
             <Link href="/contact">
-              <button className="bg-[#F8F1E6] text-[#102028] px-8 py-4 rounded-xl font-medium hover:bg-[#F8F1E6]/90 transition-all duration-300 shadow-lg hover:shadow-xl">
+              <button className="bg-[#F8F1E6] text-[#102028] px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-medium hover:bg-[#F8F1E6]/90 transition-all duration-300 shadow-lg hover:shadow-xl text-sm sm:text-base">
                 Schedule Consultation
               </button>
             </Link>
             <Link href="/about">
-              <button className="border-2 border-[#F8F1E6] text-[#F8F1E6] px-8 py-4 rounded-xl font-medium hover:bg-[#F8F1E6] hover:text-[#102028] transition-all duration-300">
+              <button className="border-2 border-[#F8F1E6] text-[#F8F1E6] px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-medium hover:bg-[#F8F1E6] hover:text-[#102028] transition-all duration-300 text-sm sm:text-base">
                 Learn About Our Team
               </button>
             </Link>

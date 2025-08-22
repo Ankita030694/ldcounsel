@@ -24,28 +24,10 @@ export default function Navbar() {
 
   return (
     <nav className="relative z-10 bg-[#102028] w-full">
-      {/* Logo and horizontal rule */}
-      <div className="relative w-full">
+      {/* Desktop Layout - Logo and Navigation side by side */}
+      <div className="hidden lg:block relative w-full">
         <div className="lg:px-8 lg:pt-8">
-          {/* Mobile menu button - top right */}
-          <div className="lg:hidden flex justify-end mb-4">
-            <button
-              className="p-3"
-              onClick={toggleMenu}
-              aria-expanded={isMenuOpen}
-              aria-controls="mobile-menu"
-              aria-label="Toggle navigation menu" 
-            >
-              <div className="w-8 h-8 flex flex-col justify-center items-center">
-                <span className={`block w-6 h-0.5 bg-[#F8F1E6] transition-all duration-300 ${isMenuOpen ? 'rotate-45 translate-y-1' : '-translate-y-1'}`}></span>
-                <span className={`block w-6 h-0.5 bg-[#F8F1E6] transition-all duration-300 ${isMenuOpen ? 'opacity-0' : 'opacity-100'}`}></span>
-                <span className={`block w-6 h-0.5 bg-[#F8F1E6] transition-all duration-300 ${isMenuOpen ? '-rotate-45 -translate-y-1' : 'translate-y-1'}`}></span>
-              </div>
-            </button>
-          </div>
-
-          {/* Desktop Layout - Logo and Navigation side by side */}
-          <div className="hidden lg:flex justify-center items-center mb-4 w-full">
+          <div className="flex justify-center items-center mb-4 w-full">
             {/* Left Navigation */}
             <nav className="flex space-x-10 mr-10 ml-14" role="navigation" aria-label="Left navigation">
               {navItems.slice(0, 2).map((item) => (
@@ -99,26 +81,54 @@ export default function Navbar() {
               </li>
             </nav>
           </div>
-
-          {/* Mobile Logo - centered */}
-          <div className="lg:hidden flex justify-center mb-4">
-            <div className="relative z-20">
-              <div className="w-32 h-24 lg:w-24 lg:h-24 border-2 border-[#F8F1E6] flex items-center justify-center bg-[#102028] shadow-sm overflow-hidden">
-                <Image
-                  src="/logo/ldlogo.png"
-                  alt="Luthra and Luthra Law Offices India"
-                  width={200}
-                  height={80}
-                  className="w-20 h-20 lg:w-22 lg:h-22 object-cover"
-                  priority
-                />
-              </div>
-            </div>
-          </div>
         </div>
 
         {/* Horizontal rule - positioned to penetrate logo just below middle */}
         <div className="relative -mt-6 lg:-mt-8 w-full">
+          <div className="h-px bg-[#F8F1E6] w-full"></div>
+        </div>
+      </div>
+
+      {/* Mobile Layout - Logo on left, burger menu on right */}
+      <div className="lg:hidden relative w-full">
+        <div className="px-4 pt-4">
+          {/* Mobile header with logo and burger menu */}
+          <div className="flex justify-between items-center mb-4">
+            {/* Mobile Logo - left side */}
+            <div className="relative z-20">
+              <Link href="/">
+                <div className="w-24 h-20 flex items-center justify-center bg-[#102028] shadow-sm overflow-hidden">
+                  <Image
+                    src="/logo/ldlogo.png"
+                    alt="Luthra and Luthra Law Offices India"
+                    width={200}
+                    height={80}
+                    className="w-16 h-16 object-contain"
+                    priority
+                  />
+                </div>
+              </Link>
+            </div>
+
+            {/* Mobile menu button - right side */}
+            <button
+              className="p-3"
+              onClick={toggleMenu}
+              aria-expanded={isMenuOpen}
+              aria-controls="mobile-menu"
+              aria-label="Toggle navigation menu" 
+            >
+              <div className="w-8 h-8 flex flex-col justify-center items-center">
+                <span className={`block w-6 h-0.5 bg-[#F8F1E6] transition-all duration-300 ${isMenuOpen ? 'rotate-45 translate-y-1' : '-translate-y-1'}`}></span>
+                <span className={`block w-6 h-0.5 bg-[#F8F1E6] transition-all duration-300 ${isMenuOpen ? 'opacity-0' : 'opacity-100'}`}></span>
+                <span className={`block w-6 h-0.5 bg-[#F8F1E6] transition-all duration-300 ${isMenuOpen ? '-rotate-45 -translate-y-1' : 'translate-y-1'}`}></span>
+              </div>
+            </button>
+          </div>
+        </div>
+
+        {/* Horizontal rule for mobile */}
+        <div className="relative -mt-2 w-full">
           <div className="h-px bg-[#F8F1E6] w-full"></div>
         </div>
       </div>
