@@ -2,6 +2,7 @@
 
 import type { Metadata } from "next";
 import { useState } from "react";
+import Link from "next/link";
 
 
 
@@ -377,9 +378,9 @@ export default function MediaEntertainmentIntellectualPropertyPage() {
                   Your creativity deserves uncompromising legal protection. At LD Counsels, we ensure your media, entertainment, and IP rights are secure, enforceable, and commercially rewarding so you can focus on creating, performing, and inspiring.
                 </p>
                 <div className="text-center">
-                  <button className="bg-[#F8F1E6] text-[#102028] px-8 py-4 lg:px-12 lg:py-6 rounded-lg font-medium text-lg lg:text-xl hover:bg-[#F8F1E6]/90 transition-colors duration-300 shadow-sm hover:shadow-md">
+                  <Link href="/contact" className="inline-block bg-[#F8F1E6] text-[#102028] px-8 py-4 lg:px-12 lg:py-6 rounded-lg font-medium text-lg lg:text-xl hover:bg-[#F8F1E6]/90 transition-colors duration-300 shadow-sm hover:shadow-md">
                     Contact Us Today
-                  </button>
+                  </Link>
                 </div>
               </div>
             </div>

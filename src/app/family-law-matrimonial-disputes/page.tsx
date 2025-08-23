@@ -2,6 +2,7 @@
 
 import type { Metadata } from "next";
 import { useState } from "react";
+import Link from "next/link";
 
 
 
@@ -417,9 +418,9 @@ export default function FamilyLawMatrimonialDisputesPage() {
                   Family disputes can be overwhelming, but you don't have to face them alone. At LD Counsels, we combine legal precision with empathy to protect your rights, your dignity, and your future.
                 </p>
                 <div className="text-center">
-                  <button className="bg-[#102028] text-[#F8F1E6] px-8 py-4 lg:px-12 lg:py-6 rounded-lg font-medium text-lg lg:text-xl hover:bg-[#102028]/90 transition-colors duration-300 shadow-sm hover:shadow-md">
+                  <Link href="/contact" className="inline-block bg-[#102028] text-[#F8F1E6] px-8 py-4 lg:px-12 lg:py-6 rounded-lg font-medium text-lg lg:text-xl hover:bg-[#102028]/90 transition-colors duration-300 shadow-sm hover:shadow-md">
                     Call Us Today
-                  </button>
+                  </Link>
                 </div>
               </div>
             </div>

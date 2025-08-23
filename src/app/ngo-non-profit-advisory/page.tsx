@@ -2,6 +2,7 @@
 
 import type { Metadata } from "next";
 import { useState } from "react";
+import Link from "next/link";
 
 
 
@@ -445,9 +446,9 @@ export default function NGONonProfitAdvisoryPage() {
                   Running an NGO is a mission of service, but it must be backed by strong legal compliance to thrive. At LD Counsels, we help you focus on your cause while we take care of the law. From formation to foreign funding compliance, we are your trusted legal partner in the social sector.
                 </p>
                 <div className="text-center">
-                  <button className="bg-[#F8F1E6] text-[#102028] px-8 py-4 lg:px-12 lg:py-6 rounded-lg font-medium text-lg lg:text-xl hover:bg-[#F8F1E6]/90 transition-colors duration-300 shadow-sm hover:shadow-md">
+                  <Link href="/contact" className="inline-block bg-[#F8F1E6] text-[#102028] px-8 py-4 lg:px-12 lg:py-6 rounded-lg font-medium text-lg lg:text-xl hover:bg-[#F8F1E6]/90 transition-colors duration-300 shadow-sm hover:shadow-md">
                     Contact Us Today
-                  </button>
+                  </Link>
                 </div>
               </div>
             </div>

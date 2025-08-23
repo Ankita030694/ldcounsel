@@ -2,6 +2,7 @@
 
 import type { Metadata } from "next";
 import { useState } from "react";
+import Link from "next/link";
 
 
 
@@ -395,9 +396,9 @@ export default function EmploymentLabourServiceLawPage() {
                   Whether you are an employee fighting for your rights, an employer seeking compliance clarity, or a government servant challenging an unfair service order, LD Counsels provides the expert legal guidance and representation you need.
                 </p>
                 <div className="text-center">
-                  <button className="bg-[#F8F1E6] text-[#102028] px-8 py-4 lg:px-12 lg:py-6 rounded-lg font-medium text-lg lg:text-xl hover:bg-[#F8F1E6]/90 transition-colors duration-300 shadow-sm hover:shadow-md">
+                  <Link href="/contact" className="inline-block bg-[#F8F1E6] text-[#102028] px-8 py-4 lg:px-12 lg:py-6 rounded-lg font-medium text-lg lg:text-xl hover:bg-[#F8F1E6]/90 transition-colors duration-300 shadow-sm hover:shadow-md">
                     Contact Us Today
-                  </button>
+                  </Link>
                 </div>
               </div>
             </div>

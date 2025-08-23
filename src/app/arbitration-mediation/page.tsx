@@ -2,6 +2,7 @@
 
 import type { Metadata } from "next";
 import { useState } from "react";
+import Link from "next/link";
 
 
 
@@ -404,9 +405,9 @@ export default function ArbitrationMediationPage() {
                   At LD Counsels, we combine deep legal expertise with practical dispute resolution skills, ensuring that your matter is handled with precision, discretion, and determination. Whether you are looking to enforce a contract, negotiate a settlement, we are ready to represent you with strategic insight and unwavering commitment.
                 </p>
                 <div className="text-center">
-                  <button className="bg-[#102028] text-[#F8F1E6] px-8 py-4 lg:px-12 lg:py-6 rounded-lg font-medium text-lg lg:text-xl hover:bg-[#102028]/90 transition-colors duration-300 shadow-sm hover:shadow-md">
+                  <Link href="/contact" className="inline-block bg-[#102028] text-[#F8F1E6] px-8 py-4 lg:px-12 lg:py-6 rounded-lg font-medium text-lg lg:text-xl hover:bg-[#102028]/90 transition-colors duration-300 shadow-sm hover:shadow-md">
                     Contact LD Counsels Today
-                  </button>
+                  </Link>
                 </div>
               </div>
             </div>

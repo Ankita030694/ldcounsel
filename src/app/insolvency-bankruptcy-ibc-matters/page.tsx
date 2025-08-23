@@ -1,6 +1,7 @@
 'use client';
 
 import type { Metadata } from "next";
+import Link from "next/link";
 import { useState } from "react";
 
 
@@ -395,9 +396,9 @@ export default function InsolvencyBankruptcyIBCMattersPage() {
                   Insolvency matters require speed, precision, and deep understanding of commercial realities. At LD Counsels, we ensure that your interests are protected at every stage from initiating or defending proceedings to negotiating successful resolutions.
                 </p>
                 <div className="text-center">
-                  <button className="bg-[#F8F1E6] text-[#102028] px-8 py-4 lg:px-12 lg:py-6 rounded-lg font-medium text-lg lg:text-xl hover:bg-[#F8F1E6]/90 transition-colors duration-300 shadow-sm hover:shadow-md">
+                  <Link href="/contact" className="inline-block bg-[#F8F1E6] text-[#102028] px-8 py-4 lg:px-12 lg:py-6 rounded-lg font-medium text-lg lg:text-xl hover:bg-[#F8F1E6]/90 transition-colors duration-300 shadow-sm hover:shadow-md">
                     Contact Us Today
-                  </button>
+                  </Link>
                 </div>
               </div>
             </div>

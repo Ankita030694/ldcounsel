@@ -2,6 +2,7 @@
 
 import type { Metadata } from "next";
 import { useState } from "react";
+import Link from "next/link";
 
 
 
@@ -372,9 +373,9 @@ export default function ConveyancingWillsPage() {
                   Property transactions and estate planning are too important to leave to chance. At LD Counsels, we ensure that your assets are legally protected, your rights are enforced, and your wishes are honoured. Whether you are buying property, drafting a will, or securing your family's future, we provide clarity, compliance, and confidence every step of the way.
                 </p>
                 <div className="text-center">
-                  <button className="bg-[#F8F1E6] text-[#102028] px-8 py-4 lg:px-12 lg:py-6 rounded-lg font-medium text-lg lg:text-xl hover:bg-[#F8F1E6]/90 transition-colors duration-300 shadow-sm hover:shadow-md">
+                  <Link href="/contact" className="inline-block bg-[#F8F1E6] text-[#102028] px-8 py-4 lg:px-12 lg:py-6 rounded-lg font-medium text-lg lg:text-xl hover:bg-[#F8F1E6]/90 transition-colors duration-300 shadow-sm hover:shadow-md">
                     Contact Us Today
-                  </button>
+                  </Link>
                 </div>
               </div>
             </div>

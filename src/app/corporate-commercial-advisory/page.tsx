@@ -2,6 +2,7 @@
 
 import type { Metadata } from "next";
 import { useState } from "react";
+import Link from "next/link";
 
 
 
@@ -482,9 +483,9 @@ export default function CorporateCommercialAdvisoryPage() {
                   Strong legal foundations lead to stronger businesses. At LD Counsels, our Corporate & Commercial Advisory team ensures your contracts, governance, and compliance are airtight, allowing you to focus on what you do best growing your business.
                 </p>
                 <div className="text-center">
-                  <button className="bg-[#102028] text-[#F8F1E6] px-8 py-4 lg:px-12 lg:py-6 rounded-lg font-medium text-lg lg:text-xl hover:bg-[#102028]/90 transition-colors duration-300 shadow-sm hover:shadow-md">
+                  <Link href="/contact" className="inline-block bg-[#102028] text-[#F8F1E6] px-8 py-4 lg:px-12 lg:py-6 rounded-lg font-medium text-lg lg:text-xl hover:bg-[#102028]/90 transition-colors duration-300 shadow-sm hover:shadow-md">
                     Get in Touch Today
-                  </button>
+                  </Link>
                 </div>
               </div>
             </div>
