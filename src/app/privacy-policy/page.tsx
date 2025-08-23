@@ -224,8 +224,8 @@ export default function PrivacyPolicyPage() {
             <div className="bg-[#F8F1E6] p-6 rounded-xl">
               <p className="text-[#102028] text-lg leading-relaxed">
                 You may request access to, correction of, or deletion of your personal data by contacting us at{' '}
-                <a href="mailto:info@ldcounsels.com" className="text-[#102028] font-semibold underline hover:opacity-80">
-                  info@ldcounsels.com
+                <a href="mailto:contact@ldcounsels.com" className="text-[#102028] font-semibold underline hover:opacity-80">
+                  contact@ldcounsels.com
                 </a>.
               </p>
             </div>
@@ -268,8 +268,8 @@ export default function PrivacyPolicyPage() {
                 <div className="w-3 h-3 bg-[#F8F1E6] rounded-full"></div>
                 <div>
                   <span className="font-semibold">Email:</span>{' '}
-                  <a href="mailto:info@ldcounsels.com" className="underline hover:opacity-80">
-                    info@ldcounsels.com
+                  <a href="mailto:contact@ldcounsels.com" className="underline hover:opacity-80">
+                    contact@ldcounsels.com
                   </a>
                 </div>
               </div>
@@ -304,7 +304,7 @@ export default function PrivacyPolicyPage() {
                   Contact Us
                 </a>
                 <a 
-                  href="mailto:info@ldcounsels.com" 
+                  href="mailto:contact@ldcounsels.com" 
                   className="border-2 border-[#102028] text-[#102028] px-8 py-4 rounded-lg hover:bg-[#102028] hover:text-[#F8F1E6] transition-all duration-300 font-semibold text-lg"
                 >
                   Send Email
