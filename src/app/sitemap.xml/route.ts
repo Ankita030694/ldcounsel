@@ -4,7 +4,7 @@ import { db } from '@/lib/firebase';
 
 export async function GET() {
   try {
-    const baseUrl = 'https://ldcounsel.com'; // Update this to your actual domain
+    const baseUrl = 'https://ldcounsels.com'; // Update this to your actual domain
     
     // Define static pages with their priorities and change frequencies
     const staticPages: Array<{ url: string; priority: string; changefreq: string; lastmod?: string }> = [
