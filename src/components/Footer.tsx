@@ -32,8 +32,9 @@ export default function Footer() {
 
   const contactInfo = [
     { label: 'Phone', value: '+91 70118 03577', href: 'tel:+917011803577' },
-    { label: 'Email', value: 'info@ldcounsels.com', href: 'mailto:info@ldcounsels.com' },
-    { label: 'Address', value: 'New Delhi, India', href: '#address' }
+    { label: 'Email', value: 'contact@ldcounsels.com', href: 'mailto:contact@ldcounsels.com' },
+    { label: 'Gurugram Office', value: 'Tower F, 802, Park View Spa, Sector 47, Gurugram, Haryana - 122018', href: '#address' },
+    { label: 'Delhi Office', value: 'A-11, Basement, Lajpat Nagar - 3, Delhi - 110024', href: '#address' }
   ];
 
   const legalLinks = [
@@ -44,7 +45,6 @@ export default function Footer() {
   const socialLinks = [
     { name: 'LinkedIn', href: 'https://www.linkedin.com/company/ld-counsels/', icon: faLinkedin },
     { name: 'Twitter', href: '#twitter', icon: faTwitter },
-    { name: 'Facebook', href: '#facebook', icon: faFacebook },
     { name: 'Instagram', href: 'https://www.instagram.com/ldcounsels?igsh=cWFid3NyOWFxZzZ1&utm_source=qr', icon: faInstagram }
   ];
 

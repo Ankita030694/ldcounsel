@@ -289,8 +289,7 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <h3 className="text-[#102028] font-medium text-base sm:text-lg mb-1">Email</h3>
-                      <p className="text-[#102028] opacity-70 text-sm sm:text-base">info@ldcounsels.com</p>
-                      <p className="text-[#102028] opacity-70 text-sm sm:text-base">legal@ldcounsels.com</p>
+                      <p className="text-[#102028] opacity-70 text-sm sm:text-base">contact@ldcounsels.com</p>
                     </div>
                   </div>
 
@@ -301,10 +300,15 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <h3 className="text-[#102028] font-medium text-base sm:text-lg mb-1">Address</h3>
+                      <p className="text-[#102028] opacity-70 text-sm sm:text-base mb-2">
+                        <strong>Gurugram Office:</strong><br />
+                        Tower F, 802, Park View Spa,<br />
+                        Sector 47, Gurugram, Haryana - 122018
+                      </p>
                       <p className="text-[#102028] opacity-70 text-sm sm:text-base">
-                        LD Counsels,<br />
-                        Legal Complex, Connaught Place,<br />
-                        New Delhi - 110001, India
+                        <strong>Delhi Office:</strong><br />
+                        A-11, Basement, Lajpat Nagar - 3,<br />
+                        Delhi - 110024
                       </p>
                     </div>
                   </div>
@@ -316,9 +320,9 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <h3 className="text-[#102028] font-medium text-base sm:text-lg mb-1">Office Hours</h3>
-                      <p className="text-[#102028] opacity-70 text-sm sm:text-base">Monday - Friday: 9:00 AM - 7:00 PM</p>
-                      <p className="text-[#102028] opacity-70 text-sm sm:text-base">Saturday: 10:00 AM - 5:00 PM</p>
-                      <p className="text-[#102028] opacity-70 text-sm sm:text-base">Sunday: By Appointment Only</p>
+                      <p className="text-[#102028] opacity-70 text-sm sm:text-base">Mon - Fri: 10:30 - 21:00</p>
+                      <p className="text-[#102028] opacity-70 text-sm sm:text-base">Sat: 10:30 - 19:00</p>
+                      <p className="text-[#102028] opacity-70 text-sm sm:text-base">Sun: Closed</p>
                     </div>
                   </div>
                 </div>

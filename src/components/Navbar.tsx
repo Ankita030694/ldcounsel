@@ -17,8 +17,8 @@ export default function Navbar() {
 
   const navItems = [
     { href: '/about', label: 'About' },
-    { href: '/resources', label: 'Resources' },
     { href: '/practices-areas', label: 'Practice Areas' },
+    { href: '/resources', label: 'Resources' },
     { href: '/contact', label: 'Contact Us' },
   ];
 
@@ -60,25 +60,16 @@ export default function Navbar() {
 
             {/* Right Navigation */}
             <nav className="flex space-x-10 ml-10" role="navigation" aria-label="Right navigation">
-              {/* Practice Areas Link */}
-              <li className="list-none">
-                <Link
-                  href="/practices-areas"
-                  className="text-[#F8F1E6] hover:text-[#F8F1E6]/80 transition-colors duration-200 font-playfair text-base font-medium px-3 py-2 flex items-center"
-                >
-                  Practice Areas
-                </Link>
-              </li>
-
-              {/* Contact Us */}
-              <li className="list-none">
-                <Link
-                  href="/contact"
-                  className="text-[#F8F1E6] hover:text-[#F8F1E6]/80 transition-colors duration-200 font-playfair text-base font-medium px-3 py-2 flex items-center -ml-5"
-                >
-                  Contact Us
-                </Link>
-              </li>
+              {navItems.slice(2, 4).map((item) => (
+                <li key={item.href} className="list-none">
+                  <Link
+                    href={item.href}
+                    className="text-[#F8F1E6] hover:text-[#F8F1E6]/80 transition-colors duration-200 font-playfair text-base font-medium px-3 py-2 flex items-center"
+                  >
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
             </nav>
           </div>
         </div>
@@ -154,122 +145,7 @@ export default function Navbar() {
               </li>
             ))}
             
-            {/* Mobile Practice Areas */}
-            <li>
-              <div className="text-[#F8F1E6] font-playfair text-lg font-medium py-3">
-                Practice Areas
-              </div>
-              <ul className="ml-4 space-y-2 mt-2">
-                <li key="arbitration-mediation">
-                  <Link
-                    href="/arbitration-mediation"
-                    className="block text-[#F8F1E6]/80 hover:text-[#F8F1E6] transition-colors duration-200 font-playfair text-base py-2"
-                    onClick={closeMenu}
-                  >
-                    Arbitration & Mediation
-                  </Link>
-                </li>
-                <li key="consumer-disputes-protection">
-                  <Link
-                    href="/consumer-disputes-protection"
-                    className="block text-[#F8F1E6]/80 hover:text-[#F8F1E6] transition-colors duration-200 font-playfair text-base py-2"
-                    onClick={closeMenu}
-                  >
-                    Consumer Disputes & Protection
-                  </Link>
-                </li>
-                <li key="conveyancing-wills">
-                  <Link
-                    href="/conveyancing-wills"
-                    className="block text-[#F8F1E6]/80 hover:text-[#F8F1E6] transition-colors duration-200 font-playfair text-base py-2"
-                    onClick={closeMenu}
-                  >
-                    Conveyancing & Wills
-                  </Link>
-                </li>
-                <li key="corporate-commercial-advisory">
-                  <Link
-                    href="/corporate-commercial-advisory"
-                    className="block text-[#F8F1E6]/80 hover:text-[#F8F1E6] transition-colors duration-200 font-playfair text-base py-2"
-                    onClick={closeMenu}
-                  >
-                    Corporate & Commercial Advisory
-                  </Link>
-                </li>
-                <li key="employment-labour-service-law">
-                  <Link
-                    href="/employment-labour-service-law"
-                    className="block text-[#F8F1E6]/80 hover:text-[#F8F1E6] transition-colors duration-200 font-playfair text-base py-2"
-                    onClick={closeMenu}
-                  >
-                    Employment & Labour Service Law
-                  </Link>
-                </li>
-                <li key="family-law-matrimonial-disputes">
-                  <Link
-                    href="/family-law-matrimonial-disputes"
-                    className="block text-[#F8F1E6]/80 hover:text-[#F8F1E6] transition-colors duration-200 font-playfair text-base py-2"
-                    onClick={closeMenu}
-                  >
-                    Family Law & Matrimonial Disputes
-                  </Link>
-                </li>
-                <li key="insolvency-bankruptcy-ibc-matters">
-                  <Link
-                    href="/insolvency-bankruptcy-ibc-matters"
-                    className="block text-[#F8F1E6]/80 hover:text-[#F8F1E6] transition-colors duration-200 font-playfair text-base py-2"
-                    onClick={closeMenu}
-                  >
-                    Insolvency & Bankruptcy (IBC) Matters
-                  </Link>
-                </li>
-                <li key="litigation-dispute-resolution">
-                  <Link
-                    href="/litigation-dispute-resolution"
-                    className="block text-[#F8F1E6]/80 hover:text-[#F8F1E6] transition-colors duration-200 font-playfair text-base py-2"
-                    onClick={closeMenu}
-                  >
-                    Litigation & Dispute Resolution
-                  </Link>
-                </li>
-                <li key="media-entertainment-intellectual-property">
-                  <Link
-                    href="/media-entertainment-intellectual-property"
-                    className="block text-[#F8F1E6]/80 hover:text-[#F8F1E6] transition-colors duration-200 font-playfair text-base py-2"
-                    onClick={closeMenu}
-                  >
-                    Media, Entertainment & IP
-                  </Link>
-                </li>
-                <li key="ngo-non-profit-advisory">
-                  <Link
-                    href="/ngo-non-profit-advisory"
-                    className="block text-[#F8F1E6]/80 hover:text-[#F8F1E6] transition-colors duration-200 font-playfair text-base py-2"
-                    onClick={closeMenu}
-                  >
-                    NGO & Non-Profit Advisory
-                  </Link>
-                </li>
-                <li key="public-interest-constitutional-matters">
-                  <Link
-                    href="/public-interest-constitutional-matters"
-                    className="block text-[#F8F1E6]/80 hover:text-[#F8F1E6] transition-colors duration-200 font-playfair text-base py-2"
-                    onClick={closeMenu}
-                  >
-                    Public Interest & Constitutional Matters
-                  </Link>
-                </li>
-                <li key="startup-legal-solutions">
-                  <Link
-                    href="/startup-legal-solutions"
-                    className="block text-[#F8F1E6]/80 hover:text-[#F8F1E6] transition-colors duration-200 font-playfair text-base py-2"
-                    onClick={closeMenu}
-                  >
-                    Startup Legal Solutions
-                  </Link>
-                </li>
-              </ul>
-            </li>
+
           </ul>
         </nav>
       )}

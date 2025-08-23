@@ -2,14 +2,13 @@
 
 import Image from 'next/image';
 import Navbar from './Navbar';
-import CounterSection from './CounterSection';
 import Link from 'next/link';
 
 export default function Hero() {
   return (
     <>
       {/* Navigation */}
-      <header className="relative py-8 sm:py-12 lg:py-16 xl:py-20 bg-[#F8F1E6]">
+      <header className="relative h-[90vh] py-8 sm:py-12 lg:py-16 xl:py-20 bg-[#F8F1E6]">
         {/* Background banner image */}
         <div className="absolute inset-0 z-0 hidden lg:block">
           <Image
@@ -22,7 +21,7 @@ export default function Hero() {
         </div>
 
         {/* Main hero content */}
-        <main className="relative z-10 px-4 sm:px-6 lg:px-8 xl:px-12">
+        <main className="relative z-10 px-4 sm:px-6 lg:px-8 xl:px-12 h-full flex items-center">
           <div className="max-w-4xl mx-auto sm:mx-0">
             <h1 className="font-playfair text-[#102028] text-2xl sm:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl leading-tight mb-3 sm:mb-4 lg:mb-6 xl:mb-8 text-center sm:text-left">
               LD Counsels – Your Trusted<br />
@@ -46,9 +45,6 @@ export default function Hero() {
           </div>
         </main>
       </header>
-
-      {/* Counter Section */}
-      <CounterSection />
     </>
   );
 } 

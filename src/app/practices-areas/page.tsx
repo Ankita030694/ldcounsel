@@ -34,7 +34,7 @@ export default function PracticesAreasPage() {
       icon: faGavel,
       category: 'litigation',
       link: '/litigation-dispute-resolution',
-      description: 'Comprehensive legal representation in civil, criminal, and commercial litigation matters with expertise in appellate practice across all courts.',
+      description: 'Comprehensive legal representation in civil, criminal, and commercial litigation matters with appellate expertise.',
       features: [
         'Civil & Criminal Litigation',
         'Commercial Disputes',
@@ -55,7 +55,7 @@ export default function PracticesAreasPage() {
       icon: faBalanceScale,
       category: 'litigation',
       link: '/arbitration-mediation',
-      description: 'Expert alternative dispute resolution services including domestic and international arbitration, mediation, and award enforcement.',
+      description: 'Expert alternative dispute resolution services including arbitration, mediation, and award enforcement.',
       features: [
         'Domestic & International Arbitration',
         'Mediation & Alternative Dispute Resolution',
@@ -76,7 +76,7 @@ export default function PracticesAreasPage() {
       icon: faBuilding,
       category: 'corporate',
       link: '/corporate-commercial-advisory',
-      description: 'Strategic corporate legal counsel including contract negotiations, M&A support, and comprehensive corporate governance services.',
+      description: 'Strategic corporate legal counsel including contract negotiations, M&A support, and governance services.',
       features: [
         'Contract Drafting & Negotiation',
         'Mergers & Acquisitions Support',
@@ -97,7 +97,7 @@ export default function PracticesAreasPage() {
       icon: faShieldAlt,
       category: 'specialized',
       link: '/consumer-disputes-protection',
-      description: 'Comprehensive consumer protection services ensuring your rights are protected and disputes are resolved effectively.',
+      description: 'Comprehensive consumer protection services ensuring rights protection and effective dispute resolution.',
       features: [
         'Consumer Rights Protection',
         'Dispute Resolution',
@@ -118,7 +118,7 @@ export default function PracticesAreasPage() {
       icon: faHeart,
       category: 'family',
       link: '/family-law-matrimonial-disputes',
-      description: 'Sensitive and professional handling of family law matters with focus on amicable resolutions and protecting family interests.',
+      description: 'Sensitive and professional handling of family law matters with focus on amicable resolutions.',
       features: [
         'Divorce & Separation Proceedings',
         'Child Custody & Guardianship',
@@ -139,7 +139,7 @@ export default function PracticesAreasPage() {
       icon: faFilm,
       category: 'specialized',
       link: '/media-entertainment-intellectual-property',
-      description: 'Specialized legal services for the media and entertainment industry including content contracts and intellectual property protection.',
+      description: 'Specialized legal services for media and entertainment including content contracts and intellectual property.',
       features: [
         'Film & Content Contracts',
         'Copyright & Trademark Protection',
@@ -160,7 +160,7 @@ export default function PracticesAreasPage() {
       icon: faRocket,
       category: 'corporate',
       link: '/startup-legal-solutions',
-      description: 'Tailored legal services for startups and early-stage ventures, from founders\' agreements to IP strategy and compliance.',
+      description: 'Tailored legal services for startups and early-stage ventures including founders agreements and compliance.',
       features: [
         'Founders\' Agreements & Structuring',
         'Compliance for Early-Stage Ventures',
@@ -177,11 +177,11 @@ export default function PracticesAreasPage() {
     },
     {
       id: 'conveyancing-wills',
-      title: 'Conveyancing & Wills',
+      title: <>Conveyancing<br />& Wills</>,  
       icon: faHome,
       category: 'specialized',
       link: '/conveyancing-wills',
-      description: 'Comprehensive property law services including document drafting, registration, and estate planning for secure asset management.',
+      description: 'Comprehensive property law services including document drafting, registration, and estate planning.',
       features: [
         'Drafting & Registration of Property Documents',
         'Transfer & Lease Agreements',
@@ -202,7 +202,7 @@ export default function PracticesAreasPage() {
       icon: faUsers,
       category: 'corporate',
       link: '/employment-labour-service-law',
-      description: 'Comprehensive employment law services ensuring workplace compliance and effective dispute resolution for employers and employees.',
+      description: 'Comprehensive employment law services ensuring workplace compliance and effective dispute resolution.',
       features: [
         'Employment Contracts & Policies',
         'Workplace Dispute Resolution',
@@ -223,7 +223,7 @@ export default function PracticesAreasPage() {
       icon: faBalanceScale,
       category: 'specialized',
       link: '/public-interest-constitutional-matters',
-      description: 'Dedicated legal services for public interest litigation, constitutional rights protection, and policy advocacy initiatives.',
+      description: 'Dedicated legal services for public interest litigation, constitutional rights protection, and advocacy.',
       features: [
         'Writ Petitions & PILs',
         'Constitutional Rights Litigation',
@@ -244,7 +244,7 @@ export default function PracticesAreasPage() {
       icon: faHandHoldingHeart,
       category: 'specialized',
       link: '/ngo-non-profit-advisory',
-      description: 'Specialized legal advisory services for NGOs and non-profit organizations including registration, compliance, and governance.',
+      description: 'Specialized legal advisory services for NGOs and non-profit organizations including registration and compliance.',
       features: [
         'Registration & Compliance',
         'FCRA & Trust Law Advisory',
@@ -261,11 +261,11 @@ export default function PracticesAreasPage() {
     },
     {
       id: 'insolvency-bankruptcy-ibc-matters',
-      title: 'Insolvency & Bankruptcy (IBC) Matters',
+      title: 'Insolvency & Bankruptcy Matters',
       icon: faShieldAlt,
       category: 'corporate',
       link: '/insolvency-bankruptcy-ibc-matters',
-      description: 'Expert insolvency and bankruptcy services including corporate restructuring, debt resolution, and IBC compliance.',
+      description: 'Comprehensive legal solutions for insolvency, bankruptcy, debt resolution, and IBC compliance.',
       features: [
         'Corporate Insolvency Resolution',
         'Bankruptcy Proceedings',
