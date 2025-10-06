@@ -785,16 +785,16 @@ const BlogsDashboard = () => {
                     
                     <div>
                       <label htmlFor="author" className="block text-sm font-medium text-[#102028] mb-1">Author</label>
-                      <select
+                      <input
+                        type="text"
                         id="author"
                         name="author"
                         value={newBlog.author}
                         onChange={handleInputChange}
                         required
                         className="text-black w-full px-4 py-2 border border-[#102028]/20 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#102028] focus:border-transparent"
-                      >
-                        <option value="Lavanya Dhawan">Lavanya Dhawan</option>
-                      </select>
+                        placeholder="Enter author name"
+                      />
                     </div>
                   </div>
                   
