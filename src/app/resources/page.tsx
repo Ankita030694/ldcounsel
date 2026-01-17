@@ -185,7 +185,7 @@ const ResourcesPage = () => {
                       <img
                         src={blog.image}
                         alt={blog.title}
-                        className="object-cover transition-transform duration-300 hover:scale-110"
+                        className="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
                         onError={(e) => {
                           // Fallback to placeholder if image fails to load
                           const target = e.target as HTMLImageElement;

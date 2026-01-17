@@ -532,7 +532,7 @@ const BlogDetailPage = () => {
               <img
                 src={blog.image}
                 alt={blog.title}
-                className="object-cover"
+                className="w-full h-full object-cover"
                 onError={(e) => {
                   // Fallback to placeholder if image fails to load
                   const target = e.target as HTMLImageElement;
@@ -658,11 +658,10 @@ const BlogDetailPage = () => {
                   >
                     {relatedBlog.image && (
                       <div className="relative h-32 mb-4 rounded-lg overflow-hidden">
-                        <Image
+                        <img
                           src={relatedBlog.image}
                           alt={relatedBlog.title}
-                          fill
-                          className="object-cover"
+                          className="w-full h-full object-cover"
                           onError={(e) => {
                             // Fallback to placeholder if image fails to load
                             const target = e.target as HTMLImageElement;
