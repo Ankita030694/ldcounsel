@@ -529,10 +529,9 @@ const BlogDetailPage = () => {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="relative h-64 md:h-96 rounded-xl overflow-hidden shadow-lg"
             >
-              <Image
+              <img
                 src={blog.image}
                 alt={blog.title}
-                fill
                 className="object-cover"
                 onError={(e) => {
                   // Fallback to placeholder if image fails to load

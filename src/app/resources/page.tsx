@@ -182,10 +182,9 @@ const ResourcesPage = () => {
                   {/* Blog Image */}
                   <div className="relative h-48 overflow-hidden">
                     {blog.image ? (
-                      <Image
+                      <img
                         src={blog.image}
                         alt={blog.title}
-                        fill
                         className="object-cover transition-transform duration-300 hover:scale-110"
                         onError={(e) => {
                           // Fallback to placeholder if image fails to load
