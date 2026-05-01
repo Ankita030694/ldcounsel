@@ -146,10 +146,11 @@ const TeamDashboard = () => {
     e.preventDefault();
     if (!member.image) return alert("Please upload an image");
     try {
+      const { id, ...memberData } = member;
       if (formMode === 'add') {
-        await addDoc(collection(db, 'team'), { ...member, created: Date.now() });
-      } else if (member.id) {
-        await updateDoc(doc(db, 'team', member.id), member);
+        await addDoc(collection(db, 'team'), { ...memberData, created: Date.now() });
+      } else if (id) {
+        await updateDoc(doc(db, 'team', id), memberData);
       }
       resetForm();
       fetchTeam();
