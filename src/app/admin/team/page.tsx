@@ -282,100 +282,122 @@ const TeamDashboard = () => {
 
       <AnimatePresence>
         {showForm && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
-            className="bg-white p-6 rounded-xl shadow-lg border border-[#102028]/10 overflow-hidden"
-          >
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="space-y-4">
-                  <div>
-                    <label className="block text-sm font-medium text-[#102028] mb-1">Full Name</label>
-                    <input
-                      type="text"
-                      name="name"
-                      value={member.name}
-                      onChange={handleInputChange}
-                      required
-                      className="text-black w-full px-4 py-2 border border-[#102028]/20 rounded-lg focus:ring-2 focus:ring-[#102028] outline-none"
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-sm font-medium text-[#102028] mb-1">Role / Designation</label>
-                    <input
-                      type="text"
-                      name="role"
-                      value={member.role}
-                      onChange={handleInputChange}
-                      required
-                      className="text-black w-full px-4 py-2 border border-[#102028]/20 rounded-lg focus:ring-2 focus:ring-[#102028] outline-none"
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-sm font-medium text-[#102028] mb-1">Priority (Lower numbers appear first)</label>
-                    <input
-                      type="number"
-                      name="priority"
-                      value={member.priority}
-                      onChange={handleInputChange}
-                      className="text-black w-full px-4 py-2 border border-[#102028]/20 rounded-lg focus:ring-2 focus:ring-[#102028] outline-none"
-                    />
-                  </div>
-                </div>
-                <div className="space-y-4">
-                  <label className="block text-sm font-medium text-[#102028] mb-1">Profile Image</label>
-                  <div className="flex items-center gap-4">
-                    <div className="relative w-32 h-32 bg-[#F8F1E6] rounded-xl overflow-hidden border border-[#102028]/10">
-                      {imagePreview ? (
-                        <Image src={imagePreview} alt="Preview" fill className="object-cover" />
-                      ) : (
-                        <div className="flex items-center justify-center h-full">
-                          <FontAwesomeIcon icon={faUpload} className="text-[#102028]/20 text-2xl" />
-                        </div>
-                      )}
-                    </div>
-                    <div className="flex-1">
-                      <input
-                        type="file"
-                        ref={fileInputRef}
-                        onChange={handleFileUpload}
-                        className="hidden"
-                        accept="image/*"
-                      />
-                      <button
-                        type="button"
-                        onClick={() => fileInputRef.current?.click()}
-                        disabled={uploading}
-                        className="bg-[#F8F1E6] text-[#102028] px-4 py-2 rounded-lg border border-[#102028]/20 hover:bg-[#F8F1E6]/80 transition-all text-sm font-medium"
-                      >
-                        {uploading ? 'Uploading...' : 'Choose New Photo'}
-                      </button>
-                      <p className="text-xs text-[#102028]/60 mt-2">Recommended: Square image, max 2MB.</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="flex justify-end gap-3 pt-4 border-t border-[#102028]/10">
-                <button
-                  type="button"
+          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#102028]/40 backdrop-blur-sm">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9, y: 20 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.9, y: 20 }}
+              className="bg-white w-full max-w-2xl rounded-2xl shadow-2xl overflow-hidden border border-[#102028]/10"
+            >
+              <div className="bg-[#102028] p-4 flex justify-between items-center">
+                <h3 className="font-playfair text-[#F8F1E6] text-xl font-semibold">
+                  {formMode === 'add' ? 'Add New Team Member' : 'Edit Team Member'}
+                </h3>
+                <button 
                   onClick={resetForm}
-                  className="px-6 py-2 rounded-lg border border-[#102028]/20 text-[#102028] hover:bg-gray-50 transition-all"
+                  className="text-[#F8F1E6] hover:rotate-90 transition-transform duration-300 p-2"
                 >
-                  Cancel
-                </button>
-                <button
-                  type="submit"
-                  disabled={uploading}
-                  className="bg-[#102028] text-[#F8F1E6] px-8 py-2 rounded-lg hover:bg-[#102028]/90 transition-all flex items-center gap-2"
-                >
-                  <FontAwesomeIcon icon={faSave} />
-                  {formMode === 'add' ? 'Add Member' : 'Save Changes'}
+                  <FontAwesomeIcon icon={faTimes} className="text-xl" />
                 </button>
               </div>
-            </form>
-          </motion.div>
+
+              <form onSubmit={handleSubmit} className="p-6 space-y-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div className="space-y-4">
+                    <div>
+                      <label className="block text-sm font-medium text-[#102028] mb-1">Full Name</label>
+                      <input
+                        type="text"
+                        name="name"
+                        value={member.name}
+                        onChange={handleInputChange}
+                        required
+                        className="text-black w-full px-4 py-2 border border-[#102028]/20 rounded-lg focus:ring-2 focus:ring-[#102028] outline-none"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-sm font-medium text-[#102028] mb-1">Role / Designation</label>
+                      <input
+                        type="text"
+                        name="role"
+                        value={member.role}
+                        onChange={handleInputChange}
+                        required
+                        className="text-black w-full px-4 py-2 border border-[#102028]/20 rounded-lg focus:ring-2 focus:ring-[#102028] outline-none"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-sm font-medium text-[#102028] mb-1">Priority (Lower numbers appear first)</label>
+                      <input
+                        type="number"
+                        name="priority"
+                        value={member.priority}
+                        onChange={handleInputChange}
+                        className="text-black w-full px-4 py-2 border border-[#102028]/20 rounded-lg focus:ring-2 focus:ring-[#102028] outline-none"
+                      />
+                    </div>
+                  </div>
+                  <div className="space-y-4">
+                    <label className="block text-sm font-medium text-[#102028] mb-1">Profile Image</label>
+                    <div className="flex flex-col items-center gap-4">
+                      <div className="relative w-40 h-40 bg-[#F8F1E6] rounded-2xl overflow-hidden border-2 border-dashed border-[#102028]/20 group">
+                        {imagePreview ? (
+                          <Image src={imagePreview} alt="Preview" fill className="object-cover" />
+                        ) : (
+                          <div className="flex items-center justify-center h-full">
+                            <FontAwesomeIcon icon={faUpload} className="text-[#102028]/20 text-3xl" />
+                          </div>
+                        )}
+                        <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                          <button
+                            type="button"
+                            onClick={() => fileInputRef.current?.click()}
+                            className="bg-white text-[#102028] p-2 rounded-full shadow-lg"
+                          >
+                            <FontAwesomeIcon icon={faUpload} />
+                          </button>
+                        </div>
+                      </div>
+                      <div>
+                        <input
+                          type="file"
+                          ref={fileInputRef}
+                          onChange={handleFileUpload}
+                          className="hidden"
+                          accept="image/*"
+                        />
+                        <button
+                          type="button"
+                          onClick={() => fileInputRef.current?.click()}
+                          disabled={uploading}
+                          className="text-[#102028] text-sm font-semibold hover:underline"
+                        >
+                          {uploading ? 'Uploading...' : (imagePreview ? 'Change Photo' : 'Upload Photo')}
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="flex justify-end gap-3 pt-6 border-t border-[#102028]/10">
+                  <button
+                    type="button"
+                    onClick={resetForm}
+                    className="px-6 py-2 rounded-lg border border-[#102028]/20 text-[#102028] hover:bg-gray-50 transition-all font-medium"
+                  >
+                    Cancel
+                  </button>
+                  <button
+                    type="submit"
+                    disabled={uploading}
+                    className="bg-[#102028] text-[#F8F1E6] px-8 py-2 rounded-lg hover:bg-[#102028]/90 transition-all flex items-center gap-2 font-semibold shadow-lg shadow-[#102028]/20"
+                  >
+                    <FontAwesomeIcon icon={faSave} />
+                    {formMode === 'add' ? 'Add Member' : 'Save Changes'}
+                  </button>
+                </div>
+              </form>
+            </motion.div>
+          </div>
         )}
       </AnimatePresence>
 
