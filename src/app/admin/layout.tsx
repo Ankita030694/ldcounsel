@@ -8,7 +8,8 @@ import {
   faNewspaper, 
   faChartBar,
   faBars,
-  faTimes
+  faTimes,
+  faUsers
 } from '@fortawesome/free-solid-svg-icons';
 import { signOut, onAuthStateChanged } from 'firebase/auth';
 import { auth } from '@/lib/firebase';
@@ -58,6 +59,12 @@ export default function AdminLayout({ children }: AdminLayoutProps) {
       href: '/admin/blogs',
       icon: faNewspaper,
       current: pathname === '/admin/blogs'
+    },
+    {
+      name: 'Team',
+      href: '/admin/team',
+      icon: faUsers,
+      current: pathname === '/admin/team'
     }
   ];
 

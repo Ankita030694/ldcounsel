@@ -4,69 +4,51 @@ import React from 'react';
 import AboutUsSection from '@/components/AboutUsSection';
 import Image from 'next/image';
 
+import { collection, getDocs, query, orderBy } from 'firebase/firestore';
+import { db } from '@/lib/firebase';
+
 export default function AboutPage() {
-  const teamMembers = [
-    {
-      name: 'Lavanya Dhawan',
-      role: 'Founder',
-      image: '/team/Lavanya.png',
-    },
-    {
-      name: 'Anuj Anand Malik',
-      role: 'Partner',
-      image: '/team/Anuj.png',
-    },
-    {
-      name: 'Aman Pathak',
-      role: 'Partner',
-      image: '/team/Aman.png',
-    },
-    {
-      name: 'Yash Datt',
-      role: 'Partner',
-      image: '/team/Yashd.png',
-    },
-    {
-      name: 'Ashwin Kumar Nair',
-      role: 'Legal Consultant & Advocate-on-Record, Supreme Court of India',
-      image: '/team/Ashwin.png',
-    },
-    {
-      name: 'Sandeep Dhawan',
-      role: 'Senior Advisor',
-      image: '/team/Sandeep.png',
-    },
-    {
-      name: 'Shivraj Pawar',
-      role: 'Senior Associate',
-      image: '/team/Shivraj.png',
-    },
-    {
-      name: 'Shrey Arora',
-      role: 'Senior Associate',
-      image: '/team/Shrey.png',
-    },
-    {
-      name: 'Ritik Gupta',
-      role: 'Senior Associate',
-      image: '/team/Ritik.png',
-    },
-    {
-      name: 'Nitika Grover',
-      role: 'Senior Associate',
-      image: '/team/Nitikag.png',
-    },
-    {
-      name: 'Aishwarya Sharma',
-      role: 'Chief of Administration & Legal Analyst',
-      image: '/team/Aishwarya.png',
-    },
-    {
-      name: 'Chhavi Joshi',
-      role: 'Legal Content Strategist',
-      image: '/team/Chhavi.png',
-    }
-  ];
+  const [teamMembers, setTeamMembers] = React.useState<any[]>([]);
+  const [loading, setLoading] = React.useState(true);
+
+  React.useEffect(() => {
+    const fetchTeam = async () => {
+      try {
+        const q = query(collection(db, 'team'), orderBy('priority', 'asc'));
+        const querySnapshot = await getDocs(q);
+        const data = querySnapshot.docs.map(doc => ({
+          id: doc.id,
+          ...doc.data()
+        }));
+        
+        // If no data in backend yet, we'll fall back to hardcoded data to prevent empty section
+        // until the user runs the migration tool in admin
+        if (data.length > 0) {
+          setTeamMembers(data);
+        } else {
+          setTeamMembers([
+            { name: 'Lavanya Dhawan', role: 'Founder', image: '/team/Lavanya.png' },
+            { name: 'Anuj Anand Malik', role: 'Partner', image: '/team/Anuj.png' },
+            { name: 'Aman Pathak', role: 'Partner', image: '/team/Aman.png' },
+            { name: 'Yash Datt', role: 'Partner', image: '/team/Yashd.png' },
+            { name: 'Ashwin Kumar Nair', role: 'Legal Consultant & Advocate-on-Record, Supreme Court of India', image: '/team/Ashwin.png' },
+            { name: 'Sandeep Dhawan', role: 'Senior Advisor', image: '/team/Sandeep.png' },
+            { name: 'Shivraj Pawar', role: 'Senior Associate', image: '/team/Shivraj.png' },
+            { name: 'Shrey Arora', role: 'Senior Associate', image: '/team/Shrey.png' },
+            { name: 'Ritik Gupta', role: 'Senior Associate', image: '/team/Ritik.png' },
+            { name: 'Nitika Grover', role: 'Senior Associate', image: '/team/Nitikag.png' },
+            { name: 'Aishwarya Sharma', role: 'Chief of Administration & Legal Analyst', image: '/team/Aishwarya.png' },
+            { name: 'Chhavi Joshi', role: 'Legal Content Strategist', image: '/team/Chhavi.png' }
+          ]);
+        }
+      } catch (error) {
+        console.error("Error fetching team:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchTeam();
+  }, []);
 
   return (
     <div className="min-h-screen">
