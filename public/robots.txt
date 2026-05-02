@@ -4,5 +4,9 @@ Allow: /
 # Disallow admin pages
 Disallow: /admin/
 
+# Disallow specific images from being indexed
+Disallow: /team/Chhavi.png
+Disallow: /team/Yashd.png
+
 # Sitemap location
 Sitemap: https://ldcounsel.com/sitemap.xml
