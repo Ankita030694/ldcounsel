@@ -13,7 +13,8 @@ import {
   faArrowDown,
   faSave,
   faTimes,
-  faFileImport
+  faFileImport,
+  faSync
 } from '@fortawesome/free-solid-svg-icons';
 import { collection, getDocs, addDoc, updateDoc, deleteDoc, doc, query, orderBy } from 'firebase/firestore';
 import { ref, uploadBytes, getDownloadURL, deleteObject } from 'firebase/storage';
@@ -21,6 +22,7 @@ import { onAuthStateChanged } from 'firebase/auth';
 import { db, auth, storage } from '../../../lib/firebase';
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';
+import { INITIAL_TEAM_DATA } from './teamData';
 
 interface TeamMember {
   id?: string;
@@ -29,6 +31,10 @@ interface TeamMember {
   image: string;
   priority: number;
   created: number;
+  description: string;
+  concisePoints: string[];
+  highlights: string[];
+  iconName: string;
 }
 
 const TeamDashboard = () => {
@@ -41,8 +47,20 @@ const TeamDashboard = () => {
     role: '',
     image: '',
     priority: 0,
-    created: Date.now()
+    created: Date.now(),
+    description: '',
+    concisePoints: [],
+    highlights: [],
+    iconName: 'faUserTie'
   });
+
+  const handleArrayChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setMember(prev => ({
+      ...prev,
+      [name]: value.split('\n').filter(line => line.trim() !== '')
+    }));
+  };
   const [uploading, setUploading] = useState(false);
   const [imagePreview, setImagePreview] = useState<string | null>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
@@ -186,29 +204,49 @@ const TeamDashboard = () => {
   };
 
   const resetForm = () => {
-    setMember({ name: '', role: '', image: '', priority: 0, created: Date.now() });
+    setMember({ 
+      name: '', role: '', image: '', priority: 0, created: Date.now(),
+      description: '', concisePoints: [], highlights: [], iconName: 'faUserTie' 
+    });
     setImagePreview(null);
     setShowForm(false);
     setFormMode('add');
   };
 
+  const syncMissingData = async () => {
+    if (!window.confirm("This will update existing members with missing details (description, highlights, etc.) from the default dataset. Continue?")) return;
+    setImporting(true);
+    try {
+      let updatedCount = 0;
+      for (const m of team) {
+        if (!m.description || m.description === '') {
+          const match = INITIAL_TEAM_DATA.find(initial => initial.name === m.name);
+          if (match && m.id) {
+            console.log(`Updating missing data for ${m.name}`);
+            await updateDoc(doc(db, 'team', m.id), {
+              description: match.description,
+              concisePoints: match.concisePoints,
+              highlights: match.highlights,
+              iconName: match.iconName
+            });
+            updatedCount++;
+          }
+        }
+      }
+      alert(`Sync complete! Updated ${updatedCount} members.`);
+      fetchTeam();
+    } catch (error) {
+      console.error("Error syncing data:", error);
+      alert("Failed to sync data.");
+    } finally {
+      setImporting(false);
+    }
+  };
+
   const importInitialTeam = async () => {
     if (!window.confirm("This will import the 12 initial team members. Continue?")) return;
     setImporting(true);
-    const initialTeam = [
-      { name: 'Lavanya Dhawan', role: 'Founder', image: '/team/Lavanya.png' },
-      { name: 'Anuj Anand Malik', role: 'Partner', image: '/team/Anuj.png' },
-      { name: 'Aman Pathak', role: 'Partner', image: '/team/Aman.png' },
-      { name: 'Yash Datt', role: 'Partner', image: '/team/Yashd.png' },
-      { name: 'Ashwin Kumar Nair', role: 'Legal Consultant & Advocate-on-Record, Supreme Court of India', image: '/team/Ashwin.png' },
-      { name: 'Sandeep Dhawan', role: 'Senior Advisor', image: '/team/Sandeep.png' },
-      { name: 'Shivraj Pawar', role: 'Senior Associate', image: '/team/Shivraj.png' },
-      { name: 'Shrey Arora', role: 'Senior Associate', image: '/team/Shrey.png' },
-      { name: 'Ritik Gupta', role: 'Senior Associate', image: '/team/Ritik.png' },
-      { name: 'Nitika Grover', role: 'Senior Associate', image: '/team/Nitikag.png' },
-      { name: 'Aishwarya Sharma', role: 'Chief of Administration & Legal Analyst', image: '/team/Aishwarya.png' },
-      { name: 'Chhavi Joshi', role: 'Legal Content Strategist', image: '/team/Chhavi.png' }
-    ];
+    const initialTeam = INITIAL_TEAM_DATA;
 
     try {
       for (let i = 0; i < initialTeam.length; i++) {
@@ -233,7 +271,11 @@ const TeamDashboard = () => {
           role: m.role,
           image: firebaseImageUrl,
           priority: i * 10,
-          created: Date.now()
+          created: Date.now(),
+          description: m.description,
+          concisePoints: m.concisePoints,
+          highlights: m.highlights,
+          iconName: m.iconName
         });
       }
       alert("Import successful!");
@@ -270,6 +312,16 @@ const TeamDashboard = () => {
               {importing ? 'Importing...' : 'Import Initial Team'}
             </button>
           )}
+          {team.length > 0 && team.some(m => !m.description) && (
+            <button
+              onClick={syncMissingData}
+              disabled={importing}
+              className="bg-[#102028]/10 text-[#102028] px-4 py-2 rounded-lg hover:bg-[#102028]/20 transition-all flex items-center gap-2"
+            >
+              <FontAwesomeIcon icon={faSync} className={importing ? 'animate-spin' : ''} />
+              {importing ? 'Syncing...' : 'Sync Missing Data'}
+            </button>
+          )}
           <button
             onClick={() => setShowForm(true)}
             className="bg-[#102028] text-[#F8F1E6] px-4 py-2 rounded-lg hover:bg-[#102028]/90 transition-all flex items-center gap-2"
@@ -287,7 +339,7 @@ const TeamDashboard = () => {
               initial={{ opacity: 0, scale: 0.9, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.9, y: 20 }}
-              className="bg-white w-full max-w-2xl rounded-2xl shadow-2xl overflow-hidden border border-[#102028]/10"
+              className="bg-white w-full max-w-2xl max-h-[90vh] flex flex-col rounded-2xl shadow-2xl overflow-hidden border border-[#102028]/10"
             >
               <div className="bg-[#102028] p-4 flex justify-between items-center">
                 <h3 className="font-playfair text-[#F8F1E6] text-xl font-semibold">
@@ -301,7 +353,7 @@ const TeamDashboard = () => {
                 </button>
               </div>
 
-              <form onSubmit={handleSubmit} className="p-6 space-y-6">
+              <form onSubmit={handleSubmit} className="p-6 space-y-6 overflow-y-auto">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="space-y-4">
                     <div>
@@ -312,7 +364,7 @@ const TeamDashboard = () => {
                         value={member.name}
                         onChange={handleInputChange}
                         required
-                        className="text-black w-full px-4 py-2 border border-[#102028]/20 rounded-lg focus:ring-2 focus:ring-[#102028] outline-none"
+                        className="bg-white text-[#102028] w-full px-4 py-2 border border-[#102028]/20 rounded-lg focus:ring-2 focus:ring-[#102028] outline-none"
                       />
                     </div>
                     <div>
@@ -323,7 +375,7 @@ const TeamDashboard = () => {
                         value={member.role}
                         onChange={handleInputChange}
                         required
-                        className="text-black w-full px-4 py-2 border border-[#102028]/20 rounded-lg focus:ring-2 focus:ring-[#102028] outline-none"
+                        className="bg-white text-[#102028] w-full px-4 py-2 border border-[#102028]/20 rounded-lg focus:ring-2 focus:ring-[#102028] outline-none"
                       />
                     </div>
                     <div>
@@ -333,8 +385,30 @@ const TeamDashboard = () => {
                         name="priority"
                         value={member.priority}
                         onChange={handleInputChange}
-                        className="text-black w-full px-4 py-2 border border-[#102028]/20 rounded-lg focus:ring-2 focus:ring-[#102028] outline-none"
+                        className="bg-white text-[#102028] w-full px-4 py-2 border border-[#102028]/20 rounded-lg focus:ring-2 focus:ring-[#102028] outline-none"
                       />
+                    </div>
+                    <div>
+                      <label className="block text-sm font-medium text-[#102028] mb-1">Icon Name</label>
+                      <select
+                        name="iconName"
+                        value={member.iconName}
+                        onChange={handleInputChange as any}
+                        className="bg-white text-[#102028] w-full px-4 py-2 border border-[#102028]/20 rounded-lg focus:ring-2 focus:ring-[#102028] outline-none"
+                      >
+                        <option value="faUserTie">User Tie</option>
+                        <option value="faBriefcase">Briefcase</option>
+                        <option value="faBalanceScale">Balance Scale</option>
+                        <option value="faShieldAlt">Shield Alt</option>
+                        <option value="faAward">Award</option>
+                        <option value="faChartLine">Chart Line</option>
+                        <option value="faUsers">Users</option>
+                        <option value="faHandshake">Handshake</option>
+                        <option value="faEdit">Edit</option>
+                        <option value="faFileAlt">File Alt</option>
+                        <option value="faLightbulb">Lightbulb</option>
+                        <option value="faGraduationCap">Graduation Cap</option>
+                      </select>
                     </div>
                   </div>
                   <div className="space-y-4">
@@ -376,6 +450,38 @@ const TeamDashboard = () => {
                         </button>
                       </div>
                     </div>
+                  </div>
+                </div>
+                <div className="space-y-4 mt-6">
+                  <div>
+                    <label className="block text-sm font-medium text-[#102028] mb-1">About / Description</label>
+                    <textarea
+                      name="description"
+                      value={member.description}
+                      onChange={handleInputChange}
+                      rows={4}
+                      className="bg-white text-[#102028] w-full px-4 py-2 border border-[#102028]/20 rounded-lg focus:ring-2 focus:ring-[#102028] outline-none resize-y"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-[#102028] mb-1">Key Expertise (One point per line)</label>
+                    <textarea
+                      name="concisePoints"
+                      value={member.concisePoints?.join('\n')}
+                      onChange={handleArrayChange}
+                      rows={4}
+                      className="bg-white text-[#102028] w-full px-4 py-2 border border-[#102028]/20 rounded-lg focus:ring-2 focus:ring-[#102028] outline-none resize-y"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-[#102028] mb-1">Other Information / Detailed Highlights (One point per line)</label>
+                    <textarea
+                      name="highlights"
+                      value={member.highlights?.join('\n')}
+                      onChange={handleArrayChange}
+                      rows={4}
+                      className="bg-white text-[#102028] w-full px-4 py-2 border border-[#102028]/20 rounded-lg focus:ring-2 focus:ring-[#102028] outline-none resize-y"
+                    />
                   </div>
                 </div>
                 <div className="flex justify-end gap-3 pt-6 border-t border-[#102028]/10">
