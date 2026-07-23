@@ -137,7 +137,7 @@ export default function OurTeamSection() {
                 <div className="space-y-3 mb-6">
                   <h4 className="font-medium text-[#102028] text-sm sm:text-base">Key Expertise:</h4>
                   <ul className="space-y-2">
-                    {member.concisePoints.map((point, pointIndex) => (
+                    {member.concisePoints.map((point: string, pointIndex: number) => (
                       <li key={pointIndex} className="flex items-start space-x-2">
                         <div className="w-1.5 h-1.5 bg-[#102028] rounded-full mt-2 flex-shrink-0"></div>
                         <span className="text-[#102028] opacity-70 text-xs sm:text-sm leading-relaxed">
@@ -171,7 +171,7 @@ export default function OurTeamSection() {
                     <div>
                       <h4 className="font-medium text-[#102028] text-sm sm:text-base mb-2">Detailed Highlights:</h4>
                       <ul className="space-y-1">
-                        {member.highlights.map((highlight, highlightIndex) => (
+                        {member.highlights.map((highlight: string, highlightIndex: number) => (
                           <li key={highlightIndex} className="flex items-start space-x-2">
                             <div className="w-1.5 h-1.5 bg-[#102028] rounded-full mt-2 flex-shrink-0"></div>
                             <span className="text-[#102028] opacity-70 text-xs sm:text-sm leading-relaxed">
