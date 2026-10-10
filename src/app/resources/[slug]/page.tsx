@@ -722,7 +722,7 @@ const BlogDetailPage = () => {
                   Contact Us
                 </motion.button>
               </Link>
-              <Link href="/services">
+              <Link href="/practices-areas">
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}

@@ -8,11 +8,10 @@ import Link from 'next/link';
 export default function Footer() {
   const usefulLinks = [
     { label: 'About Us', href: '/about' },
-    { label: 'Blogs', href: '/blogs' },
+    { label: 'Blogs & Resources', href: '/resources' },
     { label: 'Practice Areas', href: '/practices-areas' },
-    { label: 'Services', href: '/services' },
-    { label: 'Contact Us', href: '/contact' },
-    { label: 'Our Team', href: '/team' }
+    { label: 'Our Team', href: '/team' },
+    { label: 'Contact Us', href: '/contact' }
   ];
 
   const services = [
@@ -33,8 +32,7 @@ export default function Footer() {
   const contactInfo = [
     { label: 'Phone', value: '+91 70118 03577', href: 'tel:+917011803577' },
     { label: 'Email', value: 'contact@ldcounsels.com', href: 'mailto:contact@ldcounsels.com' },
-    { label: 'Gurugram Office', value: 'Tower F, 802, Park View Spa, Sector 47, Gurugram, Haryana - 122018', href: '#address' },
-    { label: 'Delhi Office', value: 'A-11, Basement, Lajpat Nagar - 3, Delhi - 110024', href: '#address' }
+    { label: 'Address', value: '6th Floor, M3M URBANA, Office space, 616A, Golf Course Extension Road, Sector 67, Gurugram, Haryana 122102', href: '/contact#address' }
   ];
 
   const legalLinks = [

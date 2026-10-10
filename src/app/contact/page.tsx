@@ -294,21 +294,16 @@ export default function ContactPage() {
                   </div>
 
                   {/* Address */}
-                  <div className="flex items-start space-x-3 sm:space-x-4">
+                  <div id="address" className="flex items-start space-x-3 sm:space-x-4">
                     <div className="w-10 h-10 sm:w-12 sm:h-12 bg-[#102028] rounded-lg flex items-center justify-center flex-shrink-0">
                       <FontAwesomeIcon icon={faMapMarkerAlt} className="text-[#F8F1E6] text-sm sm:text-lg" />
                     </div>
                     <div>
                       <h3 className="text-[#102028] font-medium text-base sm:text-lg mb-1">Address</h3>
-                      <p className="text-[#102028] opacity-70 text-sm sm:text-base mb-2">
-                        <strong>Gurugram Office:</strong><br />
-                        Tower F, 802, Park View Spa,<br />
-                        Sector 47, Gurugram, Haryana - 122018
-                      </p>
                       <p className="text-[#102028] opacity-70 text-sm sm:text-base">
-                        <strong>Delhi Office:</strong><br />
-                        A-11, Basement, Lajpat Nagar - 3,<br />
-                        Delhi - 110024
+                        6th Floor, M3M URBANA, Office space, 616A,<br />
+                        Golf Course Extension Road, Sector 67,<br />
+                        Gurugram, Haryana 122102
                       </p>
                     </div>
                   </div>
@@ -352,7 +347,10 @@ export default function ContactPage() {
                     <FontAwesomeIcon icon={faInstagram} className="text-[#F8F1E6] text-sm sm:text-lg" />
                   </a>
                   <a
-                    href="#"
+                    href={`https://wa.me/+917011803577?text=${encodeURIComponent('Hello! I would like to get in touch with LD Counsels for legal assistance.')}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Chat with us on WhatsApp"
                     className="w-10 h-10 sm:w-12 sm:h-12 bg-[#102028] rounded-lg flex items-center justify-center hover:bg-[#102028]/80 transition-colors duration-300"
                   >
                     <FontAwesomeIcon icon={faWhatsapp} className="text-[#F8F1E6] text-sm sm:text-lg" />
@@ -370,14 +368,14 @@ export default function ContactPage() {
               </h2>
               <div className="w-full h-64 sm:h-80 lg:h-96 rounded-lg overflow-hidden">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3502.0080534743755!2d77.21932731455172!3d28.630176982434745!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfd2dc6e5ad4d%3A0x896e4ac2a7685fcf!2sConnaught%20Place%2C%20New%20Delhi%2C%20Delhi!5e0!3m2!1sen!2sin!4v1642597850450!5m2!1sen!2sin"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3509.948156874091!2d77.0643154766005!3d28.390633775797767!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d190baab8acdf%3A0x99f73c3c0b127628!2sLD%20Counsels!5e0!3m2!1sen!2sin!4v1791627689510!5m2!1sen!2sin"
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}
                   allowFullScreen
                   loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  title="Luthra Law Offices Location"
+                  referrerPolicy="strict-origin-when-cross-origin"
+                  title="LD Counsels Location"
                 />
               </div>
             </div>

@@ -9,4 +9,4 @@ Disallow: /team/Chhavi.png
 Disallow: /team/Yashd.png
 
 # Sitemap location
-Sitemap: https://ldcounsel.com/sitemap.xml
+Sitemap: https://ldcounsels.com/sitemap.xml

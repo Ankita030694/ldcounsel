@@ -427,7 +427,7 @@ export default function PracticesAreasPage() {
                 Schedule Consultation
               </button>
             </Link>
-            <Link href="/about">
+            <Link href="/team">
               <button className="border-2 border-[#F8F1E6] text-[#F8F1E6] px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-medium hover:bg-[#F8F1E6] hover:text-[#102028] transition-all duration-300 text-sm sm:text-base">
                 Learn About Our Team
               </button>

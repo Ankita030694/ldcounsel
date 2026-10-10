@@ -324,7 +324,7 @@ export default function TermsAndConditionsPage() {
               <div className="flex items-center space-x-4">
                 <div className="w-3 h-3 bg-[#F8F1E6] rounded-full"></div>
                 <div>
-                  <span className="font-semibold">Address:</span> [office address tbd]
+                  <span className="font-semibold">Address:</span> 6th Floor, M3M URBANA, Office space, 616A, Golf Course Extension Road, Sector 67, Gurugram, Haryana 122102
                 </div>
               </div>
             </div>
